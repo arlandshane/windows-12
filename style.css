@@ -1,0 +1,64 @@
+body {
+    background-image: url("/16.jpg");
+    background-size: cover;
+}
+
+p {
+    opacity: 1;
+    padding: 0.5rem;
+    color: white;
+}
+
+.contain {
+    opacity: 0.7;
+    background-color: black;
+    width: fit-content;
+    height: 4rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.weather {
+    position: absolute;
+    transform: translate3d(1vw, 89vh, 0);
+}
+
+.weatherSpan {
+    height: inherit;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.weatherIcon {
+    position: relative;
+    top: 1rem;
+    padding: .5rem;
+    transform: scale(1.2);
+}
+
+.dateSpan {
+    height: inherit;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.date {
+    position: absolute;
+    transform: translate3d(90vw, 89vh, 0);
+}
+
+.notification {
+    position: relative;
+    top: 1rem;
+    padding: 0.1rem 0.55rem 0.2rem;
+    border: solid 1px;
+    border-radius: 100%;
+    color: white;
+    position: relative;
+    transform: translate3d(7rem, 1rem, 0);
+}
+
+.click {
+    padding-right: .5rem;
+    cursor: pointer;
+}
