@@ -3,27 +3,28 @@ body {
     background-size: cover;
 }
 
-p {
+.text {
     opacity: 1;
     padding: 0.5rem;
     color: white;
+    font-size: small;
 }
 
 .contain {
     opacity: 0.7;
     background-color: black;
     width: fit-content;
-    height: 4rem;
+    height: 3.5rem;
     border-radius: 0.5rem;
-    text-align: center;
 }
 
 .weather {
     position: absolute;
-    transform: translate3d(1vw, 89vh, 0);
+    transform: translate3d(1vw, 90vh, 0);
 }
 
 .weatherSpan {
+    text-align: center;
     height: inherit;
     display: inline-flex;
     justify-content: space-between;
@@ -36,6 +37,16 @@ p {
     transform: scale(1.2);
 }
 
+.windowsDiv {
+    position: absolute;
+    transform: translate3d(50vw, 90vh, 0);
+    
+}
+
+.icons {
+    width: 3rem;
+}
+
 .dateSpan {
     height: inherit;
     display: inline-flex;
@@ -44,10 +55,11 @@ p {
 
 .date {
     position: absolute;
-    transform: translate3d(90vw, 89vh, 0);
+    transform: translate3d(90vw, 90vh, 0);
 }
 
 .notification {
+    background-color: rgb(40, 40, 40);
     position: relative;
     top: 1rem;
     padding: 0.1rem 0.55rem 0.2rem;
@@ -61,4 +73,11 @@ p {
 .click {
     padding-right: .5rem;
     cursor: pointer;
+}
+
+.shortcut {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    transform: translate3d(82vw, 90vh, 0);
 }
