@@ -1,5 +1,5 @@
 body {
-    background-image: url("16.jpg");
+    background-image: url("wallpaper.jpg");
     background-size: cover;
 }
 
@@ -14,19 +14,13 @@ body {
     opacity: 0.7;
     background-color: black;
     width: fit-content;
-    height: 3.5rem;
+
     border-radius: 0.5rem;
 }
 
 .weather {
-    position: absolute;
-    transform: translate3d(1vw, 90vh, 0);
-}
-
-.weatherSpan {
     text-align: center;
-    height: inherit;
-    display: inline-flex;
+    display: flex;
     justify-content: space-between;
 }
 
@@ -37,25 +31,15 @@ body {
     transform: scale(1.2);
 }
 
-.windowsDiv {
-    position: absolute;
-    transform: translate3d(50vw, 90vh, 0);
-    
-}
-
 .icons {
-    width: 3rem;
-}
-
-.dateSpan {
-    height: inherit;
-    display: inline-flex;
-    justify-content: space-between;
+    display: flex;
+    padding: 0 0.5rem;
+    align-items: center;
 }
 
 .date {
-    position: absolute;
-    transform: translate3d(90vw, 90vh, 0);
+    display: flex;
+    justify-content: space-between;
 }
 
 .notification {
@@ -78,6 +62,18 @@ body {
 .shortcut {
     display: flex;
     align-items: center;
+}
+
+.taskbar {
+    display: flex;
+    justify-content: space-around;
     position: absolute;
-    transform: translate3d(82vw, 90vh, 0);
+    transform: translate3d(0, 90vh, 0);
+    width: 100vw;
+    height: 3.5rem;
+}
+
+.microsoft {
+    width: 2.7vw;
+    margin: auto;
 }
