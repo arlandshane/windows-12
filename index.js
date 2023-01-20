@@ -13,6 +13,9 @@ var date = today.getDay();
 if (hours < 10) {
     hours = "0" + hours;
 }
+if (minutes < 10) {
+    minutes = "0" + minutes;
+}
 if (hours > 12) {
     AMPM = "PM";
     hours -= 12;
@@ -23,3 +26,9 @@ var day = month + " " + date;
 
 $('#time').html(time);
 $('#date').html(day);
+
+$('#volume').click(function () {
+    $('#wifi').css('display', 'none')
+    $('#battery').css('display', 'none')
+    $('.progressBra').addClass('progressBar')
+})

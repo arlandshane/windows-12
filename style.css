@@ -29,22 +29,36 @@ body {
     transform: scale(1.2);
 }
 
-.date {
+.day {
     text-align: center;
     display: flex;
+    align-items: center;
     justify-content: space-between;
+}
+
+#time {
+    color: white;
+}
+
+#date {
+    color: white;
+}
+
+.dateTime {
+    display: flex;
+    flex-direction: column;
+    padding: 0 .7rem;
 }
 
 .notification {
     background-color: rgb(40, 40, 40);
     position: relative;
-    top: 1rem;
     padding: 0.1rem 0.55rem 0.2rem;
-    border: solid 1px;
-    border-radius: 100%;
+    border: solid 1px white;
+    border-radius: 30%;
     color: white;
     position: relative;
-    transform: translate3d(7rem, 1rem, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .click {
@@ -55,6 +69,7 @@ body {
 .shortcut {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .taskbar {
@@ -80,6 +95,11 @@ body {
     width: 4vh;
 }
 
-#time {
-    width: 1rem;
+.progressBar {
+    width: 10rem;
+    height: .3rem;
+    background-color: white;
+    margin-right: .7rem;
+    border-radius: 1rem;
+    transition-duration: 300ms;
 }
