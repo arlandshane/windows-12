@@ -28,7 +28,17 @@ $('#time').html(time);
 $('#date').html(day);
 
 $('#volume').click(function () {
-    $('#wifi').css('display', 'none')
-    $('#battery').css('display', 'none')
-    $('.progressBra').addClass('progressBar')
+    $("#state").css('transition-duration', '300ms')
+    $('#wifi').css('transition-duration', '300ms')
+    $('#battery').css('transition-duration', '300ms')
+    if ($("#volumeState").attr("class") === "progressBra") {
+        $('#wifi').css('display', 'none')
+        $('#battery').css('display', 'none')
+        $('#volumeState').removeClass('progressBra').addClass('progressBar')
+    }
+    else if ($("#volumeState").attr("class") === "progressBar") {
+        $('#wifi').css('display', '')
+        $('#battery').css('display', '')
+        $('#volumeState').removeClass('progressBar').addClass('progressBra')
+    }
 })

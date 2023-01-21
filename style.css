@@ -10,9 +10,15 @@ body {
     font-size: small;
 }
 
+.form-control {
+    margin-right: 2px;
+    width: 10rem;
+    border-radius: .3rem;
+    border: none;
+}
+
 .contain {
     background: rgba(0, 0, 0, .7);
-    width: fit-content;
     border-radius: 0.5rem;
 }
 
@@ -37,20 +43,26 @@ body {
 }
 
 #time {
+    font-size: small;
     color: white;
+    padding: 0 .7rem;
+    white-space: nowrap;
 }
 
 #date {
+    font-size: small;
     color: white;
+    padding: 0 .7rem;
+    white-space: nowrap;
 }
 
 .dateTime {
     display: flex;
     flex-direction: column;
-    padding: 0 .7rem;
 }
 
 .notification {
+    font-size: small;
     background-color: rgb(40, 40, 40);
     position: relative;
     padding: 0.1rem 0.55rem 0.2rem;
@@ -86,13 +98,19 @@ body {
 .icons {
     width: 25rem;
     display: flex;
-    padding: 0 0.7rem;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .icon {
     width: 4vh;
+}
+
+.hr1 {
+    border-radius: 1rem;
+    border-left: solid white;
+    width: .1vw;
+    height: 4vh;
 }
 
 .progressBar {
@@ -101,5 +119,16 @@ body {
     background-color: white;
     margin-right: .7rem;
     border-radius: 1rem;
-    transition-duration: 300ms;
+}
+
+@media only screen and (max-width: 824px) {
+    body {
+        background-size: 300%;
+    }
+
+    .icons {
+        position: absolute;
+        bottom: 10vh;
+        padding-left: var(max-width);
+    }
 }
