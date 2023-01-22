@@ -60,6 +60,10 @@ body {
     flex-direction: column;
 }
 
+#notifs {
+    padding: 0 .5rem;
+}
+
 .notification {
     font-size: small;
     background-color: rgb(40, 40, 40);
@@ -73,14 +77,12 @@ body {
 }
 
 .click {
-    padding: 0 .5rem;
     cursor: pointer;
 }
 
 .shortcut {
     display: flex;
     align-items: center;
-    cursor: pointer;
 }
 
 .taskbar {
@@ -120,11 +122,16 @@ body {
     border-radius: 1rem;
 }
 
-.wifiBox {
+.wifiBar {
+    width: fit-content;
+    height: inherit;
+    text-align: center;
+    padding-right: .7rem;
+}
+
+.batteryBar {
     width: 10rem;
-    height: 3vh;
-    background: rgba(255, 255, 255, .7);
-    border-radius: .5rem;
+    height: inherit;
     text-align: center;
 }
 

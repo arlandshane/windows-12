@@ -28,9 +28,6 @@ $('#time').html(time)
 $('#date').html(day)
 
 $('#volume').click(function () {
-    $('#state').css('transition-duration', '300ms')
-    $('#wifi').css('transition-duration', '300ms')
-    $('#battery').css('transition-duration', '300ms')
     if ($('#volumeState').attr('class') === 'progressBra') {
         $('#wifi').css('display', 'none')
         $('#battery').css('display', 'none')
@@ -40,5 +37,31 @@ $('#volume').click(function () {
         $('#wifi').css('display', '')
         $('#battery').css('display', '')
         $('#volumeState').removeClass('progressBar').addClass('progressBra')
+    }
+})
+
+$('#wifi').click(function () {
+    if ($('#wifiState').attr('class') === 'wifiBra') {
+        $('#battery').css('display', 'none')
+        $('#volume').css('display', 'none')
+        $('#wifiState').removeClass('wifiBra').addClass('wifiBar').html('<p style="margin: 0;" class="text">HomeWiFi<br>Connected, Secured</p>')
+    }
+    else if ($('#wifiState').attr('class') === 'wifiBar') {
+        $('#battery').css('display', '')
+        $('#volume').css('display', '')
+        $('#wifiState').removeClass('wifiBar').addClass('wifiBra').html('')
+    }
+})
+
+$('#battery').click(function () {
+    if ($('#batteryState').attr('class') === 'batteryBra') {
+        $('#wifi').css('display', 'none')
+        $('#volume').css('display', 'none')
+        $('#batteryState').removeClass('batteryBra').addClass('batteryBar').html('<p style="margin: 0;" class="text">Battery Status: 69%</p>')
+    }
+    else if ($('#batteryState').attr('class') === 'batteryBar') {
+        $('#wifi').css('display', '')
+        $('#volume').css('display', '')
+        $('#batteryState').removeClass('batteryBar').addClass('batteryBra').html('')
     }
 })
