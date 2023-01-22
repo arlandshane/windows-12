@@ -5,7 +5,6 @@ body {
 
 .text {
     opacity: 1;
-    padding: 0.5rem;
     color: white;
     font-size: small;
 }
@@ -119,6 +118,14 @@ body {
     background-color: white;
     margin-right: .7rem;
     border-radius: 1rem;
+}
+
+.wifiBox {
+    width: 10rem;
+    height: 3vh;
+    background: rgba(255, 255, 255, .7);
+    border-radius: .5rem;
+    text-align: center;
 }
 
 @media only screen and (max-width: 824px) {
