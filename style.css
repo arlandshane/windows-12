@@ -1,6 +1,10 @@
 body {
     background-image: url("wallpaper2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
+    width: fit-content;
 }
 
 .text {
@@ -101,7 +105,7 @@ body {
     width: 25rem;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-around;;
 }
 
 .icon {
@@ -116,7 +120,7 @@ body {
 }
 
 .progressBar {
-    width: 10rem;
+    width: 9rem;
     height: .3rem;
     background-color: white;
     margin-right: .7rem;
@@ -131,19 +135,14 @@ body {
 }
 
 .batteryBar {
-    width: 10rem;
+    width: 9rem;
     height: inherit;
     text-align: center;
 }
 
-@media only screen and (max-width: 824px) {
-    body {
-        background-size: 300%;
-    }
-
+@media only screen and (max-width: 840px) {
     .icons {
         position: absolute;
         bottom: 10vh;
-        padding-left: var(max-width);
     }
 }

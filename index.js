@@ -44,7 +44,7 @@ $('#wifi').click(function () {
     if ($('#wifiState').attr('class') === 'wifiBra') {
         $('#battery').css('display', 'none')
         $('#volume').css('display', 'none')
-        $('#wifiState').removeClass('wifiBra').addClass('wifiBar').html('<p style="margin: 0;" class="text">Home WiFi<br>Connected, Secured</p>')
+        $('#wifiState').removeClass('wifiBra').addClass('wifiBar').html('<p style="margin: 0;" class="text">HomeWiFi<br>Connected, Secured</p>')
     }
     else if ($('#wifiState').attr('class') === 'wifiBar') {
         $('#battery').css('display', '')
