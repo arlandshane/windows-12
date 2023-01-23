@@ -57,7 +57,11 @@ $('#battery').click(function () {
     if ($('#batteryState').attr('class') === 'batteryBra') {
         $('#wifi').css('display', 'none')
         $('#volume').css('display', 'none')
-        $('#batteryState').removeClass('batteryBra').addClass('batteryBar').html('<p style="margin: 0;" class="text">Battery Status: 69%</p>')
+        navigator.getBattery().then(function checkLevel(battery) {
+            var batteryLevel = battery.level * 100
+            $('#batteryState').html('<p style="margin:0;" class="text">Battery Status: ' + batteryLevel + '%</p>')
+        })
+        $('#batteryState').removeClass('batteryBra').addClass('batteryBar')
     }
     else if ($('#batteryState').attr('class') === 'batteryBar') {
         $('#wifi').css('display', '')
@@ -65,3 +69,4 @@ $('#battery').click(function () {
         $('#batteryState').removeClass('batteryBar').addClass('batteryBra').html('')
     }
 })
+
