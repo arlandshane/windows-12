@@ -1,8 +1,8 @@
 body {
     background-image: url("wallpaper2.jpg");
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
+    width: 100vw;
     height: 100vh;
 }
 
@@ -106,14 +106,19 @@ p {
 }
 
 .icons {
-    width: 30rem;
+    width: fit-content;
+    height: 3.5rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    position: absolute;
+    transform: translate3d(30vw, 0, 0);
+    bottom: 2vh;
 }
 
 .icon {
     width: 4vh;
+    margin: 0 1vw;
 }
 
 .hr1 {
@@ -128,12 +133,10 @@ p {
     width: fit-content;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
 }
 
 .progressBar {
-    width: 7rem;
+    width: 8rem;
     height: .3rem;
     background-color: white;
     margin-right: .7rem;
@@ -152,10 +155,22 @@ p {
     padding-right: .7rem;
 }
 
-@media only screen and (max-width: 1100px) {
+.dis-connect {
+    align-items: center;
+    font-size: small;
+    background-color: white;
+    border-radius: .2rem;
+    width: fit-content;
+    height: 5vh;
+    margin-right: .5vw;
+    padding: 0 .2vw;
+    display: none;
+}
+
+@media only screen and (max-width: 1200px) {
     .icons {
-        position: absolute;
-        bottom: 10vh;
+        transform: translate3d(25vw, 0, 0);
+        bottom: 12vh;
     }
 }
 

@@ -65,7 +65,7 @@ $('#battery').click(function () {
         navigator.getBattery().then(function checkLevel(battery) {
             var batteryLevel = battery.level * 100
             var batteryStatus = (battery.charging ? "Charging" : "Discharging")
-            $('#batteryState').html('<p class="text">' + batteryLevel + '% Remaining<br><em>' + batteryStatus + '</em></p>')
+            $('#batteryState').html('<p class="text">' + batteryStatus + '<br><em>' + batteryLevel + '% Remaining</em></p>')
         })
         $('#batteryState').removeClass('batteryBra').addClass('batteryBar')
     }
@@ -82,15 +82,28 @@ $('#bluetooth').click(function () {
         $('#wifi').css('display', 'none')
         $('#volume').css('display', 'none')
         $('#battery').css('display', 'none')
+        $('.dis-connect').css('display', 'flex')
         $('#blueState').removeClass('blueBra').addClass('blueBar').html('<p class="text">Headphones<br><em>Airdopes 601ANC</em></p>')
     }
     else if ($('#blueState').attr('class') === 'blueBar') {
         $('#wifi').css('display', '')
         $('#volume').css('display', '')
         $('#battery').css('display', '')
+        $('.dis-connect').css('display', 'none')
         $('#blueState').removeClass('blueBar').addClass('blueBra').html('')
     }
 })
 
-$()
-$('input:textbox').val()
+$('.musicDetails').css('display', 'none')
+$('.musicControls').css('display', 'none')
+$('.music').click(function () {
+    $('.weatherData').css('display', 'none')
+    $('.musicDetails').css('display', '')
+    $('.musicControls').css('display', 'flex')
+})
+
+$('.weather').click(function () {
+    $('.weatherData').css('display', '')
+    $('.musicDetails').css('display', 'none')
+    $('.musicControls').css('display', 'none')
+})
