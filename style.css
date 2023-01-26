@@ -159,8 +159,8 @@ em {
 
 @media only screen and (max-width: 1000px) {
     body {
-        background-image: url("phoneWall.jpg");
-        background-size: 100vh;
+        background-image: url("Images/phoneWall.jpg");
+        background-size: cover;
     }
 
     .contain {
@@ -232,9 +232,10 @@ em {
     margin: auto;
     width: 30rem;
     height: 2.5rem;
+    padding: 0 1rem;
     border-radius: 0 0 1rem 1rem;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     display: none;
 }
