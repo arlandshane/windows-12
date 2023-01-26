@@ -21,18 +21,17 @@
         <div class="side">
             <div class="weather contain click">
                 <div>
-                    <i style="color: white;" class="fa-solid fa-cloud weatherIcon"></i>
+                    <i class="fa-solid fa-cloud weatherIcon"></i>
                 </div>
-                <div class="weatherData">
-                    <p style="padding: .5rem;" class="text"><em>Jamshedpur</em><br>17 ℃</p>
+                <div style="display: flexbox;">
+                    <p style="padding: .5rem .5rem 0 0;" class="place text">Jamshedpur<br></p>
+                    <em class="temp text">17 °C</em>
                 </div>
             </div>
             <div class="music contain click">
-                <img style="transform: scale(1.3); margin: 0 1vw;" src="Images/Starboy.jpg" alt="album-art">
+                <img class="albumArt" src="Images/Starboy.jpg" alt="album-art">
                 <div class="musicDetails">
-                    <p style="margin: 0;" class="text">
-                        <em>The Weeknd</em> - Starboy
-                    </p>
+                    <p class="text">The Weeknd<br><em>Starboy</em></p>
                 </div>
                 <div class="musicControls" style="display: flex;">
                     <div>
@@ -58,7 +57,7 @@
                 <div id="batteryState" class="batteryBra"></div>
                 <i id="bluetooth" style="color: white; padding: 0 .5rem;" class="fa-brands fa-bluetooth-b click"></i>
                 <div id="blueState" class="blueBra"></div>
-                <div class="dis-connect">Connected</div>
+                <div class="dis-connect">Disconnect</div>
             </div>
 
             <div class="day contain">
@@ -73,25 +72,43 @@
         </div>
     </div>
 
-    <div class="icons contain">
-        <img class="icon" src="Images/Microsoft.png" alt="start">
-        <img class="icon" src="Images/Tabs.png" alt="tabs">
-        <img class="icon" src="Images/Search.png" alt="search">
-        <hr class="hr1">
-        <img class="icon" src="Images/FileExp.png" alt="file-explorer">
-        <a href="https://www.google.com" target="_blank">
-            <img class="icon" src="Images/Chrome.png" alt="chrome">
-        </a>
-        <a href="https://arlandshane.github.io/PROtotype/" target="_blank">
-            <img class="icon" src="Images/Photos.png" alt="photos">
-        </a>
-        <hr class="hr1">
-        <a href="https://twitter.com/home" target="_blank">
-            <img style="border-radius: .5rem;" class="icon" src="Images/Twitter.png" alt="twitter">
-        </a>
-        <a href="https://www.instagram.com/" target="_blank">
-            <img class="icon" src="Images/Instagram.png" alt="instagram">
-        </a>
+    <div class="container-fluid">
+        <div id="started" class="start">
+            <p style="margin-bottom: 1vh; display: inline-block;" class="text">Pinned</p>
+            <div style="display: grid;">
+                <img class="icon-sm" src="Images/FileExp.png" alt="file-explorer">
+                <img class="icon-sm" src="Images/Chrome.png" alt="chrome">
+                <img class="icon-sm" src="Images/Photos.png" alt="photos">
+                <img style="border-radius: .5rem;" class="icon-sm" src="Images/Twitter.png" alt="twitter">
+                <img class="icon-sm" src="Images/Instagram.png" alt="instagram">
+            </div>
+        </div>
+        <hr class="h2">
+        <div class="user">
+            <p class="text">Shane Arland</p>
+            <p class="text">Shut Down</p>
+            <p class="text">Settings</p>
+        </div>
+        <div class="icons contain">
+            <img style="width: 3.7vh;" class="icon click" src="Images/Microsoft.png" alt="start">
+            <img style="width: 3.7vh;" class="icon" src="Images/Tabs.png" alt="tabs">
+            <img class="icon" src="Images/Search.png" alt="search">
+            <hr class="hr1">
+            <img class="icon" src="Images/FileExp.png" alt="file-explorer">
+            <a href="https://www.google.com" target="_blank">
+                <img class="icon" src="Images/Chrome.png" alt="chrome">
+            </a>
+            <a href="https://arlandshane.github.io/PROtotype/" target="_blank">
+                <img class="icon" src="Images/Photos.png" alt="photos">
+            </a>
+            <hr class="hr1">
+            <a href="https://twitter.com/home" target="_blank">
+                <img style="border-radius: .5rem;" class="icon" src="Images/Twitter.png" alt="twitter">
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+                <img class="icon" src="Images/Instagram.png" alt="instagram">
+            </a>
+        </div>
     </div>
 
     <script src="index.js"></script>

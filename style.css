@@ -1,20 +1,16 @@
 body {
     background-image: url("wallpaper2.jpg");
-    background-position: center;
     background-size: cover;
-    width: 100vw;
-    height: 100vh;
 }
 
 p {
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
-#signIn {
-    position: absolute;
-    transform: translate3d(1rem, 1rem, 0);
-    display: inline-flex;
-    height: 2rem;
+em {
+    font-style: normal;
+    opacity: .8;
 }
 
 .text {
@@ -30,23 +26,33 @@ p {
 }
 
 .weather {
-    text-align: center;
     display: flex;
     justify-content: space-between;
 }
 
 .weatherIcon {
+    transition: all .5s cubic-bezier(0, 0, 0, 2);
     position: relative;
-    top: .7rem;
-    padding: .5rem;
+    top: 1rem;
+    margin: 0 .5vw;
     transform: scale(1.2);
+    color: white;
 }
 
 .music {
     width: fit-content;
     display: flex;
     margin: 0 1vw;
-    padding: 2vh 0;
+    padding: 1vh 0;
+}
+
+.musicControls {
+    margin-top: 1vh;
+}
+
+.albumArt {
+    margin: 0 .5vw;
+    border-radius: 100%;
 }
 
 .side {
@@ -76,6 +82,7 @@ p {
 .dateTime {
     display: flex;
     flex-direction: column;
+    text-align: left;
 }
 
 .notification {
@@ -105,20 +112,96 @@ p {
     height: 3.5rem;
 }
 
+.shortcut {
+    transition: all .5s cubic-bezier(0, 0, 0, 2);
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    margin-left: 1vw;
+}
+
+.progressBar {
+    transition: all .5s cubic-bezier(0, 0, 0, 2);
+    width: 8rem;
+    height: .3rem;
+    background-color: whitesmoke;
+    margin-right: .7rem;
+    border-radius: 1rem;
+}
+
+.wifiBar {
+    transition: all .5s cubic-bezier(0, 0, 0, 2);
+    padding-right: .7rem;
+}
+
+.batteryBar {
+    transition: all .5s cubic-bezier(0, 0, 0, 2);
+    padding-right: .7rem;
+}
+
+.blueBar {
+    transition: all .5s cubic-bezier(0, 0, 0, 2);
+    padding-right: .7rem;
+}
+
+.dis-connect {
+    align-items: center;
+    font-size: smaller;
+    background-color: white;
+    border-radius: .2rem;
+    width: fit-content;
+    height: 4vh;
+    margin-right: .5vw;
+    padding: 0 .5vw;
+    display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+    body {
+        background-image: url("phoneWall.jpg");
+        background-size: 100vh;
+    }
+
+    .contain {
+        background: rgba(0, 0, 0, .7);
+    }
+
+    .progressBar {
+        width: 7rem;
+    }
+
+    .dis-connect {
+        height: 3vh;
+    }
+
+    .container-fluid {
+        transform: translate3d(0, -7vh, 0);
+    }
+}
+
+.container-fluid {
+    z-index: -1;
+    position: absolute;
+    bottom: 2vh;
+}
+
 .icons {
     width: fit-content;
     height: 3.5rem;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    position: absolute;
-    transform: translate3d(30vw, 0, 0);
-    bottom: 2vh;
+    margin: auto;
+    margin-top: 1vh;
 }
 
 .icon {
     width: 4vh;
     margin: 0 1vw;
+}
+
+.icon-sm {
+    width: 3.5vh;
+    margin: 1vw;
 }
 
 .hr1 {
@@ -128,55 +211,27 @@ p {
     height: 3.5vh;
 }
 
-.shortcut {
-    transition-duration: 300ms;
-    width: fit-content;
+.start {
+    background: rgba(0, 0, 0, .7);
+    margin: auto;
+    width: 30rem;
+    height: fit-content;
+    padding: 1rem;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.h2 {
+    width: 30rem;
+    margin: auto;
+}
+
+.user {
+    background: rgba(0, 0, 0, .7);
+    margin: auto;
+    width: 30rem;
+    height: 2.5rem;
+    border-radius: 0 0 1rem 1rem;
     display: flex;
     align-items: center;
-}
-
-.progressBar {
-    width: 8rem;
-    height: .3rem;
-    background-color: white;
-    margin-right: .7rem;
-    border-radius: 1rem;
-}
-
-.wifiBar {
-    padding-right: .7rem;
-}
-
-.batteryBar {
-    padding-right: .7rem;
-}
-
-.blueBar {
-    padding-right: .7rem;
-}
-
-.dis-connect {
-    align-items: center;
-    font-size: small;
-    background-color: white;
-    border-radius: .2rem;
-    width: fit-content;
-    height: 5vh;
-    margin-right: .5vw;
-    padding: 0 .2vw;
-    display: none;
-}
-
-@media only screen and (max-width: 1200px) {
-    .icons {
-        transform: translate3d(25vw, 0, 0);
-        bottom: 12vh;
-    }
-}
-
-.start {
-    position: absolute;
-    transform: translate3d(30vw, 45vh, 0);
-    width: 30rem;
-    height: 20rem;
+    justify-content: space-around;
 }

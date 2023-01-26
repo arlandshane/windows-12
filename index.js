@@ -1,7 +1,6 @@
 var today = new Date()
 var hours = today.getHours()
 var minutes = today.getMinutes()
-var AMPM = 'AM'
 
 var monthNum = today.getMonth()
 var monthNames = ["January", "February", "March", "April", "May", "June",
@@ -16,13 +15,9 @@ if (hours < 10) {
 if (minutes < 10) {
     minutes = "0" + minutes
 }
-if (hours > 12) {
-    AMPM = "PM"
-    hours -= 12
-}
 
-var time = hours + ":" + minutes + " " + AMPM
-var day = month + " " + date
+var time = hours + ":" + minutes
+var day = '<em>' + month + " " + date + '</em>'
 
 $('#time').html('<p class="text">' + time + '</p>')
 $('#date').html('<p class="text">' + day + '</p>')
@@ -63,7 +58,7 @@ $('#battery').click(function () {
         $('#volume').css('display', 'none')
         $('#bluetooth').css('display', 'none')
         navigator.getBattery().then(function checkLevel(battery) {
-            var batteryLevel = battery.level * 100
+            var batteryLevel = parseInt(battery.level * 100)
             var batteryStatus = (battery.charging ? "Charging" : "Discharging")
             $('#batteryState').html('<p class="text">' + batteryStatus + '<br><em>' + batteryLevel + '% Remaining</em></p>')
         })
@@ -97,13 +92,19 @@ $('#bluetooth').click(function () {
 $('.musicDetails').css('display', 'none')
 $('.musicControls').css('display', 'none')
 $('.music').click(function () {
-    $('.weatherData').css('display', 'none')
+    $('.albumArt').css('border-radius', '20%')
+    $('.weatherIcon').css('top', '1vh').css('padding', '0 .5vw')
+    $('.place').css('display', 'none')
+    $('.weather').css('display', 'flexbox').css('flex-direction', 'column').css('align-items', 'center')
     $('.musicDetails').css('display', '')
     $('.musicControls').css('display', 'flex')
 })
 
 $('.weather').click(function () {
-    $('.weatherData').css('display', '')
+    $('.albumArt').css('border-radius', '100%')
+    $('.weatherIcon').css('top', '1rem').css('padding', '0')
+    $('.place').css('display', '')
+    $('.weather').css('display', 'flex').css('flex-direction', '').css('align-items', '').css('justify-contents', 'space-between')
     $('.musicDetails').css('display', 'none')
     $('.musicControls').css('display', 'none')
 })
