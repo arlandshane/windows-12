@@ -1,13 +1,16 @@
 var today = new Date()
 var hours = today.getHours()
 var minutes = today.getMinutes()
+var date = today.getDate()
 
 var monthNum = today.getMonth()
 var monthNames = ["January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
-];
+    "July", "August", "September", "October", "November", "December"]
+
+var weekNum = today.getDay()
+var weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
 var month = monthNames[monthNum]
-var date = today.getDate()
 
 if (hours < 10) {
     hours = "0" + hours
@@ -19,6 +22,8 @@ if (minutes < 10) {
 var time = hours + ":" + minutes
 var day = '<em>' + month + " " + date + '</em>'
 
+$('.weekDay').html('<p>' + weekDay[weekNum] + ',' + ' ' + date + ' ' + monthNames[monthNum] + '</p>')
+$('.time').html('<p class="time-piece">' + time + '</p>')
 $('#time').html('<p class="text">' + time + '</p>')
 $('#date').html('<p class="text">' + day + '</p>')
 
@@ -28,7 +33,7 @@ $('#volume').click(function () {
         $('#volumeState').removeClass('progressBra').addClass('progressBar')
     }
     else if ($('#volumeState').attr('class') === 'progressBar') {
-        $('#wifi, #battery, #bluetooth').css('display', '')
+        $('#wifi, #battery, #bluetooth').fadeIn()
         $('#volumeState').removeClass('progressBar').addClass('progressBra')
     }
 })
@@ -39,7 +44,7 @@ $('#wifi').click(function () {
         $('#wifiState').removeClass('wifiBra').addClass('wifiBar').html('<p class="text">Home WiFi<br><em>Connected, Secure</em></p>')
     }
     else if ($('#wifiState').attr('class') === 'wifiBar') {
-        $('#battery, #volume, #bluetooth').css('display', '')
+        $('#battery, #volume, #bluetooth').fadeIn()
         $('#wifiState').removeClass('wifiBar').addClass('wifiBra').html('')
     }
 })
@@ -55,7 +60,7 @@ $('#battery').click(function () {
         $('#batteryState').removeClass('batteryBra').addClass('batteryBar')
     }
     else if ($('#batteryState').attr('class') === 'batteryBar') {
-        $('#wifi, #volume, #bluetooth').css('display', '')
+        $('#wifi, #volume, #bluetooth').fadeIn()
         $('#batteryState').removeClass('batteryBar').addClass('batteryBra').html('')
     }
 })
@@ -67,7 +72,7 @@ $('#bluetooth').click(function () {
         $('#blueState').removeClass('blueBra').addClass('blueBar').html('<p class="text">Headphones<br><em>Airdopes 601ANC</em></p>')
     }
     else if ($('#blueState').attr('class') === 'blueBar') {
-        $('#wifi, #volume, #battery').css('display', '')
+        $('#wifi, #volume, #battery').fadeIn()
         $('.dis-connect').css('display', 'none')
         $('#blueState').removeClass('blueBar').addClass('blueBra').html('')
     }
@@ -79,14 +84,15 @@ $('.music').click(function () {
     $('.weatherIcon').css('top', '1vh').css('padding', '0 .5vw')
     $('.place').css('display', 'none')
     $('.weather').css('display', 'flexbox').css('flex-direction', 'column').css('align-items', 'center')
-    $('.musicDetails').css('display', '')
+    $('.musicDetails').fadeIn('fast')
     $('.musicControls').css('display', 'flex')
+
 })
 
 $('.weather').click(function () {
     $('.albumArt').css('border-radius', '100%')
     $('.weatherIcon').css('top', '1rem').css('padding', '0')
-    $('.place').css('display', '')
+    $('.place').fadeIn('fast')
     $('.weather').css('display', 'flex').css('flex-direction', '').css('align-items', '').css('justify-contents', 'space-between')
     $('.musicDetails, .musicControls').css('display', 'none')
 })
@@ -95,6 +101,7 @@ $('#windows').click(function () {
     if ($('#start').attr('class') === 'started') {
         $('.user, .start, .h2').fadeIn('fast')
         $('.user').css('display', 'flex')
+        $('.dis-connect').css('display', 'none')
         $("#start").removeClass('started').addClass('toStart')
     }
     else if ($('#start').attr('class') === 'toStart') {
@@ -102,3 +109,7 @@ $('#windows').click(function () {
         $("#start").removeClass('toStart').addClass('started')
     }
 })
+
+function alert() {
+    alert('hello')
+}

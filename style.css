@@ -1,5 +1,5 @@
 body {
-    background-image: url("wallpaper2.jpg");
+    background-image: url("wallpaper.jpg");
     background-size: cover;
 }
 
@@ -24,6 +24,14 @@ em {
     z-index: 1;
     background: rgba(0, 0, 0, .5);
     border-radius: 0.5rem;
+}
+
+.time-piece {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    font-size: 10vh;
+    color: whitesmoke;
+    text-shadow: 0 0 3px rgb(125, 125, 125);
 }
 
 .weather {

@@ -17,6 +17,10 @@
 </head>
 
 <body>
+    <div style="display: block; position: relative; transform: translate3d(0, 20vh, 0);">
+        <div style="text-align: center;" class="time"></div>
+        <div style="text-align: center;color: whitesmoke; text-shadow: 0 0 1px black;" class="weekDay"></div>
+    </div>
     <div class="taskbar">
         <div class="side">
             <div class="weather contain click">
@@ -25,7 +29,7 @@
                 </div>
                 <div style="display: flexbox;">
                     <p style="padding: .5rem .5rem 0 0;" class="place text">Jamshedpur<br></p>
-                    <em class="temp text">17 °C</em>
+                    <em class="text">17 °C</em>
                 </div>
             </div>
             <div class="music contain click">
@@ -87,8 +91,12 @@
         <div class="user">
             <p class="text">Shane Arland</p>
             <span style="display: flex;">
-                <i style="color: white; padding: 0 1rem;" class="fa-solid fa-power-off"></i>
-                <i style="color: white; padding: 0 1rem;" class="fa-solid fa-gear"></i>
+                <div style="background-color: rgb(40, 40, 40); margin: 0 1rem; border-radius: .4rem;">
+                    <i style="color: white; padding: .4rem;" class="fa-solid fa-gear"></i>
+                </div>
+                <div style="background-color: rgb(40, 40, 40); margin: 0 1rem; border-radius: .4rem;">
+                    <i style="color: white; padding: .4rem;" class="fa-solid fa-power-off"></i>
+                </div>
             </span>
 
         </div>
