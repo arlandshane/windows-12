@@ -132,7 +132,7 @@ function blueBG() {
         $('.earbuds').css('display', '')
         $('#wifi, #volume, #battery, #bluetooth').css('display', 'none')
         $('.dis-connect').css('display', 'flex')
-        $('#blueState').removeClass('blueBra').addClass('blueBar').html('<p class="text">Headphones<br><em>Airdopes 601ANC</em></p>')
+        $('#blueState').removeClass('blueBra').addClass('blueBar').html('<p class="text">Headphones<br><em>Airpods Pro</em></p>')
     }
 }
 
