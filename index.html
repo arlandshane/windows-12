@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta name="description" content="Author: Shane Arland; This website was made to showcase a concept of windows 12 that was inspired by a youtube video by ">
+    <meta name="description"
+        content="Author: Shane Arland; This website was made to showcase a concept of windows 12 that was inspired by a youtube video by ">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Windows 12</title>
@@ -71,40 +72,71 @@
 
     <div class="container-fluid">
         <div id="started" class="start">
-            <p style="margin-bottom: 1vh; display: inline-block;" class="text">Pinned</p>
-            <div style="display: grid; grid-template-columns: 4rem auto;">
-                <div style="display: grid; grid-column: 1;">
+            <p style="margin-bottom: 1vh; display: inline-block;" class="text">Pinned Apps</p>
+            <div style="display: flexbox;">
+                <div style="display: flex; justify-content: space-around;">
                     <img class="icon-sm" src="Images/FileExp.png" alt="file-explorer">
                     <img class="icon-sm" src="Images/Chrome.png" alt="chrome">
                     <img class="icon-sm" src="Images/Photos.png" alt="photos">
-                    <img style="border-radius: .5rem;" class="icon-sm" src="Images/Twitter.png" alt="twitter">
+                    <img class="icon-sm" src="Images/Twitter.png" alt="twitter" style="border-radius: .5rem;">
                     <img class="icon-sm" src="Images/Instagram.png" alt="instagram">
+                    <img style="width: 2rem;" class="icon-sm" src="Images/Whatsapp.png" alt="whatsapp">
                 </div>
-                <div style="grid-column: 2; padding: 1rem;">
-
+                <hr style="color: white;">
+                <p style="display: inline-block;" class="text">Continue</p>
+                <div style="display: flex; text-align: center; justify-content: space-around;">
+                    <div style="margin: 1rem 0; text-align: center;">
+                        <p style="opacity: .8;" class="text">Shopping</p>
+                        <img style="border-radius: .5rem; margin-top: .1rem;" class="icon-sm" src="Images/Amazon.png"
+                            alt="">
+                    </div>
+                    <hr class="hr3">
+                    <div style="margin: 1rem 0; text-align: center;">
+                        <p style="opacity: .8;" class="text">Writing</p>
+                        <img style="border-radius: .5rem; margin-top: .1rem;" class="icon-sm" src="Images/Docs.png"
+                            alt="">
+                    </div>
+                    <hr class="hr3">
+                    <div style="margin: 1rem 0; text-align: center;">
+                        <p style="opacity: .8;" class="text">Listening</p>
+                        <img style="border-radius: 1rem; margin-top: .1rem;" class="icon-sm" src="Images/Spotify.png"
+                            alt="">
+                    </div>
+                    <hr class="hr3">
+                    <div style="margin: 1rem 0; text-align: center;">
+                        <p style="opacity: .8;" class="text">Watching</p>
+                        <img style="border-radius: .5rem; margin-top: .1rem;" class="icon-sm" src="Images/Netflix.png"
+                            alt="">
+                    </div>
+                    <hr class="hr3">
+                    <div style="margin: 1rem 0; text-align: center;">
+                        <p style="opacity: .8;" class="text">Reading</p>
+                        <img style="border-radius: 1rem; margin-top: .1rem;" class="icon-sm" src="Images/Wikipedia.jpg"
+                            alt="">
+                    </div>
                 </div>
             </div>
         </div>
-        <hr class="h2">
+        <hr class="hr2">
         <div class="user">
             <p class="text">Shane Arland</p>
-            <span style="display: flex;">
-                <div style="background-color: lavender; margin: 0 1rem; border-radius: .4rem;">
-                    <i style="padding: .4rem;" class="fa-solid fa-gear"></i>
+            <span style="display: flex; width: 10rem; justify-content: space-around;">
+                <div style="background-color: lavender; margin: auto; border-radius: .4rem;">
+                    <i style="padding: .3rem;" class="fa-solid fa-gear"></i>
                 </div>
-                <div style="background-color: lavender; margin: 0 1rem; border-radius: .4rem;">
-                    <i style="padding: .5rem;" class="fa-solid fa-moon"></i>
+                <div style="background-color: lavender; margin: auto; border-radius: .4rem;">
+                    <i style="padding: .3rem .4rem;" class="fa-solid fa-moon"></i>
                 </div>
-                <div style="background-color: lavender; margin: 0 1rem; border-radius: .4rem;">
-                    <i style="padding: .4rem;" class="fa-solid fa-power-off"></i>
+                <div style="background-color: lavender; margin: auto; border-radius: .4rem;">
+                    <i style="padding: .3rem;" class="fa-solid fa-power-off"></i>
                 </div>
             </span>
 
         </div>
         <div class="icons contain">
             <i id="start" class="started"></i>
-            <img id="windows" style="width: 3.7vh;" class="icon click" src="Images/Microsoft.png" alt="start">
-            <img id="tabs" style="width: 3.7vh;" class="icon" src="Images/Tabs.png" alt="tabs">
+            <img id="windows" class="icon click" src="Images/Microsoft.png" alt="start">
+            <img id="tabs" class="icon click" src="Images/Tabs.png" alt="tabs">
             <img id="search" class="icon click" src="Images/Search.png" alt="search">
             <hr class="hr1">
             <img class="icon" src="Images/FileExp.png" alt="file-explorer">
@@ -115,11 +147,14 @@
                 <img class="icon" src="Images/Photos.png" alt="photos">
             </a>
             <hr class="hr1">
-            <a href="https://twitter.com/home" target="_blank">
+            <a href="https://twitter.com/arlandshane" target="_blank">
                 <img style="border-radius: .5rem;" class="icon" src="Images/Twitter.png" alt="twitter">
             </a>
-            <a href="https://www.instagram.com/" target="_blank">
+            <a href="https://www.instagram.com/arlandshane" target="_blank">
                 <img class="icon" src="Images/Instagram.png" alt="instagram">
+            </a>
+            <a href="https://wa.me/+917671919704" target="_blank">
+                <img class="icon" src="Images/Whatsapp.png" alt="whatsapp">
             </a>
         </div>
     </div>

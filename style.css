@@ -23,7 +23,8 @@ em {
 
 .contain {
     z-index: 1;
-    background: rgba(0, 0, 0, .5);
+    background: rgba(0, 0, 0, .3);
+    backdrop-filter: blur(1px);
     border-radius: 0.5rem;
 }
 
@@ -113,8 +114,7 @@ em {
 
 .taskbar {
     display: flex;
-    margin-left: 1vw;
-    margin-right: 1vw;
+    margin: 0 1vw;
     justify-content: space-between;
     position: absolute;
     bottom: 2vh;
@@ -167,29 +167,6 @@ em {
     user-select: none;
 }
 
-@media only screen and (max-width: 1000px) {
-    body {
-        background-image: url("Images/phoneWall.png");
-        background-size: cover;
-    }
-
-    .contain {
-        background: rgba(0, 0, 0, .7);
-    }
-
-    .progressBar {
-        width: 7rem;
-    }
-
-    .dis-connect {
-        height: 3vh;
-    }
-
-    .container-fluid {
-        transform: translate3d(0, -7vh, 0);
-    }
-}
-
 .container-fluid {
     position: absolute;
     bottom: 2vh;
@@ -205,7 +182,7 @@ em {
 }
 
 .icon {
-    width: 4vh;
+    width: 2rem;
     margin: 0 1vw;
 }
 
@@ -215,8 +192,8 @@ em {
 }
 
 .icon-sm {
-    width: 4vh;
-    margin: 1vw;
+    width: 2rem;
+    height: 2rem;
 }
 
 .hr1 {
@@ -227,25 +204,28 @@ em {
 }
 
 .start {
-    background: rgba(0, 0, 0, .7);
+    background: rgba(0, 0, 0, .3);
+    backdrop-filter: blur(2px);
     margin: auto;
-    width: 30rem;
-    height: fit-content;
+    width: 50vw;
+    height: 30rem;
     padding: 1rem;
     border-radius: .7rem .7rem 0 0;
     display: none;
 }
 
-.h2 {
+.hr2 {
+    color: black;
     width: 30rem;
     margin: auto;
     display: none;
 }
 
 .user {
-    background: rgba(0, 0, 0, .7);
+    background: rgba(0, 0, 0, .2);
+    backdrop-filter: blur(2px);
     margin: auto;
-    width: 30rem;
+    width: 50vw;
     height: 2.5rem;
     padding: 0 1rem;
     border-radius: 0 0 1rem 1rem;
@@ -253,4 +233,43 @@ em {
     align-items: center;
     justify-content: space-between;
     display: none;
+}
+
+.hr3 {
+    width: 1px;
+    color: white;
+    background-color: white;
+}
+
+@media only screen and (max-width: 1000px) {
+    body {
+        background-image: url("Images/phoneWall.png");
+        background-size: cover;
+    }
+
+    .contain {
+        background: rgba(0, 0, 0, .3);
+    }
+
+    .progressBar {
+        width: 7rem;
+    }
+
+    .dis-connect {
+        height: 3vh;
+    }
+
+    .container-fluid {
+        transform: translate3d(0, -7vh, 0);
+    }
+
+    .start,
+    .hr2,
+    .user {
+        width: 90vw;
+    }
+
+    .icon {
+        margin: 0 1.5vw;
+    }
 }
