@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <meta name="description" content="Author: Shane Arland; This website was made to showcase a concept of windows 12 that was inspired by a youtube video by ">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Windows 12</title>
@@ -19,7 +20,7 @@
 <body>
     <div style="display: block; position: relative; transform: translate3d(0, 20vh, 0);">
         <div style="text-align: center;" class="time"></div>
-        <div style="text-align: center; color: black;" class="weekDay"></div>
+        <div style="text-align: center; color: black; opacity: .6;" class="weekDay"></div>
     </div>
     <div class="taskbar">
         <div class="side">
@@ -63,7 +64,7 @@
                 <img style="width: 2.15rem; padding: 0 .5rem; display: none;" class="earbuds click"
                     src="Images/Earbuds.png" alt="earbuds">
                 <div id="blueState" class="blueBra"></div>
-                <div class="dis-connect">Disconnect</div>
+                <div class="dis-connect click">Disconnect</div>
             </div>
         </div>
     </div>
@@ -92,6 +93,9 @@
                     <i style="padding: .4rem;" class="fa-solid fa-gear"></i>
                 </div>
                 <div style="background-color: lavender; margin: 0 1rem; border-radius: .4rem;">
+                    <i style="padding: .5rem;" class="fa-solid fa-moon"></i>
+                </div>
+                <div style="background-color: lavender; margin: 0 1rem; border-radius: .4rem;">
                     <i style="padding: .4rem;" class="fa-solid fa-power-off"></i>
                 </div>
             </span>
@@ -100,7 +104,7 @@
         <div class="icons contain">
             <i id="start" class="started"></i>
             <img id="windows" style="width: 3.7vh;" class="icon click" src="Images/Microsoft.png" alt="start">
-            <img style="width: 3.7vh;" class="icon" src="Images/Tabs.png" alt="tabs">
+            <img id="tabs" style="width: 3.7vh;" class="icon" src="Images/Tabs.png" alt="tabs">
             <img id="search" class="icon click" src="Images/Search.png" alt="search">
             <hr class="hr1">
             <img class="icon" src="Images/FileExp.png" alt="file-explorer">

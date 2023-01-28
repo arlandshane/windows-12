@@ -27,86 +27,140 @@ $('.time').html('<p class="time-piece">' + time + '</p>')
 
 $('#volume').click(function () {
     if ($('#volumeState').attr('class') === 'progressBra') {
-        $('#wifi, #battery, #bluetooth').css('display', 'none')
-        $('#volumeState').removeClass('progressBra').addClass('progressBar')
+        volumeFocus()
     }
     else if ($('#volumeState').attr('class') === 'progressBar') {
-        $('#wifi, #battery, #bluetooth').fadeIn()
-        $('#volumeState').removeClass('progressBar').addClass('progressBra')
+        volumeBG()
     }
 })
 
 $('#wifi').click(function () {
     if ($('#wifiState').attr('class') === 'wifiBra') {
-        $('#battery, #volume, #bluetooth').css('display', 'none')
-        $('#wifiState').removeClass('wifiBra').addClass('wifiBar').html('<p class="text">Home WiFi<br><em>Connected, Secure</em></p>')
+        wifiFocus()
     }
     else if ($('#wifiState').attr('class') === 'wifiBar') {
-        $('#battery, #volume, #bluetooth').fadeIn()
-        $('#wifiState').removeClass('wifiBar').addClass('wifiBra').html('')
+        wifiBG()
     }
 })
 
 $('#battery').click(function () {
     if ($('#batteryState').attr('class') === 'batteryBra') {
-        $('#wifi, #volume, #bluetooth').css('display', 'none')
-        navigator.getBattery().then(function checkLevel(battery) {
-            var batteryLevel = parseInt(battery.level * 100)
-            var batteryStatus = (battery.charging ? "Charging" : "Discharging")
-            $('#batteryState').html('<p class="text">' + batteryStatus + '<br><em>' + batteryLevel + '% Remaining</em></p>')
-        })
-        $('#batteryState').removeClass('batteryBra').addClass('batteryBar')
+        batteryFocus()
     }
     else if ($('#batteryState').attr('class') === 'batteryBar') {
-        $('#wifi, #volume, #bluetooth').fadeIn()
-        $('#batteryState').removeClass('batteryBar').addClass('batteryBra').html('')
+        batteryBG()
     }
 })
 
-$('#bluetooth').click(function () {
+$('.earbuds').click(blueFocused)
+$('#bluetooth').click(blueBG)
+
+$('.musicDetails, .musicControls').css('display', 'none')
+$('.music').click(musicFocus)
+$('.weather').click(weatherFocus)
+
+$('#windows').click(function () {
+    if ($('#start').attr('class') === 'started') {
+        toStart()
+    }
+    else if ($('#start').attr('class') === 'toStart') {
+        started()
+    }
+
+})
+
+$('#tabs, #search').click(function () {
+    if ($('#start').attr('class') === 'toStart') {
+        started()
+    }
+})
+
+$('.dis-connect').click(function () {
+    if ($('.dis-connect').html() === 'Disconnect') {
+        $('.dis-connect').html('Connect')
+    }
+    else if ($('.dis-connect').html() === 'Connect') {
+        $('.dis-connect').html('Disconnect')
+    }
+})
+
+function volumeFocus() {
+    $('#wifi, #battery, #bluetooth').css('display', 'none')
+    $('#volumeState').removeClass('progressBra').addClass('progressBar')
+}
+
+function volumeBG() {
+    $('#wifi, #battery, #bluetooth').fadeIn()
+    $('#volumeState').removeClass('progressBar').addClass('progressBra')
+}
+
+function wifiFocus() {
+    $('#battery, #volume, #bluetooth').css('display', 'none')
+    $('#wifiState').removeClass('wifiBra').addClass('wifiBar').html('<p class="text">Home WiFi<br><em>Connected, Secure</em></p>')
+}
+
+function wifiBG() {
+    $('#battery, #volume, #bluetooth').fadeIn()
+    $('#wifiState').removeClass('wifiBar').addClass('wifiBra').html('')
+}
+
+function batteryFocus() {
+    $('#wifi, #volume, #bluetooth').css('display', 'none')
+    navigator.getBattery().then(function checkLevel(battery) {
+        var batteryLevel = parseInt(battery.level * 100)
+        var batteryStatus = (battery.charging ? "Charging" : "Discharging")
+        $('#batteryState').html('<p class="text">' + batteryStatus + '<br><em>' + batteryLevel + '% Remaining</em></p>')
+    })
+    $('#batteryState').removeClass('batteryBra').addClass('batteryBar')
+}
+
+function batteryBG() {
+    $('#wifi, #volume, #bluetooth').fadeIn()
+    $('#batteryState').removeClass('batteryBar').addClass('batteryBra').html('')
+}
+
+function blueFocused() {
+    if ($('#blueState').attr('class') === 'blueBar') {
+        $('#wifi, #volume, #battery, #bluetooth').fadeIn()
+        $('.dis-connect, .earbuds').css('display', 'none')
+        $('#blueState').removeClass('blueBar').addClass('blueBra').html('')
+    }
+}
+
+function blueBG() {
     if ($('#blueState').attr('class') === 'blueBra') {
         $('.earbuds').css('display', '')
         $('#wifi, #volume, #battery, #bluetooth').css('display', 'none')
         $('.dis-connect').css('display', 'flex')
         $('#blueState').removeClass('blueBra').addClass('blueBar').html('<p class="text">Headphones<br><em>Airdopes 601ANC</em></p>')
     }
-})
+}
 
-$('.earbuds').click(function () {
-    if ($('#blueState').attr('class') === 'blueBar') {
-        $('#wifi, #volume, #battery, #bluetooth').fadeIn()
-        $('.dis-connect, .earbuds').css('display', 'none')
-        $('#blueState').removeClass('blueBar').addClass('blueBra').html('')
-    }
-})
-
-$('.musicDetails, .musicControls').css('display', 'none')
-$('.music').click(function () {
+function musicFocus() {
     $('.albumArt').css('border-radius', '20%')
     $('.weatherIcon').css('top', '1vh').css('padding', '0 .5vw')
     $('.place').css('display', 'none')
     $('.weather').css('display', 'flexbox').css('flex-direction', 'column').css('align-items', 'center')
     $('.musicDetails').fadeIn('fast')
     $('.musicControls').css('display', 'flex')
-})
+}
 
-$('.weather').click(function () {
+function weatherFocus() {
     $('.albumArt').css('border-radius', '100%')
     $('.weatherIcon').css('top', '1rem').css('padding', '0')
     $('.place').fadeIn('fast')
     $('.weather').css('display', 'flex').css('flex-direction', '').css('align-items', '').css('justify-contents', 'space-between')
     $('.musicDetails, .musicControls').css('display', 'none')
-})
+}
 
-$('#windows').click(function () {
-    if ($('#start').attr('class') === 'started') {
-        $('.user, .start, .h2').fadeIn('fast')
-        $('.user').css('display', 'flex')
-        $('.dis-connect').css('display', 'none')
-        $("#start").removeClass('started').addClass('toStart')
-    }
-    else if ($('#start').attr('class') === 'toStart') {
-        $('.user, .start, .h2').fadeOut('fast')
-        $("#start").removeClass('toStart').addClass('started')
-    }
-})
+function toStart() {
+    $('.user, .start, .h2').fadeIn('fast')
+    $('.user').css('display', 'flex')
+    $('.dis-connect').css('display', 'none')
+    $("#start").removeClass('started').addClass('toStart')
+}
+
+function started() {
+    $('.user, .start, .h2').fadeOut('fast')
+    $("#start").removeClass('toStart').addClass('started')
+}
