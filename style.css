@@ -30,7 +30,7 @@ em {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bolder;
     font-size: 10vh;
-    color: whitesmoke;
+    color: lavenderblush;
     text-shadow: 0 0 3px rgb(125, 125, 125);
 }
 
@@ -43,7 +43,7 @@ em {
     transition: all .5s cubic-bezier(0, 0, 0, 2);
     position: relative;
     top: 1rem;
-    margin: 0 .5vw;
+    margin: 0 .5rem;
     transform: scale(1.2);
     color: white;
 }
@@ -60,7 +60,7 @@ em {
 }
 
 .albumArt {
-    margin: 0 .5vw;
+    margin: 0 .5rem;
     border-radius: 100%;
 }
 
@@ -150,24 +150,24 @@ em {
 
 .blueBar {
     transition: all .5s cubic-bezier(0, 0, 0, 2);
-    padding-right: .7rem;
+    padding-right: .5rem;
 }
 
 .dis-connect {
     align-items: center;
     font-size: smaller;
-    background-color: white;
+    background-color: lavender;
     border-radius: .2rem;
     width: fit-content;
     height: 4vh;
-    margin-right: .5vw;
-    padding: 0 .5vw;
+    margin-right: .3rem;
+    padding: 0 .3rem;
     display: none;
 }
 
 @media only screen and (max-width: 1000px) {
     body {
-        background-image: url("Images/phoneWall.jpg");
+        background-image: url("Images/phoneWall.png");
         background-size: cover;
     }
 
@@ -207,8 +207,13 @@ em {
     margin: 0 1vw;
 }
 
+.icon:hover {
+    transition-duration: 100ms;
+    transform: scale(1.1);
+}
+
 .icon-sm {
-    width: 3.5vh;
+    width: 4vh;
     margin: 1vw;
 }
 
@@ -225,7 +230,7 @@ em {
     width: 30rem;
     height: fit-content;
     padding: 1rem;
-    border-radius: 1rem 1rem 0 0;
+    border-radius: .7rem .7rem 0 0;
     display: none;
 }
 

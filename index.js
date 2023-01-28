@@ -24,8 +24,6 @@ var day = '<em>' + month + " " + date + '</em>'
 
 $('.weekDay').html('<p>' + weekDay[weekNum] + ',' + ' ' + date + ' ' + monthNames[monthNum] + '</p>')
 $('.time').html('<p class="time-piece">' + time + '</p>')
-$('#time').html('<p class="text">' + time + '</p>')
-$('#date').html('<p class="text">' + day + '</p>')
 
 $('#volume').click(function () {
     if ($('#volumeState').attr('class') === 'progressBra') {
@@ -67,13 +65,17 @@ $('#battery').click(function () {
 
 $('#bluetooth').click(function () {
     if ($('#blueState').attr('class') === 'blueBra') {
-        $('#wifi, #volume, #battery').css('display', 'none')
+        $('.earbuds').css('display', '')
+        $('#wifi, #volume, #battery, #bluetooth').css('display', 'none')
         $('.dis-connect').css('display', 'flex')
         $('#blueState').removeClass('blueBra').addClass('blueBar').html('<p class="text">Headphones<br><em>Airdopes 601ANC</em></p>')
     }
-    else if ($('#blueState').attr('class') === 'blueBar') {
-        $('#wifi, #volume, #battery').fadeIn()
-        $('.dis-connect').css('display', 'none')
+})
+
+$('.earbuds').click(function () {
+    if ($('#blueState').attr('class') === 'blueBar') {
+        $('#wifi, #volume, #battery, #bluetooth').fadeIn()
+        $('.dis-connect, .earbuds').css('display', 'none')
         $('#blueState').removeClass('blueBar').addClass('blueBra').html('')
     }
 })
@@ -86,7 +88,6 @@ $('.music').click(function () {
     $('.weather').css('display', 'flexbox').css('flex-direction', 'column').css('align-items', 'center')
     $('.musicDetails').fadeIn('fast')
     $('.musicControls').css('display', 'flex')
-
 })
 
 $('.weather').click(function () {
@@ -109,7 +110,3 @@ $('#windows').click(function () {
         $("#start").removeClass('toStart').addClass('started')
     }
 })
-
-function alert() {
-    alert('hello')
-}

@@ -19,7 +19,7 @@
 <body>
     <div style="display: block; position: relative; transform: translate3d(0, 20vh, 0);">
         <div style="text-align: center;" class="time"></div>
-        <div style="text-align: center;color: whitesmoke; text-shadow: 0 0 1px black;" class="weekDay"></div>
+        <div style="text-align: center; color: black;" class="weekDay"></div>
     </div>
     <div class="taskbar">
         <div class="side">
@@ -60,18 +60,10 @@
                 <i id="battery" style="color: white; padding: 0 .5rem;" class="fa-solid fa-battery-full click"></i>
                 <div id="batteryState" class="batteryBra"></div>
                 <i id="bluetooth" style="color: white; padding: 0 .5rem;" class="fa-brands fa-bluetooth-b click"></i>
+                <img style="width: 2.15rem; padding: 0 .5rem; display: none;" class="earbuds click"
+                    src="Images/Earbuds.png" alt="earbuds">
                 <div id="blueState" class="blueBra"></div>
                 <div class="dis-connect">Disconnect</div>
-            </div>
-
-            <div class="day contain">
-                <div class="dateTime">
-                    <div id="time"></div>
-                    <div id="date"></div>
-                </div>
-                <div style="padding-right: .5rem;" class="click">
-                    <div class="notification">1</div>
-                </div>
             </div>
         </div>
     </div>
@@ -79,23 +71,28 @@
     <div class="container-fluid">
         <div id="started" class="start">
             <p style="margin-bottom: 1vh; display: inline-block;" class="text">Pinned</p>
-            <div style="display: grid;">
-                <img class="icon-sm" src="Images/FileExp.png" alt="file-explorer">
-                <img class="icon-sm" src="Images/Chrome.png" alt="chrome">
-                <img class="icon-sm" src="Images/Photos.png" alt="photos">
-                <img style="border-radius: .5rem;" class="icon-sm" src="Images/Twitter.png" alt="twitter">
-                <img class="icon-sm" src="Images/Instagram.png" alt="instagram">
+            <div style="display: grid; grid-template-columns: 4rem auto;">
+                <div style="display: grid; grid-column: 1;">
+                    <img class="icon-sm" src="Images/FileExp.png" alt="file-explorer">
+                    <img class="icon-sm" src="Images/Chrome.png" alt="chrome">
+                    <img class="icon-sm" src="Images/Photos.png" alt="photos">
+                    <img style="border-radius: .5rem;" class="icon-sm" src="Images/Twitter.png" alt="twitter">
+                    <img class="icon-sm" src="Images/Instagram.png" alt="instagram">
+                </div>
+                <div style="grid-column: 2; padding: 1rem;">
+
+                </div>
             </div>
         </div>
         <hr class="h2">
         <div class="user">
             <p class="text">Shane Arland</p>
             <span style="display: flex;">
-                <div style="background-color: rgb(40, 40, 40); margin: 0 1rem; border-radius: .4rem;">
-                    <i style="color: white; padding: .4rem;" class="fa-solid fa-gear"></i>
+                <div style="background-color: lavender; margin: 0 1rem; border-radius: .4rem;">
+                    <i style="padding: .4rem;" class="fa-solid fa-gear"></i>
                 </div>
-                <div style="background-color: rgb(40, 40, 40); margin: 0 1rem; border-radius: .4rem;">
-                    <i style="color: white; padding: .4rem;" class="fa-solid fa-power-off"></i>
+                <div style="background-color: lavender; margin: 0 1rem; border-radius: .4rem;">
+                    <i style="padding: .4rem;" class="fa-solid fa-power-off"></i>
                 </div>
             </span>
 
@@ -104,7 +101,7 @@
             <i id="start" class="started"></i>
             <img id="windows" style="width: 3.7vh;" class="icon click" src="Images/Microsoft.png" alt="start">
             <img style="width: 3.7vh;" class="icon" src="Images/Tabs.png" alt="tabs">
-            <img class="icon" src="Images/Search.png" alt="search">
+            <img id="search" class="icon click" src="Images/Search.png" alt="search">
             <hr class="hr1">
             <img class="icon" src="Images/FileExp.png" alt="file-explorer">
             <a href="https://www.google.com" target="_blank">
