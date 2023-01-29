@@ -62,8 +62,8 @@
                 <i id="battery" style="color: white; padding: 0 .5rem;" class="fa-solid fa-battery-full click"></i>
                 <div id="batteryState" class="batteryBra"></div>
                 <i id="bluetooth" style="color: white; padding: 0 .5rem;" class="fa-brands fa-bluetooth-b click"></i>
-                <img style="margin: 0 .6rem; display: none;" class="earbuds click"
-                    src="Images/myEarbuds.png" alt="earbuds">
+                <img style="margin: 0 .6rem; display: none;" class="earbuds click" src="Images/myEarbuds.png"
+                    alt="earbuds">
                 <div id="blueState" class="blueBra"></div>
                 <div class="dis-connect click">Disconnect</div>
             </div>
@@ -179,15 +179,100 @@
                     <i style="padding: .3rem;" class="fa-solid fa-power-off"></i>
                 </div>
             </span>
-
         </div>
+
+        <div class="file-explorer">
+            <i id="file" class="f-on"></i>
+            <div class="file-head">
+                <div style="display: inline-flex; align-items: center;">
+                    <div
+                        style="background: rgba(0, 0, 0, .3); width: fit-content; border-radius: .4rem; padding: .2rem;">
+                        <p style="margin: 0 .5rem;" class="text">
+                            <i style="margin-right: .5rem" class="fa-solid fa-house text"></i>
+                            Home
+                        </p>
+                    </div>
+                    <i style="margin: 0 .5rem;" class="fa-solid fa-plus text"></i>
+                </div>
+                <div style="display: flex; justify-content: space-around; align-items: center;">
+                    <div
+                        style="background: rgba(0, 0, 0, .3); width: fit-content; border-radius: .4rem; margin: 0 .5rem; padding: .2rem;">
+                        <p style="margin: 0 .5rem;" class="text">
+                            <i style="margin-right: .5rem;" class="fa-solid fa-circle-plus text"></i>
+                            New
+                        </p>
+                    </div>
+                    <div class="cut-copy-paste">
+                        <i style="margin: auto .5rem;" class="fa-regular fa-copy text"></i>
+                        <i style="margin: auto .5rem;" class="fa-regular fa-clipboard text"></i>
+                        <i style="margin: auto .5rem; transform: rotate(270deg);" class="fa-solid fa-scissors text"></i>
+                        <i style="margin: auto .5rem;" class="fa-regular fa-square-check text"></i>
+                        <i style="margin: auto .5rem;" class="fa-solid fa-share-from-square text"></i>
+                        <i style="margin: auto .5rem;" class="fa-solid fa-trash-can text"></i>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: .2rem; align-items: center;"
+                    class="findFile">
+                    <p style="text-align: center; margin-left: .5rem;" class="text">Find a file</p>
+                    <i style="color: white; margin-right: .3rem;" class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center;">
+                <div style="margin-bottom: 1vh;">
+                    <p class="text" style="padding: .2rem;">Home</p>
+                    <p class="text" style="padding: .2rem;">One Drive</p>
+                    <hr style="color: white;">
+                    <p class="text" style="padding: .2rem;">
+                        <img style="width: 1rem; border-radius: .1rem;" src="Images/Desktop.png" alt="">
+                        Desktop
+                    </p>
+                    <p class="text" style="padding: .2rem;">
+                        <img style="width: 1rem; border-radius: .1rem;" src="Images/Downloads.png" alt="">
+                        Downloads
+                    </p>
+                    <p class="text" style="padding: .2rem;">
+                        <img style="width: 1rem; border-radius: .1rem;" src="Images/Documents.png" alt="">
+                        Documents
+                    </p>
+                    <p class="text" style="padding: .2rem;">
+                        <img style="width: 1rem; border-radius: .1rem;" src="Images/Pictures.png" alt="">
+                        Pictures
+                    </p>
+                    <p class="text" style="padding: .2rem; background-color: gray; border-radius: .3rem;">
+                        <img style="width: 1rem; border-radius: .1rem;" src="Images/Music.png" alt="">
+                        Music
+                    </p>
+                    <p class="text" style="padding: .2rem;">
+                        <img style="width: 1rem; border-radius: .1rem;" src="Images/Videos.png" alt="">
+                        Videos
+                    </p>
+                    <hr style="color: white;">
+                    <p class="text" style="padding: .2rem;">This PC</p>
+                    <p class="text" style="margin: auto;">- Windows 12 (C:)</p>
+                    <p class="text" style="margin: auto;">- Google Drive (G:)</p>
+                </div>
+                <div class="scrollbar" style="overflow: auto; height: 15rem; padding: 1rem;">
+                    <p style="margin: .5rem 0;" class="text">Panah - Mitraz</p>
+                    <p style="margin: .5rem 0;" class="text">Taara Tuteya - Mitraz</p>
+                    <p style="margin: .5rem 0;" class="text">Heeriye - Mitraz</p>
+                    <p style="margin: .5rem 0;" class="text">Tere Huve - Mitraz</p>
+                    <p style="margin: .5rem 0;" class="text">Raatein - Mitraz</p>
+                    <p style="margin: .5rem 0;" class="text">Kabhi Na Kabhi - Mitraz</p>
+                    <p style="margin: .5rem 0;" class="text">Muskurahat - Mitraz</p>
+                    <p style="margin: .5rem 0;" class="text">Akhiyaan - Mitraz</p>
+                    <p style="margin: .5rem 0;" class="text">Junoon - Mitraz</p>
+                </div>
+            </div>
+        </div>
+
         <div class="icons contain">
             <i id="start" class="started"></i>
             <img id="windows" class="icon click" src="Images/Microsoft.png" alt="start">
             <img id="tabs" class="icon click" src="Images/Tabs.png" alt="tabs">
             <img id="search" class="icon click" src="Images/Search.png" alt="search">
             <hr class="hr1">
-            <img class="icon" src="Images/FileExp.png" alt="file-explorer">
+            <img id="fileExp" class="icon click" src="Images/FileExp.png" alt="file-explorer">
             <a href="https://www.google.com" target="_blank">
                 <img class="icon" src="Images/Chrome.png" alt="chrome">
             </a>

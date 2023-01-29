@@ -62,6 +62,7 @@ $('.weather').click(weatherFocus)
 $('#windows').click(function () {
     if ($('#start').attr('class') === 'started') {
         toStart()
+        fileOut()
     }
     else if ($('#start').attr('class') === 'toStart') {
         started()
@@ -70,8 +71,9 @@ $('#windows').click(function () {
 })
 
 $('#tabs, #search').click(function () {
-    if ($('#start').attr('class') === 'toStart') {
+    if ($('#start').attr('class') === 'toStart' || $('#file').attr('class') === 'f-off') {
         started()
+        fileOut()
     }
 })
 
@@ -81,6 +83,16 @@ $('.dis-connect').click(function () {
     }
     else if ($('.dis-connect').html() === 'Connect') {
         $('.dis-connect').html('Disconnect')
+    }
+})
+
+$('#fileExp').click(function () {
+    if ($('#file').attr('class') === 'f-on') {
+        started()
+        fileIn()
+    }
+    else if ($('#file').attr('class') === 'f-off') {
+        fileOut()
     }
 })
 
@@ -161,6 +173,16 @@ function toStart() {
 }
 
 function started() {
-    $('.user, .start, .h2').fadeOut('fast')
+    $('.user, .start, .h2').css('display', 'none')
     $("#start").removeClass('toStart').addClass('started')
+}
+
+function fileIn() {
+    $('.file-explorer').fadeIn()
+    $('#file').removeClass('f-on').addClass('f-off')
+}
+
+function fileOut() {
+    $('.file-explorer').css('display', 'none')
+    $('#file').removeClass('f-off').addClass('f-on')
 }

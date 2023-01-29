@@ -194,6 +194,31 @@ em {
     display: none;
 }
 
+.file-explorer {
+    background: rgba(0, 0, 0, .3);
+    backdrop-filter: blur(2px);
+    margin: auto;
+    width: 50vw;
+    height: fit-content;
+    padding: 1vw;
+    border-radius: .7rem;
+    display: none;
+}
+
+.findFile {
+    width: 10rem;
+    background: rgba(0, 0, 0, .3);
+    border-radius: .4rem;
+}
+
+.file-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
 .hr2 {
     color: black;
     width: 30rem;
@@ -233,6 +258,14 @@ em {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 1);
 }
 
+.cut-copy-paste {
+    display: inline-flex;
+    background: rgba(0, 0, 0, .3);
+    border-radius: .4rem;
+    padding: .4rem;
+    opacity: .5;
+}
+
 @media only screen and (max-width: 1000px) {
     body {
         background-image: url("Images/phoneWall.png");
@@ -263,5 +296,14 @@ em {
 
     .icon {
         margin: 0 1.5vw;
+    }
+
+    .file-explorer {
+        width: 90vw;
+    }
+
+    .file-head {
+        justify-content: space-around;
+        row-gap: .5rem;
     }
 }
