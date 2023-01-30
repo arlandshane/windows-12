@@ -144,7 +144,7 @@ function blueBG() {
         $('.earbuds').css('display', '')
         $('#wifi, #volume, #battery, #bluetooth').css('display', 'none')
         $('.dis-connect').css('display', 'flex')
-        $('#blueState').removeClass('blueBra').addClass('blueBar').html('<p class="text">Headphones<br><em>Airpods Pro</em></p>')
+        $('#blueState').removeClass('blueBra').addClass('blueBar').html('<p class="text">Headphones<br><em>Airpods Max</em></p>')
     }
 }
 
@@ -168,7 +168,6 @@ function weatherFocus() {
 function toStart() {
     $('.user, .start, .h2').fadeIn('fast')
     $('.user').css('display', 'flex')
-    $('.dis-connect').css('display', 'none')
     $("#start").removeClass('started').addClass('toStart')
 }
 
