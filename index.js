@@ -208,7 +208,7 @@ function bisque() {
 }
 
 function plum() {
-    $('.contain, .start').css('background', 'rgba(100, 50, 150, .5)')
+    $('.contain, .start, .file-explorer').css('background', 'rgba(100, 50, 150, .5)')
     $('.user').css('background', 'rgba(100, 50, 150, .3)')
     $('p, .text, em').css('color', 'black').css('opacity', '.8')
     $('.progress').css('border', '1px solid purple')
