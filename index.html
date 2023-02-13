@@ -21,6 +21,7 @@
 </head>
 
 <body>
+    <img src="wallpaper.jpg" alt="" class="wallpaper">
     <div class="dateTime">
         <div style="text-align: center;" class="time"></div>
         <div style="text-align: center; color: black; opacity: .6;" class="weekDay"></div>
@@ -42,11 +43,9 @@
                     <p class="text">The Weeknd<br><em>Starboy</em></p>
                 </div>
                 <div class="musicControls" style="display: flex; margin-left: .5vw;">
-                    <span style="color: white; margin: auto .5vw; background: rgba(0, 0, 0, .3); border-radius: .3rem;"
-                        class="material-symbols-outlined">chevron_left</span>
-                    <span style="color: white; margin: auto .5vw; background: rgba(0, 0, 0, .3); border-radius: .3rem;"
-                        class="material-symbols-outlined">pause</span>
-                    <span style="color: white; margin: auto .5vw; background: rgba(0, 0, 0, .3); border-radius: .3rem;"
+                    <span style="color: white; margin: auto .5vw;" class="material-symbols-outlined">chevron_left</span>
+                    <span style="color: white; margin: auto .5vw;" class="material-symbols-outlined">pause</span>
+                    <span style="color: white; margin: auto .5vw;"
                         class="material-symbols-outlined">chevron_right</span>
                 </div>
             </div>
@@ -54,18 +53,20 @@
 
         <div class="side">
             <div class="shortcut contain">
-                <span id="wifi" style="color: white; padding: 0 .5rem; font-size:large;"
+                <span id="wifi" style="color: lavender; padding: 0 .5rem; font-size:large;"
                     class="material-symbols-outlined click">wifi</span>
-                <div id="wifiState" class="wifiBra"></div>
-                <span id="volume" style="color: white; padding: 0 .5rem; font-size:large;"
+                <div id="wifiState" class="wifiBra">
+                    <p class="text">
+                </div>
+                <span id="volume" style="color: lavender; padding: 0 .5rem; font-size:large;"
                     class="material-symbols-outlined click">volume_up</span>
                 <div id="volumeState" class="progressBra"></div>
-                <span id="battery" style="color: white; padding: 0 .5rem; font-size:large;"
+                <span id="battery" style="color: lavender; padding: 0 .5rem; font-size:large;"
                     class="material-symbols-outlined click">battery_full</span>
                 <div id="batteryState" class="batteryBra"></div>
-                <span id="bluetooth" style="color: white; padding: 0 .5rem; font-size:large;"
+                <span id="bluetooth" style="color: lavender; padding: 0 .5rem; font-size:large;"
                     class="material-symbols-outlined click">bluetooth_connected</span>
-                <span style="margin: 0 .6rem; display: none;"
+                <span style="margin: 0 .6rem; display: none; color: lavender;"
                     class="material-symbols-outlined earbuds click">headphones</span>
                 <div id="blueState" class="blueBra"></div>
                 <div class="dis-connect click">Disconnect</div>
@@ -125,7 +126,7 @@
                     <p style="display: inline-block; margin-bottom: 1vh;" class="text">All Apps</p>
                 </div>
                 <div style="display: flex;">
-                    <div style=" display: flex; justify-content: space-around; width: 50%;">
+                    <div class="devices" style=" display: flex; justify-content: space-around; width: 50%;">
                         <div style="text-align: center;">
                             <span class="material-symbols-outlined">smartphone</span>
                             <p class="text">Pixel 7 Pro</p>
@@ -152,19 +153,19 @@
                         </div>
                     </div>
                     <hr style="width: .1px; background-color: white;">
-                    <div style="width: 50%; padding: 1rem; overflow: auto; height: 10rem;" class="scrollbar">
-                        <p style="margin: 1rem;" class="text">Discord</p>
-                        <p style="margin: 1rem;" class="text">Figma</p>
-                        <p style="margin: 1rem;" class="text">Gmail</p>
-                        <p style="margin: 1rem;" class="text">Handbrake</p>
-                        <p style="margin: 1rem;" class="text">Hyper</p>
-                        <p style="margin: 1rem;" class="text">Notepad</p>
-                        <p style="margin: 1rem;" class="text">Photoshop</p>
-                        <p style="margin: 1rem;" class="text">Store</p>
-                        <p style="margin: 1rem;" class="text">Reddit</p>
-                        <p style="margin: 1rem;" class="text">Telegram</p>
-                        <p style="margin: 1rem;" class="text">Visual Studio Code</p>
-                        <p style="margin: 1rem;" class="text">VLC Media Player</p>
+                    <div style="width: 50%; padding: 1rem; overflow: auto; height: 10rem;" class="scrollbar1">
+                        <p class="text">Discord</p>
+                        <p class="text">Figma</p>
+                        <p class="text">Gmail</p>
+                        <p class="text">Handbrake</p>
+                        <p class="text">Hyper</p>
+                        <p class="text">Notepad</p>
+                        <p class="text">Photoshop</p>
+                        <p class="text">Store</p>
+                        <p class="text">Reddit</p>
+                        <p class="text">Telegram</p>
+                        <p class="text">Visual Studio Code</p>
+                        <p class="text">VLC Media Player</p>
                     </div>
                 </div>
             </div>
@@ -176,7 +177,8 @@
                 <div style="background-color: lavender; margin: auto; border-radius: .4rem;">
                     <i style="padding: .3rem;" class="fa-solid fa-gear"></i>
                 </div>
-                <div style="background-color: lavender; margin: auto; border-radius: .4rem;">
+                <div id="darkMode" class="dark"
+                    style="background-color: lavender; margin: auto; border-radius: .4rem; cursor: pointer;">
                     <i style="padding: .3rem .4rem;" class="fa-solid fa-moon"></i>
                 </div>
                 <div style="background-color: lavender; margin: auto; border-radius: .4rem;">
@@ -190,9 +192,9 @@
             <div class="file-head">
                 <div style="display: inline-flex; align-items: center;">
                     <div
-                        style="display: inline-flex; background: rgba(0, 0, 0, .3); width: fit-content; border-radius: .4rem; padding: .2rem;">
+                        style="display: inline-flex; background: rgba(0, 0, 0, .3); width: fit-content; border-radius: .4rem; padding: .2rem .5rem;">
                         <span style="color: white; font-size: large;" class="material-symbols-outlined">home</span>
-                        <p style="margin: 0 .5rem;" class="text">Home</p>
+                        <p style="margin-left: .5rem;" class="text">Home</p>
                     </div>
                     <i style="margin: 0 .5rem;" class="fa-solid fa-plus text"></i>
                 </div>
@@ -220,84 +222,130 @@
 
             <div style="display: flex; align-items: center;">
                 <div style="margin-bottom: 1vh;">
-                    <p class="text" style="padding: .2rem;">Home</p>
-                    <p class="text" style="padding: .2rem;">One Drive</p>
-                    <hr style="color: white;">
-                    <div style="display: flex; flex-wrap: wrap; flex-direction: column;">
-                        <span style="display: inline-flex; margin: .5rem 0; color: white; padding-left: .3vw;"
-                            class="material-symbols-outlined">
+                    <div class="highlight" style="display: flex; flex-wrap: wrap; flex-direction: column;">
+                        <span class="material-symbols-outlined">
                             computer
                             <p class="text" style="padding: .2rem;">Desktop</p>
                         </span>
-                        <span style="display: inline-flex; margin: .5rem 0; color: white; padding-left: .3vw;"
-                            class="material-symbols-outlined">
+                        <span class="material-symbols-outlined">
                             download
                             <p class="text" style="padding: .2rem;">Downloads</p>
                         </span>
-                        <span style="display: inline-flex; margin: .5rem 0; color: white; padding-left: .3vw;"
-                            class="material-symbols-outlined">
+                        <span class="material-symbols-outlined">
                             description
                             <p class="text" style="padding: .2rem;">Documents</p>
                         </span>
-                        <span style="display: inline-flex; margin: .5rem 0; color: white; padding-left: .3vw;"
-                            class="material-symbols-outlined">
+                        <span id="pictures" class="material-symbols-outlined">
                             photo_library
                             <p class="text" style="padding: .2rem;">Pictures</p>
                         </span>
-                        <span
-                            style="display: inline-flex; margin: .5rem 0; color: white; padding: .2rem 0 .2rem .2rem; background: rgba(0, 0, 0, .3); border-radius: .3rem;"
-                            class="material-symbols-outlined">
+                        <span id="music" class="material-symbols-outlined">
                             library_music
                             <p class="text" style="padding: .2rem;">Music
                             </p>
                         </span>
-                        <span style="display: inline-flex; margin: .5rem 0; color: white; padding-left: .3vw;"
-                            class="material-symbols-outlined">
+                        <span id="videos" class="material-symbols-outlined">
                             video_library
                             <p class="text" style="padding: .2rem;">Videos</p>
                         </span>
                     </div>
                     <hr style="color: white;">
-                    <p class="text" style="padding: .2rem;">This PC</p>
-                    <p class="text" style="margin: auto;">- Windows 12 (C:)</p>
-                    <p class="text" style="margin: auto;">- Google Drive (G:)</p>
+                    <span style="display: flex; justify-content: space-around; align-items: center;">
+                        <p class="text">C:</p>
+                        <img style="width: 2rem;" src="Images/CDrive.png" alt="">
+                    </span>
+                    <div style="height: .5rem; width: 5rem; margin: 0 auto .5rem; opacity: .8;" class="progress">
+                        <div style="width: 2rem; background-color: lavender;"></div>
+                    </div>
+                    <span style="display: flex; justify-content: space-around; align-items: center;">
+                        <p class="text">G:</p>
+                        <img style="width: 2rem; transform: scale(.8);" src="Images/GDrive.png" alt="">
+                    </span>
+                    <div style="height: .5rem; width: 5rem; margin: auto; opacity: .8;" class="progress">
+                        <div style="width: 3rem; background-color:lavender;"></div>
+                    </div>
                 </div>
-                <div class="scrollbar" style="overflow: auto; height: 15rem; padding: 1rem;">
-                    <p style="margin: .5rem 0;" class="text">Panah - Mitraz</p>
-                    <p style="margin: .5rem 0;" class="text">Taara Tuteya - Mitraz</p>
-                    <p style="margin: .5rem 0;" class="text">Heeriye - Mitraz</p>
-                    <p style="margin: .5rem 0;" class="text">Tere Huve - Mitraz</p>
-                    <p style="margin: .5rem 0;" class="text">Raatein - Mitraz</p>
-                    <p style="margin: .5rem 0;" class="text">Kabhi Na Kabhi - Mitraz</p>
-                    <p style="margin: .5rem 0;" class="text">Muskurahat - Mitraz</p>
-                    <p style="margin: .5rem 0;" class="text">Akhiyaan - Mitraz</p>
-                    <p style="margin: .5rem 0;" class="text">Junoon - Mitraz</p>
+                <div id="songList" class="scrollbar2">
+                    <p class="text">Panah - Mitraz</p>
+                    <p class="text">Aas Pass - Mitraz</p>
+                    <p class="text">Taara Tuteya - Mitraz</p>
+                    <p class="text">Heeriye - Mitraz</p>
+                    <p class="text">Tere Huve - Mitraz</p>
+                    <p class="text">Raatein - Mitraz</p>
+                    <p class="text">Kabhi Na Kabhi - Mitraz</p>
+                    <p class="text">Muskurahat - Mitraz</p>
+                    <p class="text">Akhiyaan - Mitraz</p>
+                    <p class="text">Junoon - Mitraz</p>
+                </div>
+                <div id="picList" class="scrollbar2">
+                    <img class="photo" src="Images/Animals/Antilope.jpg" alt="">
+                    <img class="photo" src="Images/Animals/Barn Owl.jpg" alt="">
+                    <img class="photo" src="Images/Animals/Polar Bear.jpg" alt="">
+                    <img class="photo" src="Images/Animals/Cheetah.jpg" alt="">
+                    <img class="photo" src="Images/Animals/Crab.jpg" alt="">
+                    <img class="photo" src="Images/Animals/Dog.jpg" alt="">
+                    <img class="photo" src="Images/Animals/Dolphin.jpg" alt="">
+                    <img class="photo" src="Images/Animals/Leopard.jpg" alt="">
+                    <img class="photo" src="Images/Animals/Elephant.jpg" alt="">
+                    <img class="photo" src="Images/Animals/Humming Bird.jpg" alt="">
+                    <img class="photo" src="Images/Animals/Sloth.jpg" alt="">
+                    <img class="photo" src="Images/Animals/Sparrow.jpg" alt="">
+                    <img class="photo" src="Images/Animals/Squirrel.jpg" alt="">
                 </div>
             </div>
         </div>
 
+        <div id="searching" class="searchOff">
+
+        </div>
+
         <div class="icons contain">
             <i id="start" class="started"></i>
-            <img id="windows" class="icon click" src="Images/Taskbar Icons/Microsoft.png" alt="start">
-            <img id="tabs" class="icon click" src="Images/Taskbar Icons/Tabs.png" alt="tabs">
-            <img id="search" class="icon click" src="Images/Taskbar Icons/Search.png" alt="search">
+            <div>
+                <img id="windows" class="icon click" src="Images/Taskbar Icons/Microsoft.png" alt="start">
+                <div class="progress"
+                    style="height: .2rem; width: 1rem; color: lavender; margin: .3rem auto auto; display: none;">
+                    <div class="progress-bar w-100"></div>
+                </div>
+            </div>
+            <div>
+                <img id="tabs" class="icon click" src="Images/Taskbar Icons/Tabs.png" alt="tabs">
+                <div class="progress"
+                    style="height: .2rem; width: 1rem; color: lavender; margin: .3rem auto auto; display: none;">
+                    <div class="progress-bar w-100"></div>
+                </div>
+            </div>
+            <div>
+                <img id="search" class="icon click" src="Images/Taskbar Icons/Search.png" alt="search">
+                <div class="progress"
+                    style="height: .2rem; width: 1rem; color: lavender; margin: .3rem auto auto; display: none;">
+                    <div class="progress-bar w-100"></div>
+                </div>
+            </div>
             <hr class="hr1">
-            <img id="fileExp" class="icon click" src="Images/Taskbar Icons/FileExp.png" alt="file-explorer">
+            <div>
+                <img id="fileExp" class="icon click" src="Images/Taskbar Icons/FileExp.png" alt="file-explorer">
+                <div class="progress"
+                    style="height: .2rem; width: 1rem; color: lavender; margin: .3rem auto auto; display: none;">
+                    <div class="progress-bar w-100"></div>
+                </div>
+            </div>
             <a href="https://www.google.com" target="_blank">
-                <img class="icon" src="Images/Taskbar Icons/Chrome.png" alt="chrome">
+                <img id="chrome" class="icon" src="Images/Taskbar Icons/Chrome.png" alt="chrome">
             </a>
             <a href="https://arlandshane.github.io/PROtotype/" target="_blank">
-                <img class="icon" src="Images/Taskbar Icons/Photos.png" alt="photos">
+                <img id="photos" class="icon" src="Images/Taskbar Icons/Photos.png" alt="photos">
             </a>
             <hr class="hr1">
             <a href="https://twitter.com/arlandshane" target="_blank">
-                <img style="border-radius: .5rem;" class="icon" src="Images/Taskbar Icons/Twitter.png" alt="twitter">
+                <img id="twitter" style="border-radius: .5rem;" class="icon" src="Images/Taskbar Icons/Twitter.png"
+                    alt="twitter">
             </a>
             <a href="https://www.instagram.com/arlandshane" target="_blank">
-                <img class="icon" src="Images/Taskbar Icons/Instagram.png" alt="instagram">
+                <img id="instagram" class="icon" src="Images/Taskbar Icons/Instagram.png" alt="instagram">
             </a>
             <a href="https://wa.me/+917671919704" target="_blank">
-                <img class="icon" src="Images/Taskbar Icons/Whatsapp.png" alt="whatsapp">
+                <img id="whatsapp" class="icon" src="Images/Taskbar Icons/Whatsapp.png" alt="whatsapp">
             </a>
         </div>
     </div>

@@ -25,7 +25,7 @@ var day = '<em>' + month + " " + date + '</em>'
 $('.weekDay').html('<p>' + weekDay[weekNum] + ',' + ' ' + date + ' ' + monthNames[monthNum] + '</p>')
 $('.time').html('<p class="time-piece">' + time + '</p>')
 
-$('#volume').click(function () {
+$('#volume').click(() => {
     if ($('#volumeState').attr('class') === 'progressBra') {
         volumeFocus()
     }
@@ -34,7 +34,7 @@ $('#volume').click(function () {
     }
 })
 
-$('#wifi').click(function () {
+$('#wifi').click(() => {
     if ($('#wifiState').attr('class') === 'wifiBra') {
         wifiFocus()
     }
@@ -43,7 +43,7 @@ $('#wifi').click(function () {
     }
 })
 
-$('#battery').click(function () {
+$('#battery').click(() => {
     if ($('#batteryState').attr('class') === 'batteryBra') {
         batteryFocus()
     }
@@ -59,7 +59,7 @@ $('.musicDetails, .musicControls').css('display', 'none')
 $('.music').click(musicFocus)
 $('.weather').click(weatherFocus)
 
-$('#windows').click(function () {
+$('#windows').click(() => {
     if ($('#start').attr('class') === 'started') {
         toStart()
         fileOut()
@@ -70,14 +70,14 @@ $('#windows').click(function () {
 
 })
 
-$('#tabs, #search').click(function () {
+$('#tabs, #search').click(() => {
     if ($('#start').attr('class') === 'toStart' || $('#file').attr('class') === 'f-off') {
         started()
         fileOut()
     }
 })
 
-$('.dis-connect').click(function () {
+$('.dis-connect').click(() => {
     if ($('.dis-connect').html() === 'Disconnect') {
         $('.dis-connect').html('Connect')
     }
@@ -86,13 +86,23 @@ $('.dis-connect').click(function () {
     }
 })
 
-$('#fileExp').click(function () {
+$('#fileExp').click(() => {
     if ($('#file').attr('class') === 'f-on') {
         started()
         fileIn()
     }
     else if ($('#file').attr('class') === 'f-off') {
         fileOut()
+    }
+})
+
+$('#search').click(() => {
+    if ($('#searching').attr('class') === 'searchOff') {
+        $('#windows, #tabs, #fileExp, #chrome, #photos, #twitter, #instagram, #whatsapp, .hr1').css('display', 'none')
+        $('#searching').removeClass('searchOff').addClass('searchOn')
+    } else if ($('#searching').attr('class') === 'searchOn') {
+        $('#windows, #tabs, #fileExp, #chrome, #photos, #twitter, #instagram, #whatsapp, .hr1').css('display', '')
+        $('#searching').removeClass('searchOn').addClass('searchOff')
     }
 })
 
@@ -108,7 +118,7 @@ function volumeBG() {
 
 function wifiFocus() {
     $('#battery, #volume, #bluetooth').css('display', 'none')
-    $('#wifiState').removeClass('wifiBra').addClass('wifiBar').html('<p class="text">Home WiFi<br><em>Connected, Secure</em></p>')
+    $('#wifiState').removeClass('wifiBra').addClass('wifiBar').html('<p>Home WiFi<br><em>Connected, Secure</em></p>')
 }
 
 function wifiBG() {
@@ -121,7 +131,7 @@ function batteryFocus() {
     navigator.getBattery().then(function checkLevel(battery) {
         var batteryLevel = parseInt(battery.level * 100)
         var batteryStatus = (battery.charging ? "Charging" : "Discharging")
-        $('#batteryState').html('<p class="text">' + batteryStatus + '<br><em>' + batteryLevel + '% Remaining</em></p>')
+        $('#batteryState').html('<p>' + batteryStatus + '<br>' + batteryLevel + '% Remaining</p>')
     })
     $('#batteryState').removeClass('batteryBra').addClass('batteryBar')
 }
@@ -144,7 +154,7 @@ function blueBG() {
         $('.earbuds').css('display', '')
         $('#wifi, #volume, #battery, #bluetooth').css('display', 'none')
         $('.dis-connect').css('display', 'flex')
-        $('#blueState').removeClass('blueBra').addClass('blueBar').html('<p class="text">Headphones<br><em>Airpods Max</em></p>')
+        $('#blueState').removeClass('blueBra').addClass('blueBar').html('<p>Headphones<br><em>Airpods Max</em></p>')
     }
 }
 
@@ -177,7 +187,7 @@ function started() {
 }
 
 function fileIn() {
-    $('.file-explorer').fadeIn()
+    $('.file-explorer').fadeIn('fast')
     $('#file').removeClass('f-on').addClass('f-off')
 }
 
@@ -185,3 +195,64 @@ function fileOut() {
     $('.file-explorer').css('display', 'none')
     $('#file').removeClass('f-off').addClass('f-on')
 }
+
+function bisque() {
+    $('.contain, .start, .file-explorer').css('background', 'rgba(210, 210, 200, .8)')
+    $('.user').css('background', 'rgba(210, 210, 200, .6)')
+    $('p, .text, em').css('color', 'black').css('opacity', '.8')
+    $('hr, .hr1, .hr2, .hr3').css('color', 'black').css('background-color', 'black')
+    $('.progress-bar').css('background-color', 'salmon')
+    $('.progress').css('border', '1px solid salmon')
+    $('.shortcut').css('color', 'black').css('font-size', 'small').css('opacity', '.85')
+    $('.material-symbols-outlined').css('color', 'black').css('opacity', '.85')
+}
+
+function plum() {
+    $('.contain, .start').css('background', 'rgba(100, 50, 150, .5)')
+    $('.user').css('background', 'rgba(100, 50, 150, .3)')
+    $('p, .text, em').css('color', 'black').css('opacity', '.8')
+    $('.progress').css('border', '1px solid purple')
+    $('.progress-bar').css('background-color', 'purple')
+    $('.shortcut').css('color', 'black').css('font-size', 'small')
+    $('.material-symbols-outlined').css('color', 'white')
+}
+
+function black() {
+    $('.contain, .start').css('background', '')
+    $('.user').css('background', '')
+    $('p, .text, em').css('color', '').css('opacity', '')
+    $('hr, .hr1, .hr2, .hr3').css('color', 'white').css('background-color', 'white')
+    $('.progress').css('border', '1px solid lavender')
+    $('.progress-bar').css('background-color', 'lavender')
+    $('.shortcut').css('color', 'white').css('font-size', 'small')
+    $('.material-symbols-outlined').css('color', 'white')
+}
+
+i = 0
+if (i === 0) {
+    $('.shortcut').css('color', 'white').css('font-size', 'small')
+    $('.dis-connect').css('background', 'rgba(0, 0, 0, .4)').css('color', 'white')
+    $('.material-symbols-outlined').css('color', 'white')
+}
+$('#darkMode').click(() => {
+    if (i === 0) {
+        bisque()
+        i++
+    } else if (i === 1) {
+        plum()
+        i++
+    } else if (i === 2) {
+        black()
+        i = 0
+    }
+})
+
+$('#music').mouseenter(() => {
+    $('#songList').fadeIn('fast')
+    $('#picList').css('display', 'none')
+})
+
+$('#pictures').mouseenter(() => {
+    $('#picList').fadeIn('fast')
+    $('#songList').css('display', 'none')
+})
