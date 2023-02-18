@@ -2,6 +2,28 @@ body {
     user-select: none;
 }
 
+/*paragraph element does not have a margin*/
+p {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*normal sized text with .8 opacity*/
+em {
+    font-style: normal;
+    opacity: .8;
+}
+
+ul {
+    list-style: none;
+}
+
+/*every item of an unordered list has a padding of .5rem*/
+ul li {
+    padding: .5rem;
+}
+
+/*background wallpaper*/
 .wallpaper {
     position: absolute;
     background-size: contain;
@@ -9,16 +31,12 @@ body {
     height: 100%;
 }
 
-p {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
+/*shows a pointer when the mouse hovers over a div containing this classed*/
+.click {
+    cursor: pointer;
 }
 
-em {
-    font-style: normal;
-    opacity: .8;
-}
-
+/*text that are small and white, and in a straight line*/
 .text {
     opacity: .9;
     color: white;
@@ -26,6 +44,7 @@ em {
     white-space: nowrap;
 }
 
+/*divs that have a blurred black background and a border radius of .5rem*/
 .contain {
     z-index: 1;
     background: rgba(0, 0, 0, .5);
@@ -33,6 +52,7 @@ em {
     border-radius: 0.5rem;
 }
 
+/*time displayed at the center of the screen*/
 .time-piece {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bolder;
@@ -82,10 +102,6 @@ em {
     transform: translate3d(0, 20vh, 0);
 }
 
-.click {
-    cursor: pointer;
-}
-
 .taskbar {
     display: flex;
     margin: 0 1vw;
@@ -96,6 +112,7 @@ em {
     height: 3.5rem;
 }
 
+/*wifi, volume, battery and bluetooth icons*/
 .shortcut {
     transition: all .5s cubic-bezier(0, 0, 0, 2);
     width: fit-content;
@@ -104,6 +121,7 @@ em {
     margin-left: 1vw;
 }
 
+/*volume slider in the expanded volume div*/
 .progressBar {
     transition: all .5s cubic-bezier(0, 0, 0, 2);
     width: 8rem;
@@ -114,21 +132,25 @@ em {
     border-radius: 1rem;
 }
 
+/*expanding the wifi div*/
 .wifiBar {
     transition: all .5s cubic-bezier(0, 0, 0, 2);
     padding-right: .7rem;
 }
 
+/*expanding the battery div*/
 .batteryBar {
     transition: all .5s cubic-bezier(0, 0, 0, 2);
     padding-right: .7rem;
 }
 
+/*expanding the bluetooth div*/
 .blueBar {
     transition: all .5s cubic-bezier(0, 0, 0, 2);
     padding-right: .5rem;
 }
 
+/*connect and disconnect in the expanded bluetooth div*/
 .dis-connect {
     align-items: center;
     font-size: smaller;
@@ -147,6 +169,7 @@ em {
     bottom: 2vh;
 }
 
+/*all the icons of the taskbar*/
 .icons {
     width: fit-content;
     height: 3.5rem;
@@ -156,6 +179,7 @@ em {
     margin-top: 1vh;
 }
 
+/*each icon of the taskbar*/
 .icon {
     width: 2rem;
     height: 2rem;
@@ -163,12 +187,14 @@ em {
     filter: drop-shadow(0 0 .1rem rgb(125, 125, 125));
 }
 
+/*icons inside the start menu*/
 .icon-sm {
     width: 2rem;
     height: 2rem;
     filter: drop-shadow(0 0 .1rem rgb(125, 125, 125));
 }
 
+/*start expanded*/
 .start {
     background: rgba(0, 0, 0, .5);
     backdrop-filter: blur(2px);
@@ -180,6 +206,7 @@ em {
     display: none;
 }
 
+/*file explorer expanded*/
 .file-explorer {
     background: rgba(0, 0, 0, .5);
     backdrop-filter: blur(2px);
@@ -197,6 +224,7 @@ em {
     border-radius: .4rem;
 }
 
+/*items at the head of the file explorer*/
 .file-head {
     display: flex;
     flex-wrap: wrap;
@@ -205,6 +233,7 @@ em {
     margin-bottom: .5rem;
 }
 
+/*user bar under the start menu showing the name of the user and other options*/
 .user {
     background: rgba(0, 0, 0, .3);
     backdrop-filter: blur(2px);
@@ -219,6 +248,7 @@ em {
     display: none;
 }
 
+/*horizontal rule in the taskbar, seperating the windows funtions, windows apps, and installed apps*/
 .hr1 {
     color: white;
     background-color: white;
@@ -226,6 +256,7 @@ em {
     height: 3.5vh;
 }
 
+/*seperating the user bar from the start menu*/
 .hr2 {
     color: black;
     width: 30rem;
@@ -233,22 +264,21 @@ em {
     display: none;
 }
 
+/*vertical rule seperating the continue apps*/
 .hr3 {
     width: 1px;
     color: white;
     background-color: white;
 }
 
+/*connected devices icons*/
 .devices>div>.material-symbols-outlined {
     color: lavender;
     opacity: .9;
     transition-duration: 300ms;
 }
 
-.devices>div>.material-symbols-outlined:hover {
-    color: violet;
-}
-
+/*items of list highlight (desktop, downloads, documents, pictures, music, video)*/
 .highlight>span {
     transition-duration: 300ms;
     display: inline-flex;
@@ -259,45 +289,42 @@ em {
 
 .highlight>span:hover {
     background: rgba(0, 0, 0, .3);
-    color: violet;
 }
 
+/*progress bar has a lavender border and no background*/
 .progress {
     background: none;
     border: 1px lavender solid;
 }
 
+/*lavender coloured progress bar with .9 opacity*/
 .progress-bar {
     background-color: lavender;
     opacity: .9;
 }
 
-.scrollbar1>p,
-.scrollbar2>p {
+.scrollbar1>p {
     margin: 1rem;
     transition-duration: 300ms;
 }
 
-.scrollbar1>.text:hover,
-.scrollbar2>.text:hover {
+.scrollbar1>.text:hover {
     transform: scale(1.02);
 }
 
-.scrollbar1::-webkit-scrollbar,
-.scrollbar2::-webkit-scrollbar {
+.scrollbar1::-webkit-scrollbar {
     width: .1rem;
 }
 
-.scrollbar1::-webkit-scrollbar-track,
-.scrollbar2::-webkit-scrollbar-track {
+.scrollbar1::-webkit-scrollbar-track {
     background: none;
 }
 
-.scrollbar1::-webkit-scrollbar-thumb,
-.scrollbar2::-webkit-scrollbar-thumb {
+.scrollbar1::-webkit-scrollbar-thumb {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
 }
 
+/*cut, copy, and paste icons*/
 a .cut-copy-paste {
     display: inline-flex;
     background: rgba(0, 0, 0, .3);
@@ -306,31 +333,86 @@ a .cut-copy-paste {
     opacity: .5;
 }
 
+.search-box {
+    margin: 0 .5rem;
+    padding: .5rem;
+    display: none;
+    border-radius: .3rem;
+    border: none;
+}
+
+/*music folder items*/
 #songList {
     overflow: auto;
     height: 20rem;
-    padding: 1rem;
+    padding: 1rem 0;
     display: none;
 }
 
-#picList {
-    overflow: auto;
-    height: 20rem;
-    padding: 1rem;
+#music-text-list {
     display: none;
-
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
 }
 
-.photo {
+#music-preview>.photo {
+    display: none;
     height: 10rem;
     border-radius: .5rem;
     margin: .5rem;
     transition-duration: 300ms;
 }
 
-.photo:hover {
+#music-preview>.photo:hover {
     transform: scale(1.1);
 }
+
+/*pictures folder items*/
+#picList {
+    overflow: auto;
+    height: 20rem;
+    padding: 1rem 0;
+    display: none;
+}
+
+#pictures-text-list {
+    display: none;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+}
+
+/*each picture in the pictures folder*/
+#pictures-preview>.photo {
+    display: none;
+    border-radius: .5rem;
+    margin: .5rem;
+    transition-duration: 300ms;
+}
+
+/*hovering over each photo in the pictures folder*/
+#pictures-preview>.photo:hover {
+    transform: scale(1.1);
+}
+
+
+#windows+.progress,
+#fileExp+.progress {
+    height: .1rem;
+    width: 1rem;
+    margin: .2rem auto 0;
+    display: none;
+}
+
+
+
+
+
+
+
+
+
 
 @media only screen and (max-width: 1000px) {
     .wallpaper {
