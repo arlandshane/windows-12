@@ -343,6 +343,7 @@ $pictures.click(() => {
     $('.music-folder').css('background', '')
     $('#picList').fadeIn('fast')
     $picturesTextList.fadeIn('fast')
+    hideMusic()
     $('#songList').hide()
 })
 
@@ -402,3 +403,31 @@ function hidePictures() {
 $('#panah').click(() => {
     $('#panah-img').fadeIn('fast')
 })
+
+function hideMusic() {
+    $('#music-preview>.photo').hide()
+}
+
+//made by alrandshane
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+const arland = 'ARLANDSHANE'
+const madeBy = $('#arlandshane')
+let interval = null;
+
+madeBy.mouseover(function () {
+    let iteration = 0;
+    clearInterval(interval)
+    interval = setInterval(() => {
+        $(this).text(() => {
+            return $(this).text().split('').map((letter, index) => {
+                if (index < iteration) {
+                    return arland[index]
+                }
+                return letters[Math.floor(Math.random() * 26)]
+            }).join('')
+        });
+        iteration += 0.33
+    }, 30)
+})
+
+$('#pictures-preview>.photo').draggable()

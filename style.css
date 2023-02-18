@@ -23,6 +23,13 @@ ul li {
     padding: .5rem;
 }
 
+h1 {
+    position: absolute;
+    margin: 1rem;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
 /*background wallpaper*/
 .wallpaper {
     position: absolute;
@@ -90,6 +97,8 @@ ul li {
     margin: 0 .5rem;
     border-radius: 100%;
     filter: drop-shadow(0 0 .1rem rgb(125, 125, 125));
+    width: inherit;
+    height: inherit;
 }
 
 .side {
