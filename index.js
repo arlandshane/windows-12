@@ -1,3 +1,28 @@
+//made by alrandshane
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+const arland = 'ARLANDSHANE'
+const madeBy = $('#arlandshane')
+let interval = null
+
+madeBy.mouseover(hyperplexed)
+function hyperplexed() {
+    madeBy.css('background-color', 'white').css('border-radius', '.2rem').css('opacity', '.8').css('padding', '0 .1rem')
+    let iteration = 0
+    clearInterval(interval)
+    interval = setInterval(() => {
+        $(this).text(() => {
+            return $(this).text().split('').map((letter, index) => {
+                if (index < iteration) {
+                    return arland[index]
+                }
+                return letters[Math.floor(Math.random() * 10)]
+            }).join('')
+        })
+        iteration += 0.33
+    }, 30)
+}
+
+//jQuery elements
 const $search = $('#search')
 const $searching = $('#searching')
 const $windows = $('#windows')
@@ -162,8 +187,22 @@ function blueBG() {
 $('.musicDetails, .musicControls').hide()
 $('.music').click(musicFocus)
 $('.weather').click(weatherFocus)
+$('#play-button').hide() //the play button is hidden by default
 
-//expanding teh music div and collapsing the weather div
+//clicking the pause button switches it to the play button
+$('#pause-button').click(() => {
+    $('#pause-button').hide()
+    $('#play-button').fadeIn('fast')
+})
+//clicking the play button, switches it to the pause button
+$('#play-button').click(() => {
+    $('#play-button').hide()
+    $('#pause-button').fadeIn('fast')
+})
+
+$('#previous-song').click()
+
+//expanding the music div and collapsing the weather div
 function musicFocus() {
     $('.albumArt').css('border-radius', '20%')
     $('.weatherIcon').css('top', '1vh').css('padding', '0 .5vw')
@@ -347,6 +386,7 @@ $pictures.click(() => {
     $('#songList').hide()
 })
 
+//when the name of a picture in the pictures folder is clicked
 $('#antilope').click(() => {
     $('#antilope-img').fadeIn('fast')
     $('#pictures-preview >.photo').not('#antilope-img').hide()
@@ -396,38 +436,94 @@ $('#squirrel').click(() => {
     $('#pictures-preview >.photo').not('#squirrel-img').hide()
 })
 
+//hiding all the  images inside the pictures folder
 function hidePictures() {
     $('#pictures-preview>.photo').hide()
 }
 
-$('#panah').click(() => {
-    $('#panah-img').fadeIn('fast')
-})
+let playMusic = [
+    function aasPaas() {
+        $('.albumArt').attr('src', 'Images/Music/Aas Pass.jpg')
+        $('#now-playing-music').html('Aas Paas<br><em>Mitraz</em>')
+        $('#aas-paas-img').fadeIn('fast')
+        $('#music-preview >.photo').not('#aas-paas-img').hide()
+    },
+    function akhiyaan() {
+        $('.albumArt').attr('src', 'Images/Music/Akhiyaan.jpg')
+        $('#now-playing-music').html('Akhiyaan<br><em>Mitraz</em>')
+        $('#akhiyaan-img').fadeIn('fast')
+        $('#music-preview >.photo').not('#akhiyaan-img').hide()
+    },
+    function heeriye() {
+        $('.albumArt').attr('src', 'Images/Music/Heeriye.jpg')
+        $('#now-playing-music').html('Heeriye<br><em>Mitraz</em>')
+        $('#heeriye-img').fadeIn('fast')
+        $('#music-preview >.photo').not('#heeriye-img').hide()
+    },
+    function junoon() {
+        $('.albumArt').attr('src', 'Images/Music/Junoon.jpg')
+        $('#now-playing-music').html('Junoon<br><em>Mitraz</em>')
+        $('#junoon-img').fadeIn('fast')
+        $('#music-preview >.photo').not('#junoon-img').hide()
+    },
+    function kabhiNaKabhi() {
+        $('.albumArt').attr('src', 'Images/Music/Kabhi Na Kabhi.jpg')
+        $('#now-playing-music').html('Kabhi Na Kabhi<br><em>Mitraz</em>')
+        $('#kabhi-na-kabhi-img').fadeIn('fast')
+        $('#music-preview >.photo').not('#kabhi-na-kabhi-img').hide()
+    },
+    function muskurahat() {
+        $('.albumArt').attr('src', 'Images/Music/Muskurahat.jpg')
+        $('#now-playing-music').html('Muskurahat<br><em>Mitraz</em>')
+        $('#muskurahat-img').fadeIn('fast')
+        $('#music-preview >.photo').not('#muskurahat-img').hide()
+    },
+    function panah() {
+        $('.albumArt').attr('src', 'Images/Music/Panah.jpg')
+        $('#now-playing-music').html('Panah<br><em>Mitraz</em>')
+        $('#panah-img').fadeIn('fast')
+        $('#music-preview >.photo').not('#panah-img').hide()
+    },
+    function roiNa() {
+        $('.albumArt').attr('src', 'Images/Music/Roi Na.jpg')
+        $('#now-playing-music').html('Roi Na<br><em>Mitraz</em>')
+        $('#roi-na-img').fadeIn('fast')
+        $('#music-preview >.photo').not('#roi-na-img').hide()
+    },
+    function raatien() {
+        $('.albumArt').attr('src', 'Images/Music/Raatein.jpg')
+        $('#now-playing-music').html('Raatein<br><em>Mitraz</em>')
+        $('#raatein-img').fadeIn('fast')
+        $('#music-preview >.photo').not('#raatein-img').hide()
+    },
+    function taaraTuteya() {
+        $('.albumArt').attr('src', 'Images/Music/Taara Tuteya.jpg')
+        $('#now-playing-music').html('Taara Tuteya<br><em>Mitraz</em>')
+        $('#taara-tuteya-img').fadeIn('fast')
+        $('#music-preview >.photo').not('#taara-tuteya-img').hide()
+    },
+    function tereHuve() {
+        $('.albumArt').attr('src', 'Images/Music/Tere Huve.jpg')
+        $('#now-playing-music').html('Tere Huve<br><em>Mitraz</em>')
+        $('#tere-huve-img').fadeIn('fast')
+        $('#music-preview >.photo').not('#tere-huve-img').hide()
+    }
+]
 
+//when the name of a song in the music folder is clicked
+$('#aas-paas').click(playMusic[0])
+$('#akhiyaan').click(playMusic[1])
+$('#heeriye').click(playMusic[2])
+$('#junoon').click(playMusic[3])
+$('#kabhi-na-kabhi').click(playMusic[4])
+$('#muskurahat').click(playMusic[5])
+$('#panah').click(playMusic[6])
+$('#roi-na').click(playMusic[7])
+$('#raatein').click(playMusic[8])
+$('#taara-tuteya').click(playMusic[9])
+$('#tere-huve').click(playMusic[10])
+
+//hiding all the images inside the music folder
 function hideMusic() {
     $('#music-preview>.photo').hide()
 }
-
-//made by alrandshane
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-const arland = 'ARLANDSHANE'
-const madeBy = $('#arlandshane')
-let interval = null;
-
-madeBy.mouseover(function () {
-    let iteration = 0;
-    clearInterval(interval)
-    interval = setInterval(() => {
-        $(this).text(() => {
-            return $(this).text().split('').map((letter, index) => {
-                if (index < iteration) {
-                    return arland[index]
-                }
-                return letters[Math.floor(Math.random() * 26)]
-            }).join('')
-        });
-        iteration += 0.33
-    }, 30)
-})
-
-$('#pictures-preview>.photo').draggable()

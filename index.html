@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet"
@@ -48,17 +49,21 @@
             <!-- music playing -->
             <div class="music contain click">
                 <!-- album art -->
-                <img class="albumArt" src="Images/Starboy.jpg" alt="album-art">
+                <img class="albumArt" src="Images/Music/Aas Pass.jpg" alt="album-art">
                 <!-- music details -->
                 <div class="musicDetails">
                     <!-- song tile and artist name -->
-                    <p class="text">The Weeknd<br><em>Starboy</em></p>
+                    <p style="margin: auto;" id="now-playing-music" class="text">Aas Paas<br><em>Mitraz</em></p>
                 </div>
                 <!-- music controls -->
-                <div class="musicControls" style="display: flex; margin-left: .5vw;">
-                    <span style="color: white; margin: auto .5vw;" class="material-symbols-outlined">chevron_left</span>
-                    <span style="color: white; margin: auto .5vw;" class="material-symbols-outlined">pause</span>
-                    <span style="color: white; margin: auto .5vw;"
+                <div class="musicControls" style="display: flex; margin: auto; height: 100%;">
+                    <span id="previous-song" style="color: white; margin: auto .5vw;"
+                        class="material-symbols-outlined">chevron_left</span>
+                    <span id="pause-button" style="color: white; margin: auto .5vw;"
+                        class="material-symbols-outlined">pause</span>
+                    <span id="play-button" style="color: white; margin: auto .5vw;"
+                        class="material-symbols-outlined">play_arrow</span>
+                    <span id="next-song" style="color: white; margin: auto .5vw;"
                         class="material-symbols-outlined">chevron_right</span>
                 </div>
             </div>
@@ -299,27 +304,39 @@
                     </div>
                 </div>
 
-                <!-- a list of songs in the music folder -->
                 <div style="display: flex; width: 100%; padding-left: 1rem;" id="songList">
+                    <!-- a list of songs in the music folder -->
                     <ul id="music-text-list" class="scrollbar1">
+                        <li id="aas-paas" class="text">Aas Pass - Mitraz</li>
+                        <li id="akhiyaan" class="text">Akhiyaan - Mitraz</li>
+                        <li id="heeriye" class="text">Heeriye - Mitraz</li>
+                        <li id="junoon" class="text">Junoon - Mitraz</li>
+                        <li id="kabhi-na-kabhi" class="text">Kabhi Na Kabhi - Mitraz</li>
+                        <li id="muskurahat" class="text">Muskurahat - Mitraz</li>
                         <li id="panah" class="text">Panah - Mitraz</li>
-                        <li class="text">Aas Pass - Mitraz</li>
-                        <li class="text">Taara Tuteya - Mitraz</li>
-                        <li class="text">Heeriye - Mitraz</li>
-                        <li class="text">Tere Huve - Mitraz</li>
-                        <li class="text">Raatein - Mitraz</li>
-                        <li class="text">Kabhi Na Kabhi - Mitraz</li>
-                        <li class="text">Muskurahat - Mitraz</li>
-                        <li class="text">Akhiyaan - Mitraz</li>
-                        <li class="text">Junoon - Mitraz</li>
+                        <li id="raatein" class="text">Raatein - Mitraz</li>
+                        <li id="roi-na" class="text">Roi Na - Mitraz</li>
+                        <li id="taara-tuteya" class="text">Taara Tuteya - Mitraz</li>
+                        <li id="tere-huve" class="text">Tere Huve - Mitraz</li>
                     </ul>
+                    <!-- preview of images in the music folder -->
                     <div id="music-preview" style="margin: auto;">
+                        <img id="aas-paas-img" class="photo" src="Images/Music/Aas Pass.jpg" alt="">
+                        <img id="akhiyaan-img" class="photo" src="Images/Music/Akhiyaan.jpg" alt="">
+                        <img id="heeriye-img" class="photo" src="Images/Music/Heeriye.jpg" alt="">
+                        <img id="junoon-img" class="photo" src="Images/Music/Junoon.jpg" alt="">
+                        <img id="kabhi-na-kabhi-img" class="photo" src="Images/Music/Kabhi Na Kabhi.jpg" alt="">
+                        <img id="muskurahat-img" class="photo" src="Images/Music/Muskurahat.jpg" alt="">
                         <img id="panah-img" class="photo" src="Images/Music/Panah.jpg" alt="">
+                        <img id="raatein-img" class="photo" src="Images/Music/Raatein.jpg" alt="">
+                        <img id="roi-na-img" class="photo" src="Images/Music/Roi Na.jpg" alt="">
+                        <img id="taara-tuteya-img" class="photo" src="Images/Music/Taara Tuteya.jpg" alt="">
+                        <img id="tere-huve-img" class="photo" src="Images/Music/Tere Huve.jpg" alt="">
                     </div>
                 </div>
 
-                <!-- a list of images in the pictures folder -->
                 <div style="display: flex; width: 100%; padding-left: 1rem;" id="picList">
+                    <!-- a list of images in the pictures folder -->
                     <ul id="pictures-text-list" class="scrollbar1">
                         <li id="antilope" class="text">Antilope</li>
                         <li id="barn-owl" class="text">Barn Owl</li>

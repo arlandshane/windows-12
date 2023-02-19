@@ -27,7 +27,8 @@ h1 {
     position: absolute;
     margin: 1rem;
     font-size: 1rem;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: lighter;
 }
 
 /*background wallpaper*/
@@ -95,7 +96,7 @@ h1 {
 
 .albumArt {
     margin: 0 .5rem;
-    border-radius: 100%;
+    border-radius: .2rem;
     filter: drop-shadow(0 0 .1rem rgb(125, 125, 125));
     width: inherit;
     height: inherit;
