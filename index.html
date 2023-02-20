@@ -25,9 +25,7 @@
 
 <body>
     <!-- background wallpaper -->
-    <img src="wallpaper.jpg" alt="" class="wallpaper">
-    <!-- logo -->
-    <h1>MADE BY <span id="arlandshane">ARLANDSHANE</span></h1>
+    <img id="wallpaper" src="wallpaper.jpg" alt="wallpaper" class="wallpaper">
     <div class="dateTime">
         <div style="text-align: center;" class="time"></div>
         <div style="text-align: center; color: black; opacity: .6;" class="weekDay"></div>
@@ -113,32 +111,42 @@
                 <div style="display: flex; text-align: center; justify-content: space-around;">
                     <div style="margin: 1vh 0; text-align: center;">
                         <p style="opacity: .8;" class="text">Shopping</p>
-                        <img style="border-radius: .5rem; margin-top: .2rem;" class="icon-sm" src="Images/Amazon.png"
-                            alt="">
+                        <a href="https://www.amazon.in/" target="_blank">
+                            <img style="border-radius: .5rem; margin-top: .2rem;" class="icon-sm"
+                                src="Images/Amazon.png" alt="">
+                        </a>
                     </div>
                     <hr class="hr3">
                     <div style="margin: 1vh 0; text-align: center;">
                         <p style="opacity: .8;" class="text">Writing</p>
-                        <img style="border-radius: .5rem; margin-top: .2rem;" class="icon-sm" src="Images/Docs.png"
-                            alt="">
+                        <a href="https://docs.google.com/" target="_blank">
+                            <img style="border-radius: .5rem; margin-top: .2rem;" class="icon-sm" src="Images/Docs.png"
+                                alt="">
+                        </a>
                     </div>
                     <hr class="hr3">
                     <div style="margin: 1vh 0; text-align: center;">
                         <p style="opacity: .8;" class="text">Listening</p>
-                        <img style="border-radius: 1rem; margin-top: .2rem;" class="icon-sm" src="Images/Spotify.png"
-                            alt="">
+                        <a href="https://open.spotify.com/" target="_blank">
+                            <img style="border-radius: 1rem; margin-top: .2rem;" class="icon-sm"
+                                src="Images/Spotify.png" alt="spotify">
+                        </a>
                     </div>
                     <hr class="hr3">
                     <div style="margin: 1vh 0; text-align: center;">
                         <p style="opacity: .8;" class="text">Watching</p>
-                        <img style="border-radius: .5rem; margin-top: .2rem;" class="icon-sm" src="Images/Netflix.png"
-                            alt="">
+                        <a href="https://www.netflix.com/in/" target="_blank">
+                            <img style="border-radius: .5rem; margin-top: .2rem;" class="icon-sm"
+                                src="Images/Netflix.png" alt="netflix">
+                        </a>
                     </div>
                     <hr class="hr3">
                     <div style="margin: 1vh 0; text-align: center;">
                         <p style="opacity: .8;" class="text">Reading</p>
-                        <img style="border-radius: 1rem; margin-top: .2rem;" class="icon-sm" src="Images/Wikipedia.jpg"
-                            alt="">
+                        <a href="https://www.wikipedia.org/" target="_blank">
+                            <img style="border-radius: 1rem; margin-top: .2rem;" class="icon-sm"
+                                src="Images/Wikipedia.jpg" alt="">
+                        </a>
                     </div>
                 </div>
                 <hr style="color: white;">
@@ -200,7 +208,7 @@
         <!-- start menu footer -->
         <div class="user">
             <!-- user name -->
-            <p class="text">Shane Arland</p>
+            <p id="arlandshane" class="arlandshane">ARLANDSHANE</p>
             <span style="display: flex; width: 10rem; justify-content: space-around;">
                 <!-- settings -->
                 <div style="background-color: lavender; margin: auto; border-radius: .4rem;">
@@ -247,11 +255,15 @@
                         <i style="margin: auto .5rem;" class="fa-solid fa-trash-can text"></i>
                     </div>
                 </div>
-                <div style="display: flex; justify-content: space-between; padding: .2rem; align-items: center;"
+                <!-- <div style="display: flex; justify-content: space-between; padding: .2rem; align-items: center;"
                     class="findFile">
-                    <!-- need to convert this into an input to enter file name and search -->
                     <p style="text-align: center; margin-left: .5rem;" class="text">Find a file</p>
-                    <span style="color: white; font-size: large;" class="material-symbols-outlined">search</span>
+                    
+                </div> -->
+                <div style="width: auto;" class="input-group">
+                    <span class="material-symbols-outlined">search</span>
+                    <input style="background: rgba(0, 0, 0, .3); border: none;" type="text" class="findFile"
+                        placeholder="Find a file">
                 </div>
             </div>
 
@@ -371,8 +383,6 @@
             </div>
         </div>
 
-        <div id="searching" class="searchOff"></div>
-
         <!-- taskbar -->
         <div class="icons contain">
             <i id="start" class="started"></i>
@@ -382,13 +392,6 @@
                     <div class="progress-bar w-100"></div>
                 </div>
             </div>
-            <!-- <div>
-                <img id="tabs" class="icon click" src="Images/Taskbar Icons/Tabs.png" alt="tabs">
-
-            </div>
-            <div>
-                <img id="search" class="icon click" src="Images/Taskbar Icons/Search.png" alt="search">
-            </div> -->
             <hr class="hr1">
             <div>
                 <img id="fileExp" class="icon click" src="Images/Taskbar Icons/FileExp.png" alt="file-explorer">
@@ -413,7 +416,6 @@
             <a href="https://wa.me/" target="_blank">
                 <img id="whatsapp" class="icon" src="Images/Taskbar Icons/Whatsapp.png" alt="whatsapp">
             </a>
-            <input type="text" placeholder="Search The Web" class="search-box">
         </div>
     </div>
 

@@ -6,7 +6,6 @@ let interval = null
 
 madeBy.mouseover(hyperplexed)
 function hyperplexed() {
-    madeBy.css('background-color', 'white').css('border-radius', '.2rem').css('opacity', '.8').css('padding', '0 .1rem')
     let iteration = 0
     clearInterval(interval)
     interval = setInterval(() => {
@@ -22,11 +21,15 @@ function hyperplexed() {
     }, 30)
 }
 
+$('#wallpaper').click(() => {
+    wifiBG()
+    volumeBG()
+    batteryBG()
+    blueFocused()
+})
+
 //jQuery elements
-const $search = $('#search')
-const $searching = $('#searching')
 const $windows = $('#windows')
-const $tabs = $('#tabs')
 const $fileExp = $('#fileExp')
 const $chrome = $('#chrome')
 const $photos = $('#photos')
@@ -34,7 +37,6 @@ const $twitter = $('#twitter')
 const $instagram = $('#instagram')
 const $whatsapp = $('#whatsapp')
 const $hr1 = $('.hr1')
-const $searchBox = $('.search-box')
 const $disConnect = $('.dis-connect')
 const $music = $('#music')
 const $pictures = $('#pictures')
@@ -132,7 +134,7 @@ $('#battery').click(() => {
 
 //expaning the battery div
 function batteryFocus() {
-    $('#wifi, #volume, #bluetooth').hide();
+    $('#wifi, #volume, #bluetooth').hide()
     navigator.getBattery().then(function checkLevel(battery) {
         const batteryLevel = parseInt(battery.level * 100)
         const batteryStatus = (battery.charging ? "Charging" : "Discharging")
@@ -142,16 +144,16 @@ function batteryFocus() {
             .addClass('batteryBar')
     }).catch(function (err) {
         console.error('Error getting battery information', err)
-    });
+    })
 }
 
 //collapsing the battery div
 function batteryBG() {
-    $('#wifi, #volume, #bluetooth').fadeIn();
+    $('#wifi, #volume, #bluetooth').fadeIn()
     $('#batteryState')
         .removeClass('batteryBar')
         .addClass('batteryBra')
-        .html('');
+        .html('')
 }
 
 //clicking the bluetooth icon
@@ -200,7 +202,34 @@ $('#play-button').click(() => {
     $('#pause-button').fadeIn('fast')
 })
 
-$('#previous-song').click()
+let currentSongIndex = 0
+
+// function to update UI with current song info
+function updateSongInfo() {
+    $('.albumArt').attr('src', imgSrc[currentSongIndex])
+    $('#now-playing-music').html(songNames[currentSongIndex])
+}
+
+//on clicking the next song icon
+$('#next-song').click(() => {
+    if (currentSongIndex === 10) {
+        currentSongIndex = 0
+    } else {
+        currentSongIndex++
+    }
+    updateSongInfo()
+})
+
+//on clicking the previous song icon
+$('#previous-song').click(() => {
+    if (currentSongIndex === 0) {
+        currentSongIndex = 10
+    } else {
+        --currentSongIndex
+    }
+    updateSongInfo()
+})
+
 
 //expanding the music div and collapsing the weather div
 function musicFocus() {
@@ -227,14 +256,6 @@ function weatherFocus() {
         .css('justify-contents', 'space-between')
     $('.musicDetails, .musicControls').hide()
 }
-
-//clicking the tabs and search icons removes the start and file explorer divs
-$('#tabs, #search').click(() => {
-    if ($('#start').hasClass('toStart') || $('#file').hasClass('f-off')) {
-        started()
-        fileOut()
-    }
-})
 
 //start functionality
 $('#windows').click(() => {
@@ -297,26 +318,10 @@ $disConnect.click(() => {
     $disConnect.text(currentText === 'Disconnect' ? 'Connect' : 'Disconnect')
 })
 
-//toggling search on/off
-$search.click(() => {
-    $searching.toggleClass('searchOn searchOff')
-    $windows.toggle()
-    $tabs.toggle()
-    $fileExp.toggle()
-    $chrome.toggle()
-    $photos.toggle()
-    $twitter.toggle()
-    $instagram.toggle()
-    $whatsapp.toggle()
-    $hr1.toggle()
-    $searchBox.toggle()
-    $search.css('margin-right', $searching.hasClass('searchOn') ? '0' : '')
-})
-
 //light colored theme
 function bisque() {
-    $('.contain, .start, .file-explorer').css('background', 'rgba(210, 210, 200, .8)')
-    $('.user').css('background', 'rgba(210, 210, 200, .6)')
+    $('.contain, .start, .file-explorer').css('background', 'rgba(250, 230, 250, .8)')
+    $('.user').css('background', 'rgba(250, 230, 250, .5)')
     $('p, .text, em').css('color', 'black').css('opacity', '.8')
     $('hr, .hr1, .hr2, .hr3').css('color', 'black').css('background-color', 'black')
     $('.progress-bar').css('background-color', 'salmon')
@@ -352,6 +357,7 @@ let theme = 0
 $('.shortcut').css('color', 'white').css('font-size', 'small')
 $disConnect.css('background', 'rgba(0, 0, 0, .4)').css('color', 'white')
 $('.material-symbols-outlined').css('color', 'white')
+
 //changing the theme
 $('#darkMode').click(() => {
     if (theme === 0) {
@@ -375,7 +381,6 @@ $music.click(() => {
     $musicTextList.fadeIn('fast')
     hidePictures()
 })
-
 //showing the pictures folder
 $pictures.click(() => {
     $('.pictures-folder').css('background', 'rgba(0, 0, 0, .3)')
@@ -386,143 +391,198 @@ $pictures.click(() => {
     $('#songList').hide()
 })
 
-//when the name of a picture in the pictures folder is clicked
-$('#antilope').click(() => {
-    $('#antilope-img').fadeIn('fast')
-    $('#pictures-preview >.photo').not('#antilope-img').hide()
-})
-$('#barn-owl').click(() => {
-    $('#barn-owl-img').fadeIn('fast')
-    $('#pictures-preview >.photo').not('#barn-owl-img').hide()
-})
-$('#polar-bear').click(() => {
-    $('#polar-bear-img').fadeIn('fast')
-    $('#pictures-preview >.photo').not('#polar-bear-img').hide()
-})
-$('#cheetah').click(() => {
-    $('#cheetah-img').fadeIn('fast')
-    $('#pictures-preview >.photo').not('#cheetah-img').hide()
-})
-$('#crab').click(() => {
-    $('#crab-img').fadeIn('fast')
-    $('#pictures-preview >.photo').not('#crab-img').hide()
-})
-$('#dog').click(() => {
-    $('#dog-img').fadeIn('fast')
-    $('#pictures-preview >.photo').not('#dog-img').hide()
-})
-$('#dolphin').click(() => {
-    $('#dolphin-img').fadeIn('fast')
-    $('#pictures-preview >.photo').not('#dolphin-img').hide()
-})
-$('#elephant').click(() => {
-    $('#elephant-img').fadeIn('fast')
-    $('#pictures-preview >.photo').not('#elephant-img').hide()
-})
-$('#humming-bird').click(() => {
-    $('#humming-bird-img').fadeIn('fast')
-    $('#pictures-preview >.photo').not('#humming-bird-img').hide()
-})
-$('#sloth').click(() => {
-    $('#sloth-img').fadeIn('fast')
-    $('#pictures-preview >.photo').not('#sloth-img').hide()
-})
-$('#sparrow').click(() => {
-    $('#sparrow-img').fadeIn('fast')
-    $('#pictures-preview >.photo').not('#sparrow-img').hide()
-})
-$('#squirrel').click(() => {
-    $('#squirrel-img').fadeIn('fast')
-    $('#pictures-preview >.photo').not('#squirrel-img').hide()
-})
+//an array of functions to display the pictures-preview in the pictures folder
+let picturesFolder = [
+    () => {
+        $('#antilope-img').fadeIn('fast')
+        $('#pictures-preview > .photo').not('#antilope-img').hide()
+    },
+    () => {
+        $('#barn-owl-img').fadeIn('fast')
+        $('#pictures-preview > .photo').not('#barn-owl-img').hide()
+    },
+    () => {
+        $('#polar-bear-img').fadeIn('fast')
+        $('#pictures-preview > .photo').not('#polar-bear-img').hide()
+    },
+    () => {
+        $('#cheetah-img').fadeIn('fast')
+        $('#pictures-preview > .photo').not('#cheetah-img').hide()
+    },
+    () => {
+        $('#crab-img').fadeIn('fast')
+        $('#pictures-preview > .photo').not('#crab-img').hide()
+    },
+    () => {
+        $('#dog-img').fadeIn('fast')
+        $('#pictures-preview > .photo').not('#dog-img').hide()
+    },
+    () => {
+        $('#dolphin-img').fadeIn('fast')
+        $('#pictures-preview > .photo').not('#dolphin-img').hide()
+    },
+    () => {
+        $('#elephant-img').fadeIn('fast')
+        $('#pictures-preview > .photo').not('#elephant-img').hide()
+    },
+    () => {
+        $('#humming-bird-img').fadeIn('fast')
+        $('#pictures-preview > .photo').not('#humming-bird-img').hide()
+    },
+    () => {
+        $('#sloth-img').fadeIn('fast')
+        $('#pictures-preview > .photo').not('#sloth-img').hide()
+    },
+    () => {
+        $('#sparrow-img').fadeIn('fast')
+        $('#pictures-preview > .photo').not('#sparrow-img').hide()
+    },
+    () => {
+        $('#squirrel-img').fadeIn('fast')
+        $('#pictures-preview > .photo').not('#squirrel-img').hide()
+    }
+]
 
-//hiding all the  images inside the pictures folder
-function hidePictures() {
-    $('#pictures-preview>.photo').hide()
-}
-
-let playMusic = [
-    function aasPaas() {
-        $('.albumArt').attr('src', 'Images/Music/Aas Pass.jpg')
-        $('#now-playing-music').html('Aas Paas<br><em>Mitraz</em>')
+//an array of image src files
+let imgSrc = [
+    'Images/Music/Aas Pass.jpg',
+    'Images/Music/Akhiyaan.jpg',
+    'Images/Music/Heeriye.jpg',
+    'Images/Music/Junoon.jpg',
+    'Images/Music/Kabhi Na Kabhi.jpg',
+    'Images/Music/Muskurahat.jpg',
+    'Images/Music/Panah.jpg',
+    'Images/Music/Raatein.jpg',
+    'Images/Music/Roi Na.jpg',
+    'Images/Music/Taara Tuteya.jpg',
+    'Images/Music/Tere Huve.jpg',
+]
+//an array of name of songs in the music folder
+let songNames = [
+    'Aas Paas<br><em>Mitraz</em>',
+    'Akhiyaan<br><em>Mitraz</em>',
+    'Heeriye<br><em>Mitraz</em>',
+    'Junoon<br><em>Mitraz</em>',
+    'Kabhi Na Kabhi<br><em>Mitraz</em>',
+    'Muskurahat<br><em>Mitraz</em>',
+    'Panah<br><em>Mitraz</em>',
+    'Raatein<br><em>Mitraz</em>',
+    'Roi Na<br><em>Mitraz</em>',
+    'Taara Tuteya<br><em>Mitraz</em>',
+    'Tere Huve<br><em>Mitraz</em>'
+]
+//an array of functions which change the albumArt, now-playing-music and displays the music-preview in the music folder
+let musicFolder = [
+    () => {
+        $('.albumArt').attr('src', imgSrc[0])
+        $('#now-playing-music').html(songNames[0])
+        currentSongIndex = 0
         $('#aas-paas-img').fadeIn('fast')
         $('#music-preview >.photo').not('#aas-paas-img').hide()
     },
-    function akhiyaan() {
-        $('.albumArt').attr('src', 'Images/Music/Akhiyaan.jpg')
-        $('#now-playing-music').html('Akhiyaan<br><em>Mitraz</em>')
+    () => {
+        $('.albumArt').attr('src', imgSrc[1])
+        $('#now-playing-music').html(songNames[1])
+        currentSongIndex = 1
         $('#akhiyaan-img').fadeIn('fast')
         $('#music-preview >.photo').not('#akhiyaan-img').hide()
     },
-    function heeriye() {
-        $('.albumArt').attr('src', 'Images/Music/Heeriye.jpg')
-        $('#now-playing-music').html('Heeriye<br><em>Mitraz</em>')
+    () => {
+        $('.albumArt').attr('src', imgSrc[2])
+        $('#now-playing-music').html(songNames[2])
+        currentSongIndex = 2
         $('#heeriye-img').fadeIn('fast')
         $('#music-preview >.photo').not('#heeriye-img').hide()
     },
-    function junoon() {
-        $('.albumArt').attr('src', 'Images/Music/Junoon.jpg')
-        $('#now-playing-music').html('Junoon<br><em>Mitraz</em>')
+    () => {
+        $('.albumArt').attr('src', imgSrc[3])
+        $('#now-playing-music').html(songNames[3])
+        currentSongIndex = 3
         $('#junoon-img').fadeIn('fast')
         $('#music-preview >.photo').not('#junoon-img').hide()
     },
-    function kabhiNaKabhi() {
-        $('.albumArt').attr('src', 'Images/Music/Kabhi Na Kabhi.jpg')
-        $('#now-playing-music').html('Kabhi Na Kabhi<br><em>Mitraz</em>')
+    () => {
+        $('.albumArt').attr('src', imgSrc[4])
+        $('#now-playing-music').html(songNames[4])
+        currentSongIndex = 4
         $('#kabhi-na-kabhi-img').fadeIn('fast')
         $('#music-preview >.photo').not('#kabhi-na-kabhi-img').hide()
     },
-    function muskurahat() {
-        $('.albumArt').attr('src', 'Images/Music/Muskurahat.jpg')
-        $('#now-playing-music').html('Muskurahat<br><em>Mitraz</em>')
+    () => {
+        $('.albumArt').attr('src', imgSrc[5])
+        $('#now-playing-music').html(songNames[5])
+        currentSongIndex = 5
         $('#muskurahat-img').fadeIn('fast')
         $('#music-preview >.photo').not('#muskurahat-img').hide()
     },
-    function panah() {
-        $('.albumArt').attr('src', 'Images/Music/Panah.jpg')
-        $('#now-playing-music').html('Panah<br><em>Mitraz</em>')
+    () => {
+        $('.albumArt').attr('src', imgSrc[6])
+        $('#now-playing-music').html(songNames[6])
+        currentSongIndex = 6
         $('#panah-img').fadeIn('fast')
         $('#music-preview >.photo').not('#panah-img').hide()
     },
-    function roiNa() {
-        $('.albumArt').attr('src', 'Images/Music/Roi Na.jpg')
-        $('#now-playing-music').html('Roi Na<br><em>Mitraz</em>')
+    () => {
+        $('.albumArt').attr('src', imgSrc[7])
+        $('#now-playing-music').html(songNames[7])
+        currentSongIndex = 7
         $('#roi-na-img').fadeIn('fast')
         $('#music-preview >.photo').not('#roi-na-img').hide()
     },
-    function raatien() {
-        $('.albumArt').attr('src', 'Images/Music/Raatein.jpg')
-        $('#now-playing-music').html('Raatein<br><em>Mitraz</em>')
+    () => {
+        $('.albumArt').attr('src', imgSrc[8])
+        $('#now-playing-music').html(songNames[8])
+        currentSongIndex = 8
         $('#raatein-img').fadeIn('fast')
         $('#music-preview >.photo').not('#raatein-img').hide()
     },
-    function taaraTuteya() {
-        $('.albumArt').attr('src', 'Images/Music/Taara Tuteya.jpg')
-        $('#now-playing-music').html('Taara Tuteya<br><em>Mitraz</em>')
+    () => {
+        $('.albumArt').attr('src', imgSrc[9])
+        $('#now-playing-music').html(songNames[9])
+        currentSongIndex = 9
         $('#taara-tuteya-img').fadeIn('fast')
         $('#music-preview >.photo').not('#taara-tuteya-img').hide()
     },
-    function tereHuve() {
-        $('.albumArt').attr('src', 'Images/Music/Tere Huve.jpg')
-        $('#now-playing-music').html('Tere Huve<br><em>Mitraz</em>')
+    () => {
+        $('.albumArt').attr('src', imgSrc[10])
+        $('#now-playing-music').html(songNames[10])
+        currentSongIndex = 10
         $('#tere-huve-img').fadeIn('fast')
         $('#music-preview >.photo').not('#tere-huve-img').hide()
     }
 ]
 
-//when the name of a song in the music folder is clicked
-$('#aas-paas').click(playMusic[0])
-$('#akhiyaan').click(playMusic[1])
-$('#heeriye').click(playMusic[2])
-$('#junoon').click(playMusic[3])
-$('#kabhi-na-kabhi').click(playMusic[4])
-$('#muskurahat').click(playMusic[5])
-$('#panah').click(playMusic[6])
-$('#roi-na').click(playMusic[7])
-$('#raatein').click(playMusic[8])
-$('#taara-tuteya').click(playMusic[9])
-$('#tere-huve').click(playMusic[10])
+//when the name of a picture in the pictures folder is clicked
+$('#antilope').dblclick(picturesFolder[0])
+$('#barn-owl').dblclick(picturesFolder[1])
+$('#polar-bear').dblclick(picturesFolder[2])
+$('#cheetah').dblclick(picturesFolder[3])
+$('#crab').dblclick(picturesFolder[4])
+$('#dog').dblclick(picturesFolder[5])
+$('#dolphin').dblclick(picturesFolder[6])
+$('#elephant').dblclick(picturesFolder[7])
+$('#humming-bird').dblclick(picturesFolder[8])
+$('#sloth').dblclick(picturesFolder[9])
+$('#sparrow').dblclick(picturesFolder[10])
+$('#squirrel').dblclick(picturesFolder[11])
 
+//when the name of a song in the music folder is clicked, a function from the musicFolder array is called
+$('#aas-paas').dblclick(musicFolder[0])
+$('#akhiyaan').dblclick(musicFolder[1])
+$('#heeriye').dblclick(musicFolder[2])
+$('#junoon').dblclick(musicFolder[3])
+$('#kabhi-na-kabhi').dblclick(musicFolder[4])
+$('#muskurahat').dblclick(musicFolder[5])
+$('#panah').dblclick(musicFolder[6])
+$('#roi-na').dblclick(musicFolder[7])
+$('#raatein').dblclick(musicFolder[8])
+$('#taara-tuteya').dblclick(musicFolder[9])
+$('#tere-huve').dblclick(musicFolder[10])
+
+//hiding all the  images inside the pictures folder
+function hidePictures() {
+    $('#pictures-preview>.photo').hide()
+}
 //hiding all the images inside the music folder
 function hideMusic() {
     $('#music-preview>.photo').hide()

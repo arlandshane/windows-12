@@ -23,8 +23,7 @@ ul li {
     padding: .5rem;
 }
 
-h1 {
-    position: absolute;
+.arlandshane {
     margin: 1rem;
     font-size: 1rem;
     font-family: 'Source Code Pro', monospace;
@@ -95,11 +94,11 @@ h1 {
 }
 
 .albumArt {
-    margin: 0 .5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: auto .5rem;
     border-radius: .2rem;
     filter: drop-shadow(0 0 .1rem rgb(125, 125, 125));
-    width: inherit;
-    height: inherit;
 }
 
 .side {
@@ -343,12 +342,20 @@ a .cut-copy-paste {
     opacity: .5;
 }
 
-.search-box {
-    margin: 0 .5rem;
-    padding: .5rem;
-    display: none;
-    border-radius: .3rem;
+/* find a file input box */
+.findFile::placeholder {
+    padding: 0 .3rem;
+    color: white;
+}
+
+/* search icon beside find a file input box */
+.input-group>.material-symbols-outlined {
+    color: white;
+    font-size: large;
+    background: rgba(0, 0, 0, .3);
     border: none;
+    padding: .2rem .3rem;
+    border-radius: .5rem 0 0 .5rem;
 }
 
 /*music folder items*/
