@@ -25,6 +25,7 @@
     <!-- jquery google cdn -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <!-- jquery ui google cdn -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
 </head>
 
@@ -242,19 +243,28 @@
 
         <!-- file explorer when expanded -->
         <div class="file-explorer panel">
-            <div class="file-head">
+            <div class="window-header">
                 <div style="display: inline-flex; align-items: center;">
                     <div
                         style="display: inline-flex; background: rgba(0, 0, 0, .3); width: fit-content; border-radius: .4rem; padding: .2rem .5rem;">
                         <span style="color: white; font-size: large;" class="material-symbols-outlined">home</span>
+                        <hr style="margin: 0 .3rem;" class="hr4">
                         <!-- need to change home to folder that is opened -->
-                        <p style="margin-left: .5rem;" class="text">Home</p>
+                        <p class="text">Home</p>
                     </div>
                     <i style="margin: 0 .5rem;" class="fa-solid fa-plus text"></i>
                 </div>
+                <div style="display: flex;" class="window-action-icons">
+                    <img src="Images/minimize.png" alt="minimize-window">
+                    <img src="Images/maximize.png" alt="maximize-window">
+                    <img src="Images/close.png" alt="close-window">
+                </div>
+            </div>
+            <hr style="margin: .5rem 0; color: white;">
+            <div class="file-head">
                 <div style="display: flex; justify-content: space-around; align-items: center;">
                     <div
-                        style="display: inline-flex; background: rgba(0, 0, 0, .3); width: fit-content; border-radius: .4rem; margin: 0 .5rem; padding: .2rem;">
+                        style="display: inline-flex; background: rgba(0, 0, 0, .3); width: fit-content; border-radius: .4rem; margin-right: .3rem; padding: .2rem;">
                         <span style="color: white;" class="material-symbols-outlined">add_circle</span>
                         <p style="margin: 0 .5rem;" class="text">New</p>
                     </div>
@@ -297,8 +307,7 @@
                         </span>
                         <span id="music" class="material-symbols-outlined music-folder">
                             library_music
-                            <p class="text" style="padding: .2rem;">Music
-                            </p>
+                            <p class="text" style="padding: .2rem;">Music</p>
                         </span>
                         <span id="videos" class="material-symbols-outlined videos-folder">
                             video_library
@@ -393,6 +402,24 @@
 
         <!-- browser -->
         <div class="browser-window panel">
+            <div class="window-header">
+                <div style="display: inline-flex; align-items: center;">
+                    <div
+                        style="display: inline-flex; background: rgba(0, 0, 0, .3); width: fit-content; border-radius: .4rem; padding: .2rem .5rem;">
+                        <span style="color: white; font-size: large;" class="material-symbols-outlined">home</span>
+                        <hr style="margin: 0 .3rem;" class="hr4">
+                        <!-- need to change home to folder that is opened -->
+                        <p class="text">Home</p>
+                    </div>
+                    <i style="margin: 0 .5rem;" class="fa-solid fa-plus text"></i>
+                </div>
+                <div style="display: flex;" class="window-action-icons">
+                    <img src="Images/minimize.png" alt="minimize-window">
+                    <img src="Images/maximize.png" alt="maximize-window">
+                    <img src="Images/close.png" alt="close-window">
+                </div>
+            </div>
+            <hr style="margin: .5rem 0; color: white;">
             <input id="search-the-web"
                 style="display: block; width: 100%; border-radius: .3rem; border: none; background-color: lavender;"
                 type="text" placeholder="Search The Web">
@@ -400,14 +427,33 @@
 
         <!-- settings -->
         <div class="settings panel">
+            <div class="window-header">
+                <div style="display: inline-flex; align-items: center;">
+                    <div
+                        style="display: inline-flex; background: rgba(0, 0, 0, .3); width: fit-content; border-radius: .4rem; padding: .2rem .5rem;">
+                        <span style="color: white; font-size: large;" class="material-symbols-outlined">home</span>
+                        <hr style="margin: 0 .3rem;" class="hr4">
+                        <!-- need to change home to folder that is opened -->
+                        <p class="text">Home</p>
+                    </div>
+                    <i style="margin: 0 .5rem;" class="fa-solid fa-plus text"></i>
+                </div>
+                <div style="display: flex;" class="window-action-icons">
+                    <img src="Images/minimize.png" alt="minimize-window">
+                    <img src="Images/maximize.png" alt="maximize-window">
+                    <img src="Images/close.png" alt="close-window">
+                </div>
+            </div>
+            <hr style="margin: .5rem 0; color: white;">
             <p>Settings</p>
         </div>
 
         <!-- taskbar -->
         <div class="icons contain">
             <i id="start" class="started"></i>
-            <i id="file" class="f-off"></i>
+            <i id="file" class="f-on"></i>
             <i id="browser" class="browser-closed"></i>
+            <i id="settings" class="settings-collapsed"></i>
             <div>
                 <img id="windows" class="icon click" src="Images/Taskbar Icons/Microsoft.webp" alt="start" defer>
                 <div class="progress">

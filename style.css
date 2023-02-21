@@ -195,6 +195,7 @@ ul li {
 
 .container-fluid {
     position: absolute;
+    height: fit-content;
     bottom: 2vh;
 }
 
@@ -223,6 +224,19 @@ ul li {
     filter: drop-shadow(0 0 .1rem rgb(125, 125, 125));
 }
 
+/* window-header */
+.window-header {
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+}
+
+.window-action-icons>img {
+    width: 1.8rem;
+    height: 1.8rem;
+    padding: .3rem;
+}
+
 /* start, file explorer, browser, and settings windows */
 .panel {
     background: rgba(0, 0, 0, .5);
@@ -242,13 +256,13 @@ ul li {
 /*file explorer expanded*/
 .file-explorer {
     width: 50vw;
-    padding: 1vw;
+    padding: .5rem .5rem 1rem .5rem;
     border-radius: .7rem;
 }
 
 /* browser expanded */
 .browser-window {
-    padding: 1rem;
+    padding: .5rem;
     width: 30vw;
     border-radius: .7rem;
 }
@@ -315,6 +329,14 @@ ul li {
     width: 1px;
     color: white;
     background-color: white;
+}
+
+.hr4 {
+    color: white;
+    background-color: white;
+    width: .1vw;
+    height: 1.3rem;
+    margin: auto .3rem;
 }
 
 /* connected devices div */
