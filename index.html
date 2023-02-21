@@ -7,30 +7,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Windows 12</title>
+    <!-- bootstrap cdn -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- montserrat google font cdn -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&display=swap" rel="stylesheet">
+    <!-- styles.css -->
     <link rel="stylesheet" href="style.css">
+    <!-- favicon -->
     <link rel="icon" type="image/png" href="logo.png">
+    <!-- google cdn for material icons -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,-25" />
+    <!-- font awesome cdn -->
     <script src="https://kit.fontawesome.com/cd9e976117.js" crossorigin="anonymous"></script>
+    <!-- jquery google cdn -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- jquery ui google cdn -->
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <!-- background wallpaper -->
+    <!------------ background wallpaper ------------>
     <img id="wallpaper" src="wallpaper.jpg" alt="wallpaper" class="wallpaper">
+
+    <!------------ time peice at the center of the screen ------------>
+
     <div class="dateTime">
         <div style="text-align: center;" class="time"></div>
         <div style="text-align: center; color: black; opacity: .6;" class="weekDay"></div>
     </div>
+
+    <!------------ left and right side ui ------------>
+
     <div class="taskbar">
+        <!-- left-side ui -->
         <div class="side">
             <!-- weather and location -->
             <div class="weather contain click">
@@ -46,20 +58,17 @@
             </div>
             <!-- music playing -->
             <div class="music contain click">
-                <!-- album art -->
-                <img class="albumArt" src="Images/Music/Aas Pass.jpg" alt="album-art">
-                <!-- music details -->
+                <img class="albumArt" src="Images/Music/Aas Pass.webp" alt="album-art">
                 <div class="musicDetails">
-                    <!-- song tile and artist name -->
                     <p style="margin: auto;" id="now-playing-music" class="text">Aas Paas<br><em>Mitraz</em></p>
                 </div>
                 <!-- music controls -->
-                <div class="musicControls" style="display: flex; margin: auto; height: 100%;">
+                <div class="musicControls">
                     <span id="previous-song" style="color: white; margin: auto .5vw;"
                         class="material-symbols-outlined">chevron_left</span>
-                    <span id="pause-button" style="color: white; margin: auto .5vw;"
+                    <span id="pause-song" style="color: white; margin: auto .5vw;"
                         class="material-symbols-outlined">pause</span>
-                    <span id="play-button" style="color: white; margin: auto .5vw;"
+                    <span id="play-song" style="color: white; margin: auto .5vw;"
                         class="material-symbols-outlined">play_arrow</span>
                     <span id="next-song" style="color: white; margin: auto .5vw;"
                         class="material-symbols-outlined">chevron_right</span>
@@ -67,6 +76,7 @@
             </div>
         </div>
 
+        <!-- right-side ui -->
         <div class="side">
             <!-- wifi, volume, battery, and bluetooth icons -->
             <div class="shortcut contain">
@@ -91,19 +101,24 @@
         </div>
     </div>
 
+    <!------------ taskbar and window panels ------------>
+
     <div class="container-fluid">
-        <div id="started" class="start">
+        <!-- start menu when expanded -->
+        <div id="started" class="start panel">
             <p style="margin-bottom: 1vh; display: inline-block;" class="text">Pinned Apps</p>
             <!-- list of pinned apps -->
             <div style="display: flexbox;">
                 <div style="display: flex; justify-content: space-around;">
-                    <img class="icon-sm" src="Images/Taskbar Icons/FileExp.png" alt="file-explorer">
-                    <img class="icon-sm" src="Images/Taskbar Icons/Chrome.png" alt="chrome">
-                    <img class="icon-sm" src="Images/Taskbar Icons/Photos.png" alt="photos">
-                    <img class="icon-sm" src="Images/Taskbar Icons/Twitter.png" alt="twitter"
+                    <img id="file-exp-shortcut" style="cursor: pointer;" class="icon-sm"
+                        src="Images/Taskbar Icons/FileExp.webp" alt="file-explorer">
+                    <img id="edge-shortcut" style="cursor: pointer;" class="icon-sm"
+                        src="Images/Taskbar Icons/Edge.webp" alt="edge">
+                    <img class="icon-sm" src="Images/Taskbar Icons/Photos.webp" alt="photos">
+                    <img class="icon-sm" src="Images/Taskbar Icons/Twitter.webp" alt="twitter"
                         style="border-radius: .5rem;">
-                    <img class="icon-sm" src="Images/Taskbar Icons/Instagram.png" alt="instagram">
-                    <img style="width: 2rem;" class="icon-sm" src="Images/Taskbar Icons/Whatsapp.png" alt="whatsapp">
+                    <img class="icon-sm" src="Images/Taskbar Icons/Instagram.webp" alt="instagram">
+                    <img style="width: 2rem;" class="icon-sm" src="Images/Taskbar Icons/Whatsapp.webp" alt="whatsapp">
                 </div>
                 <hr style="color: white;">
                 <p style="display: inline-block;" class="text">Continue</p>
@@ -157,9 +172,9 @@
                 </div>
                 <div style="display: flex;">
                     <!-- list of connected devices -->
-                    <div class="devices" style=" display: flex; justify-content: space-around; width: 50%;">
+                    <div class="devices">
                         <!-- need to change phone to laptop when viewing on phone -->
-                        <div style="text-align: center;">
+                        <div>
                             <span class="material-symbols-outlined">smartphone</span>
                             <p class="text">Pixel 7 Pro</p>
                             <div class="progress" style="height: .3rem; width: 6rem; margin-bottom: 1rem;">
@@ -171,7 +186,7 @@
                                 <div class="progress-bar w-25"></div>
                             </div>
                         </div>
-                        <div style="text-align: center;">
+                        <div>
                             <span class="material-symbols-outlined">tablet</span>
                             <p class="text">Pixel Slate</p>
                             <div class="progress" style="height: .3rem; width: 6rem; margin-bottom: 1rem;">
@@ -211,24 +226,22 @@
             <p id="arlandshane" class="arlandshane">ARLANDSHANE</p>
             <span style="display: flex; width: 10rem; justify-content: space-around;">
                 <!-- settings -->
-                <div style="background-color: lavender; margin: auto; border-radius: .4rem;">
+                <div id="settings-button">
                     <i style="padding: .3rem;" class="fa-solid fa-gear"></i>
                 </div>
                 <!-- dark mode -->
-                <div id="darkMode" class="dark"
-                    style="background-color: lavender; margin: auto; border-radius: .4rem; cursor: pointer;">
+                <div id="darkMode">
                     <i style="padding: .3rem .4rem;" class="fa-solid fa-moon"></i>
                 </div>
                 <!-- power menu -->
-                <div style="background-color: lavender; margin: auto; border-radius: .4rem;">
+                <div id="power-button">
                     <i style="padding: .3rem;" class="fa-solid fa-power-off"></i>
                 </div>
             </span>
         </div>
 
         <!-- file explorer when expanded -->
-        <div class="file-explorer">
-            <i id="file" class="f-on"></i>
+        <div class="file-explorer panel">
             <div class="file-head">
                 <div style="display: inline-flex; align-items: center;">
                     <div
@@ -247,19 +260,14 @@
                     </div>
                     <!-- cut, copy, and paste icons at the head of the file explorer -->
                     <div class="cut-copy-paste">
-                        <i style="margin: auto .5rem;" class="fa-regular fa-copy text"></i>
-                        <i style="margin: auto .5rem;" class="fa-regular fa-clipboard text"></i>
-                        <i style="margin: auto .5rem; transform: rotate(270deg);" class="fa-solid fa-scissors text"></i>
-                        <i style="margin: auto .5rem;" class="fa-regular fa-square-check text"></i>
-                        <i style="margin: auto .5rem;" class="fa-solid fa-share-from-square text"></i>
-                        <i style="margin: auto .5rem;" class="fa-solid fa-trash-can text"></i>
+                        <i class="fa-regular fa-copy text"></i>
+                        <i class=" fa-regular fa-clipboard text"></i>
+                        <i style="transform: rotate(270deg);" class="fa-solid fa-scissors text"></i>
+                        <i class=" fa-regular fa-square-check text"></i>
+                        <i class=" fa-solid fa-share-from-square text"></i>
+                        <i class=" fa-solid fa-trash-can text"></i>
                     </div>
                 </div>
-                <!-- <div style="display: flex; justify-content: space-between; padding: .2rem; align-items: center;"
-                    class="findFile">
-                    <p style="text-align: center; margin-left: .5rem;" class="text">Find a file</p>
-                    
-                </div> -->
                 <div style="width: auto;" class="input-group">
                     <span class="material-symbols-outlined">search</span>
                     <input style="background: rgba(0, 0, 0, .3); border: none;" type="text" class="findFile"
@@ -298,8 +306,8 @@
                         </span>
                     </div>
                     <hr style="color: white;">
-                    <!-- c: drive and progress bar -->
-                    <span style="display: flex; justify-content: space-around; align-items: center;">
+                    <!-- hard drive and progress bar -->
+                    <span class="hard-drive">
                         <p class="text">C:</p>
                         <img style="width: 2rem;" src="Images/CDrive.png" alt="">
                     </span>
@@ -307,7 +315,7 @@
                         <div style="width: 2rem; background-color: lavender;"></div>
                     </div>
                     <!-- google drive and progress bar -->
-                    <span style="display: flex; justify-content: space-around; align-items: center;">
+                    <span class="google-drive">
                         <p class="text">G:</p>
                         <img style="width: 2rem; transform: scale(.8);" src="Images/GDrive.png" alt="">
                     </span>
@@ -333,17 +341,17 @@
                     </ul>
                     <!-- preview of images in the music folder -->
                     <div id="music-preview" style="margin: auto;">
-                        <img id="aas-paas-img" class="photo" src="Images/Music/Aas Pass.jpg" alt="">
-                        <img id="akhiyaan-img" class="photo" src="Images/Music/Akhiyaan.jpg" alt="">
-                        <img id="heeriye-img" class="photo" src="Images/Music/Heeriye.jpg" alt="">
-                        <img id="junoon-img" class="photo" src="Images/Music/Junoon.jpg" alt="">
-                        <img id="kabhi-na-kabhi-img" class="photo" src="Images/Music/Kabhi Na Kabhi.jpg" alt="">
-                        <img id="muskurahat-img" class="photo" src="Images/Music/Muskurahat.jpg" alt="">
-                        <img id="panah-img" class="photo" src="Images/Music/Panah.jpg" alt="">
-                        <img id="raatein-img" class="photo" src="Images/Music/Raatein.jpg" alt="">
-                        <img id="roi-na-img" class="photo" src="Images/Music/Roi Na.jpg" alt="">
-                        <img id="taara-tuteya-img" class="photo" src="Images/Music/Taara Tuteya.jpg" alt="">
-                        <img id="tere-huve-img" class="photo" src="Images/Music/Tere Huve.jpg" alt="">
+                        <img id="aas-paas-img" class="photo" src="Images/Music/Aas Pass.webp" alt="">
+                        <img id="akhiyaan-img" class="photo" src="Images/Music/Akhiyaan.webp" alt="">
+                        <img id="heeriye-img" class="photo" src="Images/Music/Heeriye.webp" alt="">
+                        <img id="junoon-img" class="photo" src="Images/Music/Junoon.webp" alt="">
+                        <img id="kabhi-na-kabhi-img" class="photo" src="Images/Music/Kabhi Na Kabhi.webp" alt="">
+                        <img id="muskurahat-img" class="photo" src="Images/Music/Muskurahat.webp" alt="">
+                        <img id="panah-img" class="photo" src="Images/Music/Panah.webp" alt="">
+                        <img id="raatein-img" class="photo" src="Images/Music/Raatein.webp" alt="">
+                        <img id="roi-na-img" class="photo" src="Images/Music/Roi Na.webp" alt="">
+                        <img id="taara-tuteya-img" class="photo" src="Images/Music/Taara Tuteya.webp" alt="">
+                        <img id="tere-huve-img" class="photo" src="Images/Music/Tere Huve.webp" alt="">
                     </div>
                 </div>
 
@@ -383,38 +391,57 @@
             </div>
         </div>
 
+        <!-- browser -->
+        <div class="browser-window panel">
+            <input id="search-the-web"
+                style="display: block; width: 100%; border-radius: .3rem; border: none; background-color: lavender;"
+                type="text" placeholder="Search The Web">
+        </div>
+
+        <!-- settings -->
+        <div class="settings panel">
+            <p>Settings</p>
+        </div>
+
         <!-- taskbar -->
         <div class="icons contain">
             <i id="start" class="started"></i>
+            <i id="file" class="f-off"></i>
+            <i id="browser" class="browser-closed"></i>
             <div>
-                <img id="windows" class="icon click" src="Images/Taskbar Icons/Microsoft.png" alt="start">
+                <img id="windows" class="icon click" src="Images/Taskbar Icons/Microsoft.webp" alt="start" defer>
                 <div class="progress">
                     <div class="progress-bar w-100"></div>
                 </div>
             </div>
+
             <hr class="hr1">
             <div>
-                <img id="fileExp" class="icon click" src="Images/Taskbar Icons/FileExp.png" alt="file-explorer">
+                <img id="fileExp" class="icon click" src="Images/Taskbar Icons/FileExp.webp" alt="file-explorer" defer>
                 <div class="progress">
                     <div class="progress-bar w-100"></div>
                 </div>
             </div>
-            <a href="https://www.google.com" target="_blank">
-                <img id="chrome" class="icon" src="Images/Taskbar Icons/Chrome.png" alt="chrome">
-            </a>
+            <div>
+                <img id="edge" class="icon click" src="Images/Taskbar Icons/Edge.webp" alt="edge" defer>
+                <div class="progress">
+                    <div class="progress-bar w-100"></div>
+                </div>
+            </div>
+
+            <hr class="hr1">
             <a href="https://arlandshane.github.io/PROtotype/" target="_blank">
-                <img id="photos" class="icon" src="Images/Taskbar Icons/Photos.png" alt="photos">
+                <img id="photos" class="icon click" src="Images/Taskbar Icons/Photos.webp" alt="photos" defer>
             </a>
-            <hr class="hr1">
             <a href="https://twitter.com/" target="_blank">
-                <img id="twitter" style="border-radius: .5rem;" class="icon" src="Images/Taskbar Icons/Twitter.png"
-                    alt="twitter">
+                <img id="twitter" style="border-radius: .5rem;" class="icon" src="Images/Taskbar Icons/Twitter.webp"
+                    alt="twitter" defer>
             </a>
             <a href="https://www.instagram.com/" target="_blank">
-                <img id="instagram" class="icon" src="Images/Taskbar Icons/Instagram.png" alt="instagram">
+                <img id="instagram" class="icon" src="Images/Taskbar Icons/Instagram.webp" alt="instagram" defer>
             </a>
             <a href="https://wa.me/" target="_blank">
-                <img id="whatsapp" class="icon" src="Images/Taskbar Icons/Whatsapp.png" alt="whatsapp">
+                <img id="whatsapp" class="icon" src="Images/Taskbar Icons/Whatsapp.webp" alt="whatsapp" defer>
             </a>
         </div>
     </div>

@@ -6,6 +6,7 @@ body {
 p {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
+    font-display: swap;
 }
 
 /*normal sized text with .8 opacity*/
@@ -28,6 +29,7 @@ ul li {
     font-size: 1rem;
     font-family: 'Source Code Pro', monospace;
     font-weight: lighter;
+    font-display: swap;
 }
 
 /*background wallpaper*/
@@ -64,6 +66,7 @@ ul li {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bolder;
     font-size: 5rem;
+    font-display: swap;
     color: black;
     opacity: .6;
 }
@@ -91,14 +94,31 @@ ul li {
 
 .musicControls {
     margin-top: 1vh;
+    display: flex;
+    margin: auto;
+    height: 100%;
+}
+
+#previous-song,
+#play-song,
+#pause-song,
+#next-song {
+    transition-duration: 300ms;
+}
+
+#previous-song:hover,
+#play-song:hover,
+#pause-song:hover,
+#next-song:hover {
+    background: rgba(0, 0, 0, .3);
+    border-radius: .3rem;
 }
 
 .albumArt {
     width: 2.5rem;
     height: 2.5rem;
     margin: auto .5rem;
-    border-radius: .2rem;
-    filter: drop-shadow(0 0 .1rem rgb(125, 125, 125));
+    border-radius: 100%;
 }
 
 .side {
@@ -203,28 +223,45 @@ ul li {
     filter: drop-shadow(0 0 .1rem rgb(125, 125, 125));
 }
 
-/*start expanded*/
-.start {
+/* start, file explorer, browser, and settings windows */
+.panel {
     background: rgba(0, 0, 0, .5);
     backdrop-filter: blur(2px);
     margin: auto;
-    width: 50vw;
+    display: none;
     height: fit-content;
+}
+
+/*start expanded*/
+.start {
+    width: 50vw;
     padding: 1rem;
     border-radius: .7rem .7rem 0 0;
-    display: none;
 }
 
 /*file explorer expanded*/
 .file-explorer {
-    background: rgba(0, 0, 0, .5);
-    backdrop-filter: blur(2px);
-    margin: auto;
     width: 50vw;
-    height: fit-content;
     padding: 1vw;
     border-radius: .7rem;
-    display: none;
+}
+
+/* browser expanded */
+.browser-window {
+    padding: 1rem;
+    width: 30vw;
+    border-radius: .7rem;
+}
+
+/* settings window expanded */
+.settings {
+    padding: 1rem;
+    width: 40vw;
+    border-radius: .7rem;
+}
+
+.browser-window>input::placeholder {
+    padding: 0 .3rem;
 }
 
 .findFile {
@@ -280,11 +317,27 @@ ul li {
     background-color: white;
 }
 
+/* connected devices div */
+.devices {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    width: 50%;
+}
+
 /*connected devices icons*/
 .devices>div>.material-symbols-outlined {
     color: lavender;
     opacity: .9;
     transition-duration: 300ms;
+}
+
+.hard-drive,
+.google-drive {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 /*items of list highlight (desktop, downloads, documents, pictures, music, video)*/
@@ -334,12 +387,16 @@ ul li {
 }
 
 /*cut, copy, and paste icons*/
-a .cut-copy-paste {
+.cut-copy-paste {
     display: inline-flex;
     background: rgba(0, 0, 0, .3);
     border-radius: .4rem;
     padding: .4rem;
     opacity: .5;
+}
+
+.cut-copy-paste>i {
+    margin: auto .5rem;
 }
 
 /* find a file input box */
@@ -413,13 +470,22 @@ a .cut-copy-paste {
     transform: scale(1.1);
 }
 
-
 #windows+.progress,
-#fileExp+.progress {
+#fileExp+.progress,
+#edge+.progress {
     height: .1rem;
     width: 1rem;
     margin: .2rem auto 0;
     display: none;
+}
+
+#settings-button,
+#darkMode,
+#power-button {
+    background-color: lavender;
+    margin: auto;
+    border-radius: .4rem;
+    cursor: pointer;
 }
 
 
