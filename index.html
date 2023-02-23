@@ -21,17 +21,18 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,-25" />
     <!-- font awesome cdn -->
-    <script src="https://kit.fontawesome.com/cd9e976117.js" crossorigin="anonymous"></script>
+    <script rel="dns-prefetch" src="https://kit.fontawesome.com/cd9e976117.js" crossorigin="anonymous"></script>
     <!-- jquery google cdn -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <!-- jquery ui google cdn -->
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" defer></script>
 </head>
 
 <body>
     <!------------ background wallpaper ------------>
-    <img id="wallpaper" src="wallpaper.jpg" alt="wallpaper" class="wallpaper">
+
+    <img id="wallpaper" src="wallpaper.webp" alt="wallpaper" class="wallpaper">
 
     <!------------ time peice at the center of the screen ------------>
 
@@ -60,11 +61,11 @@
             <!-- music playing -->
             <div class="music contain click">
                 <img class="albumArt" src="Images/Music/Aas Pass.webp" alt="album-art">
-                <div class="musicDetails">
+                <div style="display: none;" class="musicDetails">
                     <p style="margin: auto;" id="now-playing-music" class="text">Aas Paas<br><em>Mitraz</em></p>
                 </div>
                 <!-- music controls -->
-                <div class="musicControls">
+                <div style="display: none;" class="musicControls">
                     <span id="previous-song" style="color: white; margin: auto .5vw;"
                         class="material-symbols-outlined">chevron_left</span>
                     <span id="pause-song" style="color: white; margin: auto .5vw;"
@@ -102,147 +103,201 @@
         </div>
     </div>
 
-    <!------------ taskbar and window panels ------------>
+    <!------------ taskbar ------------>
 
-    <div class="container-fluid">
-        <!-- start menu when expanded -->
-        <div id="started" class="start panel">
-            <p style="margin-bottom: 1vh; display: inline-block;" class="text">Pinned Apps</p>
-            <!-- list of pinned apps -->
-            <div style="display: flexbox;">
-                <div style="display: flex; justify-content: space-around;">
-                    <img id="file-exp-shortcut" style="cursor: pointer;" class="icon-sm"
-                        src="Images/Taskbar Icons/FileExp.webp" alt="file-explorer">
-                    <img id="edge-shortcut" style="cursor: pointer;" class="icon-sm"
-                        src="Images/Taskbar Icons/Edge.webp" alt="edge">
-                    <img class="icon-sm" src="Images/Taskbar Icons/Photos.webp" alt="photos">
-                    <img class="icon-sm" src="Images/Taskbar Icons/Twitter.webp" alt="twitter"
-                        style="border-radius: .5rem;">
-                    <img class="icon-sm" src="Images/Taskbar Icons/Instagram.webp" alt="instagram">
-                    <img style="width: 2rem;" class="icon-sm" src="Images/Taskbar Icons/Whatsapp.webp" alt="whatsapp">
-                </div>
-                <hr style="color: white;">
-                <p style="display: inline-block;" class="text">Continue</p>
-                <!-- continue shopping, writing, listening, watching, and reading -->
-                <div style="display: flex; text-align: center; justify-content: space-around;">
-                    <div style="margin: 1vh 0; text-align: center;">
-                        <p style="opacity: .8;" class="text">Shopping</p>
-                        <a href="https://www.amazon.in/" target="_blank">
-                            <img style="border-radius: .5rem; margin-top: .2rem;" class="icon-sm"
-                                src="Images/Amazon.png" alt="">
-                        </a>
-                    </div>
-                    <hr class="hr3">
-                    <div style="margin: 1vh 0; text-align: center;">
-                        <p style="opacity: .8;" class="text">Writing</p>
-                        <a href="https://docs.google.com/" target="_blank">
-                            <img style="border-radius: .5rem; margin-top: .2rem;" class="icon-sm" src="Images/Docs.png"
-                                alt="">
-                        </a>
-                    </div>
-                    <hr class="hr3">
-                    <div style="margin: 1vh 0; text-align: center;">
-                        <p style="opacity: .8;" class="text">Listening</p>
-                        <a href="https://open.spotify.com/" target="_blank">
-                            <img style="border-radius: 1rem; margin-top: .2rem;" class="icon-sm"
-                                src="Images/Spotify.png" alt="spotify">
-                        </a>
-                    </div>
-                    <hr class="hr3">
-                    <div style="margin: 1vh 0; text-align: center;">
-                        <p style="opacity: .8;" class="text">Watching</p>
-                        <a href="https://www.netflix.com/in/" target="_blank">
-                            <img style="border-radius: .5rem; margin-top: .2rem;" class="icon-sm"
-                                src="Images/Netflix.png" alt="netflix">
-                        </a>
-                    </div>
-                    <hr class="hr3">
-                    <div style="margin: 1vh 0; text-align: center;">
-                        <p style="opacity: .8;" class="text">Reading</p>
-                        <a href="https://www.wikipedia.org/" target="_blank">
-                            <img style="border-radius: 1rem; margin-top: .2rem;" class="icon-sm"
-                                src="Images/Wikipedia.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
-                <hr style="color: white;">
-                <!-- headings for connected devices and all apps -->
-                <div style="display: flex; justify-content: space-around;">
-                    <p style="display: inline-block; margin-bottom: 1vh;" class="text">My Devices</p>
-                    <p style="display: inline-block; margin-bottom: 1vh;" class="text">All Apps</p>
-                </div>
-                <div style="display: flex;">
-                    <!-- list of connected devices -->
-                    <div class="devices">
-                        <!-- need to change phone to laptop when viewing on phone -->
-                        <div>
-                            <span class="material-symbols-outlined">smartphone</span>
-                            <p class="text">Pixel 7 Pro</p>
-                            <div class="progress" style="height: .3rem; width: 6rem; margin-bottom: 1rem;">
-                                <div class="progress-bar w-100"></div>
-                            </div>
-                            <span class="material-symbols-outlined">watch </span>
-                            <p class="text">Pixel Watch</p>
-                            <div class="progress" style="height: .3rem; width: 6rem;">
-                                <div class="progress-bar w-25"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <span class="material-symbols-outlined">tablet</span>
-                            <p class="text">Pixel Slate</p>
-                            <div class="progress" style="height: .3rem; width: 6rem; margin-bottom: 1rem;">
-                                <div class="progress-bar w-75"></div>
-                            </div>
-                            <span class="material-symbols-outlined">headphones</span>
-                            <p class="text">Airpods Max</p>
-                            <div class="progress" style="height: .3rem; width: 6rem;">
-                                <div class="progress-bar w-50"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr style="width: .1px; background-color: white;">
-                    <!-- list of all apps -->
-                    <ul style="width: 50%; padding: 1rem; overflow: auto; height: 10rem;" class="scrollbar1">
-                        <!-- need to add more apps -->
-                        <li class="text">Discord</li>
-                        <li class="text">Figma</li>
-                        <li class="text">Gmail</li>
-                        <li class="text">Handbrake</li>
-                        <li class="text">Hyper</li>
-                        <li class="text">Notepad</li>
-                        <li class="text">Photoshop</li>
-                        <li class="text">Store</li>
-                        <li class="text">Reddit</li>
-                        <li class="text">Telegram</li>
-                        <li class="text">Visual Studio Code</li>
-                        <li class="text">VLC Media Player</li>
-                    </ul>
+    <section class="container-fluid">
+        <div class="icons contain">
+            <!-- taskbar -->
+            <i id="start" class="started"></i>
+            <i id="file" class="f-on"></i>
+            <i id="browser" class="browser-closed"></i>
+            <i id="settings" class="settings-collapsed"></i>
+            <div>
+                <img id="windows" class="icon click" src="Images/Taskbar Icons/Microsoft.webp" alt="start">
+                <div class="progress">
+                    <div class="progress-bar w-100"></div>
                 </div>
             </div>
+
+            <hr class="hr1">
+            <div>
+                <img id="fileExp" class="icon click" src="Images/Taskbar Icons/FileExp.webp" alt="file-explorer">
+                <div class="progress">
+                    <div class="progress-bar w-100"></div>
+                </div>
+            </div>
+            <div>
+                <img id="edge" class="icon click" src="Images/Taskbar Icons/Edge.webp" alt="edge">
+                <div class="progress">
+                    <div class="progress-bar w-100"></div>
+                </div>
+            </div>
+
+            <hr class="hr1">
+            <a href="https://arlandshane.github.io/PROtotype/" target="_blank">
+                <img id="photos" class="icon click" src="Images/Taskbar Icons/Photos.webp" alt="photos">
+            </a>
+            <a href="https://twitter.com/" target="_blank">
+                <img id="twitter" style="border-radius: .5rem;" class="icon" src="Images/Taskbar Icons/Twitter.webp"
+                    alt="twitter">
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+                <img id="instagram" class="icon" src="Images/Taskbar Icons/Instagram.webp" alt="instagram">
+            </a>
+            <a href="https://wa.me/" target="_blank">
+                <img id="whatsapp" class="icon" src="Images/Taskbar Icons/Whatsapp.webp" alt="whatsapp">
+            </a>
         </div>
-        <hr class="hr2">
-        <!-- start menu footer -->
-        <div class="user">
-            <!-- user name -->
-            <p id="arlandshane" class="arlandshane">ARLANDSHANE</p>
-            <span style="display: flex; width: 10rem; justify-content: space-around;">
-                <!-- settings -->
-                <div id="settings-button">
-                    <i style="padding: .3rem;" class="fa-solid fa-gear"></i>
+    </section>
+
+    <!------------ window panels ------------>
+
+    <section class="window-panel-section">
+        <div class="start-and-user">
+            <div id="started" class="start panel">
+                <p style="margin-bottom: 1vh; display: inline-block;" class="text">Pinned Apps</p>
+                <!-- list of pinned apps -->
+                <div style="display: flexbox;">
+                    <div style="display: flex; justify-content: space-around;">
+                        <img id="file-exp-shortcut" style="cursor: pointer;" class="icon-sm"
+                            src="Images/Taskbar Icons/FileExp.webp" alt="file-explorer">
+                        <img id="edge-shortcut" style="cursor: pointer;" class="icon-sm"
+                            src="Images/Taskbar Icons/Edge.webp" alt="edge">
+                        <img class="icon-sm" src="Images/Taskbar Icons/Photos.webp" alt="photos">
+                        <img class="icon-sm" src="Images/Taskbar Icons/Twitter.webp" alt="twitter"
+                            style="border-radius: .5rem;">
+                        <img class="icon-sm" src="Images/Taskbar Icons/Instagram.webp" alt="instagram">
+                        <img style="width: 2rem;" class="icon-sm" src="Images/Taskbar Icons/Whatsapp.webp"
+                            alt="whatsapp">
+                    </div>
+                    <hr style="color: white;">
+                    <p style="display: inline-block;" class="text">Continue</p>
+                    <!-- continue shopping, writing, listening, watching, and reading -->
+                    <div style="display: flex; text-align: center; justify-content: space-around;">
+                        <div style="margin: 1vh 0; text-align: center;">
+                            <p style="opacity: .8;" class="text">Shopping</p>
+                            <a href="https://www.amazon.in/" target="_blank">
+                                <img style="border-radius: .5rem; margin-top: .2rem;" class="icon-sm"
+                                    src="Images/Amazon.png" alt="">
+                            </a>
+                        </div>
+                        <hr class="hr3">
+                        <div style="margin: 1vh 0; text-align: center;">
+                            <p style="opacity: .8;" class="text">Writing</p>
+                            <a href="https://docs.google.com/" target="_blank">
+                                <img style="border-radius: .5rem; margin-top: .2rem;" class="icon-sm"
+                                    src="Images/Docs.png" alt="">
+                            </a>
+                        </div>
+                        <hr class="hr3">
+                        <div style="margin: 1vh 0; text-align: center;">
+                            <p style="opacity: .8;" class="text">Listening</p>
+                            <a href="https://open.spotify.com/" target="_blank">
+                                <img style="border-radius: 1rem; margin-top: .2rem;" class="icon-sm"
+                                    src="Images/Spotify.png" alt="spotify">
+                            </a>
+                        </div>
+                        <hr class="hr3">
+                        <div style="margin: 1vh 0; text-align: center;">
+                            <p style="opacity: .8;" class="text">Watching</p>
+                            <a href="https://www.netflix.com/in/" target="_blank">
+                                <img style="border-radius: .5rem; margin-top: .2rem;" class="icon-sm"
+                                    src="Images/Netflix.png" alt="netflix">
+                            </a>
+                        </div>
+                        <hr class="hr3">
+                        <div style="margin: 1vh 0; text-align: center;">
+                            <p style="opacity: .8;" class="text">Reading</p>
+                            <a href="https://www.wikipedia.org/" target="_blank">
+                                <img style="border-radius: 1rem; margin-top: .2rem;" class="icon-sm"
+                                    src="Images/Wikipedia.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <hr style="color: white;">
+                    <!-- headings for connected devices and all apps -->
+                    <div style="display: flex; justify-content: space-around;">
+                        <p style="display: inline-block; margin-bottom: 1vh;" class="text">My Devices</p>
+                        <p style="display: inline-block; margin-bottom: 1vh;" class="text">All Apps</p>
+                    </div>
+                    <div style="display: flex;">
+                        <!-- list of connected devices -->
+                        <div class="devices">
+                            <!-- need to change phone to laptop when viewing on phone -->
+                            <div>
+                                <span class="material-symbols-outlined">smartphone</span>
+                                <p class="text">Pixel 7 Pro</p>
+                                <div class="progress" style="height: .3rem; width: 6rem; margin-bottom: 1rem;">
+                                    <div class="progress-bar w-100"></div>
+                                </div>
+                                <span class="material-symbols-outlined">watch </span>
+                                <p class="text">Pixel Watch</p>
+                                <div class="progress" style="height: .3rem; width: 6rem;">
+                                    <div class="progress-bar w-25"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="material-symbols-outlined">tablet</span>
+                                <p class="text">Pixel Slate</p>
+                                <div class="progress" style="height: .3rem; width: 6rem; margin-bottom: 1rem;">
+                                    <div class="progress-bar w-75"></div>
+                                </div>
+                                <span class="material-symbols-outlined">headphones</span>
+                                <p class="text">Airpods Max</p>
+                                <div class="progress" style="height: .3rem; width: 6rem;">
+                                    <div class="progress-bar w-50"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr style="width: .1px; background-color: white;">
+                        <!-- list of all apps -->
+                        <ul style="width: 50%; padding: 1rem; overflow: auto; height: 10rem;" class="scrollbar1">
+                            <!-- need to add more apps -->
+                            <li class="text">Discord</li>
+                            <li class="text">Figma</li>
+                            <li class="text">Gmail</li>
+                            <li class="text">Handbrake</li>
+                            <li class="text">Hyper</li>
+                            <li class="text">Notepad</li>
+                            <li class="text">Photoshop</li>
+                            <li class="text">Store</li>
+                            <li class="text">Reddit</li>
+                            <li class="text">Telegram</li>
+                            <li class="text">Visual Studio Code</li>
+                            <li class="text">VLC Media Player</li>
+                        </ul>
+                    </div>
                 </div>
-                <!-- dark mode -->
-                <div id="darkMode">
-                    <i style="padding: .3rem .4rem;" class="fa-solid fa-moon"></i>
-                </div>
-                <!-- power menu -->
-                <div id="power-button">
-                    <i style="padding: .3rem;" class="fa-solid fa-power-off"></i>
-                </div>
-            </span>
+            </div>
+            <hr class="hr2">
+            <!-- start menu footer -->
+            <div class="user">
+                <!-- user name -->
+                <a style="text-decoration: none; display: flex; color: inherit;" href="https://github.com/arlandshane">
+                    <p id="arlandshane" class="arlandshane">ARLANDSHANE</p>
+                    <tool-tip id="tooltip-content" tip-positon>Go To The Github Repo</tool-tip>
+                </a>
+                <span style="display: flex; width: 10rem; justify-content: space-around;">
+                    <!-- settings -->
+                    <div id="settings-button">
+                        <i style="padding: .3rem;" class="fa-solid fa-gear"></i>
+                    </div>
+                    <!-- dark mode -->
+                    <div id="darkMode">
+                        <i style="padding: .3rem .4rem;" class="fa-solid fa-moon"></i>
+                    </div>
+                    <!-- power menu -->
+                    <div id="power-button">
+                        <i style="padding: .3rem;" class="fa-solid fa-power-off"></i>
+                    </div>
+                </span>
+            </div>
         </div>
 
+
+
         <!-- file explorer when expanded -->
-        <div class="file-explorer panel">
+        <div style="position: absolute; top: 5rem; left: 5rem;" class="file-explorer panel">
             <div class="window-header">
                 <div style="display: inline-flex; align-items: center;">
                     <div
@@ -250,7 +305,7 @@
                         <span style="color: white; font-size: large;" class="material-symbols-outlined">home</span>
                         <hr style="margin: 0 .3rem;" class="hr4">
                         <!-- need to change home to folder that is opened -->
-                        <p class="text">Home</p>
+                        <p id="FE-window-name" class="text">Home</p>
                     </div>
                     <i style="margin: 0 .5rem;" class="fa-solid fa-plus text"></i>
                 </div>
@@ -285,119 +340,120 @@
                 </div>
             </div>
 
-            <!-- list of folders in file explorer -->
-            <div style="display: flex; align-items: center;">
-                <div style="margin-bottom: 1vh;">
-                    <div class="highlight" style="display: flex; flex-wrap: wrap; flex-direction: column;">
-                        <span class="material-symbols-outlined desktop-folder">
-                            computer
-                            <p class="text" style="padding: .2rem;">Desktop</p>
+            <!-- list of folders in file explorer and the contents inside them -->
+            <div style="display: flex;">
+                <!-- list of folders in file explorer -->
+                <div style="display: flex; align-items: center; width: auto;">
+                    <div style="margin-bottom: 1vh;">
+                        <div class="highlight" style="display: flex; flex-wrap: wrap; flex-direction: column;">
+                            <span class="material-symbols-outlined desktop-folder">
+                                computer
+                                <p class="text" style="padding: .2rem;">Desktop</p>
+                            </span>
+                            <span class="material-symbols-outlined downloads-folder">
+                                download
+                                <p class="text" style="padding: .2rem;">Downloads</p>
+                            </span>
+                            <span class="material-symbols-outlined documents-folder">
+                                description
+                                <p class="text" style="padding: .2rem;">Documents</p>
+                            </span>
+                            <span id="pictures" class="material-symbols-outlined pictures-folder">
+                                photo_library
+                                <p class="text" style="padding: .2rem;">Pictures</p>
+                            </span>
+                            <span id="music" class="material-symbols-outlined music-folder">
+                                library_music
+                                <p class="text" style="padding: .2rem;">Music</p>
+                            </span>
+                            <span id="videos" class="material-symbols-outlined videos-folder">
+                                video_library
+                                <p class="text" style="padding: .2rem;">Videos</p>
+                            </span>
+                        </div>
+                        <hr style="color: white;">
+                        <!-- hard drive and progress bar -->
+                        <span class="hard-drive">
+                            <p class="text">C - Drive:</p>
+                            <img style="width: 2rem;" src="Images/CDrive.png" alt="">
                         </span>
-                        <span class="material-symbols-outlined downloads-folder">
-                            download
-                            <p class="text" style="padding: .2rem;">Downloads</p>
+                        <div style="height: .5rem; width: 5rem; margin: 0 auto .5rem; opacity: .8;" class="progress">
+                            <div style="width: 2rem; background-color: lavender;"></div>
+                        </div>
+                        <!-- google drive and progress bar -->
+                        <span class="google-drive">
+                            <p class="text">G - Drive:</p>
+                            <img style="width: 2rem; transform: scale(.8);" src="Images/GDrive.png" alt="">
                         </span>
-                        <span class="material-symbols-outlined documents-folder">
-                            description
-                            <p class="text" style="padding: .2rem;">Documents</p>
-                        </span>
-                        <span id="pictures" class="material-symbols-outlined pictures-folder">
-                            photo_library
-                            <p class="text" style="padding: .2rem;">Pictures</p>
-                        </span>
-                        <span id="music" class="material-symbols-outlined music-folder">
-                            library_music
-                            <p class="text" style="padding: .2rem;">Music</p>
-                        </span>
-                        <span id="videos" class="material-symbols-outlined videos-folder">
-                            video_library
-                            <p class="text" style="padding: .2rem;">Videos</p>
-                        </span>
-                    </div>
-                    <hr style="color: white;">
-                    <!-- hard drive and progress bar -->
-                    <span class="hard-drive">
-                        <p class="text">C:</p>
-                        <img style="width: 2rem;" src="Images/CDrive.png" alt="">
-                    </span>
-                    <div style="height: .5rem; width: 5rem; margin: 0 auto .5rem; opacity: .8;" class="progress">
-                        <div style="width: 2rem; background-color: lavender;"></div>
-                    </div>
-                    <!-- google drive and progress bar -->
-                    <span class="google-drive">
-                        <p class="text">G:</p>
-                        <img style="width: 2rem; transform: scale(.8);" src="Images/GDrive.png" alt="">
-                    </span>
-                    <div style="height: .5rem; width: 5rem; margin: auto; opacity: .8;" class="progress">
-                        <div style="width: 3rem; background-color:lavender;"></div>
-                    </div>
-                </div>
-
-                <div style="display: flex; width: 100%; padding-left: 1rem;" id="songList">
-                    <!-- a list of songs in the music folder -->
-                    <ul id="music-text-list" class="scrollbar1">
-                        <li id="aas-paas" class="text">Aas Pass - Mitraz</li>
-                        <li id="akhiyaan" class="text">Akhiyaan - Mitraz</li>
-                        <li id="heeriye" class="text">Heeriye - Mitraz</li>
-                        <li id="junoon" class="text">Junoon - Mitraz</li>
-                        <li id="kabhi-na-kabhi" class="text">Kabhi Na Kabhi - Mitraz</li>
-                        <li id="muskurahat" class="text">Muskurahat - Mitraz</li>
-                        <li id="panah" class="text">Panah - Mitraz</li>
-                        <li id="raatein" class="text">Raatein - Mitraz</li>
-                        <li id="roi-na" class="text">Roi Na - Mitraz</li>
-                        <li id="taara-tuteya" class="text">Taara Tuteya - Mitraz</li>
-                        <li id="tere-huve" class="text">Tere Huve - Mitraz</li>
-                    </ul>
-                    <!-- preview of images in the music folder -->
-                    <div id="music-preview" style="margin: auto;">
-                        <img id="aas-paas-img" class="photo" src="Images/Music/Aas Pass.webp" alt="">
-                        <img id="akhiyaan-img" class="photo" src="Images/Music/Akhiyaan.webp" alt="">
-                        <img id="heeriye-img" class="photo" src="Images/Music/Heeriye.webp" alt="">
-                        <img id="junoon-img" class="photo" src="Images/Music/Junoon.webp" alt="">
-                        <img id="kabhi-na-kabhi-img" class="photo" src="Images/Music/Kabhi Na Kabhi.webp" alt="">
-                        <img id="muskurahat-img" class="photo" src="Images/Music/Muskurahat.webp" alt="">
-                        <img id="panah-img" class="photo" src="Images/Music/Panah.webp" alt="">
-                        <img id="raatein-img" class="photo" src="Images/Music/Raatein.webp" alt="">
-                        <img id="roi-na-img" class="photo" src="Images/Music/Roi Na.webp" alt="">
-                        <img id="taara-tuteya-img" class="photo" src="Images/Music/Taara Tuteya.webp" alt="">
-                        <img id="tere-huve-img" class="photo" src="Images/Music/Tere Huve.webp" alt="">
+                        <div style="height: .5rem; width: 5rem; margin: auto; opacity: .8;" class="progress">
+                            <div style="width: 3rem; background-color:lavender;"></div>
+                        </div>
                     </div>
                 </div>
 
-                <div style="display: flex; width: 100%; padding-left: 1rem;" id="picList">
-                    <!-- a list of images in the pictures folder -->
-                    <ul id="pictures-text-list" class="scrollbar1">
-                        <li id="antilope" class="text">Antilope</li>
-                        <li id="barn-owl" class="text">Barn Owl</li>
-                        <li id="polar-bear" class="text">Polar Bear</li>
-                        <li id="cheetah" class="text">Cheetah</li>
-                        <li id="crab" class="text">Crab</li>
-                        <li id="dog" class="text">Dog</li>
-                        <li id="dolphin" class="text">Dolphin</li>
-                        <li id="elephant" class="text">Elephant</li>
-                        <li id="humming-bird" class="text">Humming Brid</li>
-                        <li id="sloth" class="text">Sloth</li>
-                        <li id="sparrow" class="text">Sparrow</li>
-                        <li id="squirrel" class="text">Squirrel</li>
-                    </ul>
-                    <!-- preview of images in the pictures folder -->
-                    <div id="pictures-preview" style="margin: auto;">
-                        <img id="antilope-img" class="photo" src="Images/Animals/Antilope.jpg" alt="">
-                        <img id="barn-owl-img" class="photo" src="Images/Animals/Barn Owl.jpg" alt="">
-                        <img id="polar-bear-img" class="photo" src="Images/Animals/Polar Bear.jpg" alt="">
-                        <img id="cheetah-img" class="photo" src="Images/Animals/Cheetah.jpg" alt="">
-                        <img id="crab-img" class="photo" src="Images/Animals/Crab.jpg" alt="">
-                        <img id="dog-img" class="photo" src="Images/Animals/Dog.jpg" alt="">
-                        <img id="dolphin-img" class="photo" src="Images/Animals/Dolphin.jpg" alt="">
-                        <img id="leopard-img" class="photo" src="Images/Animals/Leopard.jpg" alt="">
-                        <img id="elephant-img" class="photo" src="Images/Animals/Elephant.jpg" alt="">
-                        <img id="humming-bird-img" class="photo" src="Images/Animals/Humming Bird.jpg" alt="">
-                        <img id="sloth-img" class="photo" src="Images/Animals/Sloth.jpg" alt="">
-                        <img id="sparrow-img" class="photo" src="Images/Animals/Sparrow.jpg" alt="">
-                        <img id="squirrel-img" class="photo" src="Images/Animals/Squirrel.jpg" alt="">
+                <!-- content inside folders -->
+                <div style="margin: auto 1rem auto 0; height: 100%; width: 100%;">
+                    <div id="songList">
+                        <!-- a list of songs in the music folder -->
+                        <ul id="music-text-list" class="scrollbar1">
+                            <li id="aas-paas" class="text">Aas Pass - Mitraz</li>
+                            <li id="akhiyaan" class="text">Akhiyaan - Mitraz</li>
+                            <li id="heeriye" class="text">Heeriye - Mitraz</li>
+                            <li id="junoon" class="text">Junoon - Mitraz</li>
+                            <li id="kabhi-na-kabhi" class="text">Kabhi Na Kabhi - Mitraz</li>
+                            <li id="muskurahat" class="text">Muskurahat - Mitraz</li>
+                            <li id="panah" class="text">Panah - Mitraz</li>
+                            <li id="raatein" class="text">Raatein - Mitraz</li>
+                            <li id="roi-na" class="text">Roi Na - Mitraz</li>
+                            <li id="taara-tuteya" class="text">Taara Tuteya - Mitraz</li>
+                            <li id="tere-huve" class="text">Tere Huve - Mitraz</li>
+                        </ul>
+                        <!-- preview of images in the music folder -->
+                        <div id="music-preview" style="margin: auto;">
+                            <img id="aas-paas-img" class="photo" src="Images/Music/Aas Pass.webp" alt="">
+                            <img id="akhiyaan-img" class="photo" src="Images/Music/Akhiyaan.webp" alt="">
+                            <img id="heeriye-img" class="photo" src="Images/Music/Heeriye.webp" alt="">
+                            <img id="junoon-img" class="photo" src="Images/Music/Junoon.webp" alt="">
+                            <img id="kabhi-na-kabhi-img" class="photo" src="Images/Music/Kabhi Na Kabhi.webp" alt="">
+                            <img id="muskurahat-img" class="photo" src="Images/Music/Muskurahat.webp" alt="">
+                            <img id="panah-img" class="photo" src="Images/Music/Panah.webp" alt="">
+                            <img id="raatein-img" class="photo" src="Images/Music/Raatein.webp" alt="">
+                            <img id="roi-na-img" class="photo" src="Images/Music/Roi Na.webp" alt="">
+                            <img id="taara-tuteya-img" class="photo" src="Images/Music/Taara Tuteya.webp" alt="">
+                            <img id="tere-huve-img" class="photo" src="Images/Music/Tere Huve.webp" alt="">
+                        </div>
+                    </div>
+
+                    <div id="picList">
+                        <!-- a list of images in the pictures folder -->
+                        <ul id="pictures-text-list" class="scrollbar1">
+                            <li id="antilope" class="text">Unsplash 1</li>
+                            <li id="barn-owl" class="text">Unsplash 2</li>
+                            <li id="polar-bear" class="text">Unsplash 3</li>
+                            <li id="cheetah" class="text">Unsplash 4</li>
+                            <li id="crab" class="text">Unsplash 5</li>
+                            <li id="dog" class="text">Unsplash 6</li>
+                            <li id="dolphin" class="text">Unsplash 7</li>
+                            <li id="elephant" class="text">Unsplash 8</li>
+                            <li id="humming-bird" class="text">Unsplash 9</li>
+                        </ul>
+                        <!-- preview of images in the pictures folder -->
+                        <div id="pictures-preview" style="margin: auto; height: auto;">
+                            <img id="antilope-img" class="photo" src="Images/Unsplash/1.webp" alt="">
+                            <img id="barn-owl-img" class="photo" src="Images/Unsplash/2.webp" alt="">
+                            <img id="polar-bear-img" class="photo" src="Images/Unsplash/3.webp" alt="">
+                            <img id="cheetah-img" class="photo" src="Images/Unsplash/4.webp" alt="">
+                            <img id="crab-img" class="photo" src="Images/Unsplash/5.webp" alt="">
+                            <img id="dog-img" class="photo" src="Images/Unsplash/6.webp" alt="">
+                            <img id="dolphin-img" class="photo" src="Images/Unsplash/7.webp" alt="">
+                            <img id="leopard-img" class="photo" src="Images/Unsplash/8.webp" alt="">
+                            <img id="elephant-img" class="photo" src="Images/Unsplash/9.webp" alt="">
+                            <img id="humming-bird-img" class="photo" src="Images/Unsplash/10.webp" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
         <!-- browser -->
@@ -447,50 +503,7 @@
             <hr style="margin: .5rem 0; color: white;">
             <p>Settings</p>
         </div>
-
-        <!-- taskbar -->
-        <div class="icons contain">
-            <i id="start" class="started"></i>
-            <i id="file" class="f-on"></i>
-            <i id="browser" class="browser-closed"></i>
-            <i id="settings" class="settings-collapsed"></i>
-            <div>
-                <img id="windows" class="icon click" src="Images/Taskbar Icons/Microsoft.webp" alt="start" defer>
-                <div class="progress">
-                    <div class="progress-bar w-100"></div>
-                </div>
-            </div>
-
-            <hr class="hr1">
-            <div>
-                <img id="fileExp" class="icon click" src="Images/Taskbar Icons/FileExp.webp" alt="file-explorer" defer>
-                <div class="progress">
-                    <div class="progress-bar w-100"></div>
-                </div>
-            </div>
-            <div>
-                <img id="edge" class="icon click" src="Images/Taskbar Icons/Edge.webp" alt="edge" defer>
-                <div class="progress">
-                    <div class="progress-bar w-100"></div>
-                </div>
-            </div>
-
-            <hr class="hr1">
-            <a href="https://arlandshane.github.io/PROtotype/" target="_blank">
-                <img id="photos" class="icon click" src="Images/Taskbar Icons/Photos.webp" alt="photos" defer>
-            </a>
-            <a href="https://twitter.com/" target="_blank">
-                <img id="twitter" style="border-radius: .5rem;" class="icon" src="Images/Taskbar Icons/Twitter.webp"
-                    alt="twitter" defer>
-            </a>
-            <a href="https://www.instagram.com/" target="_blank">
-                <img id="instagram" class="icon" src="Images/Taskbar Icons/Instagram.webp" alt="instagram" defer>
-            </a>
-            <a href="https://wa.me/" target="_blank">
-                <img id="whatsapp" class="icon" src="Images/Taskbar Icons/Whatsapp.webp" alt="whatsapp" defer>
-            </a>
-        </div>
-    </div>
+    </section>
 
     <script src="index.js"></script>
 </body>

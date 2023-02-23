@@ -1,5 +1,6 @@
 body {
     user-select: none;
+    overflow: hidden;
 }
 
 /*paragraph element does not have a margin*/
@@ -25,7 +26,7 @@ ul li {
 }
 
 .arlandshane {
-    margin: 1rem;
+    margin: auto .5rem;
     font-size: 1rem;
     font-family: 'Source Code Pro', monospace;
     font-weight: lighter;
@@ -35,9 +36,9 @@ ul li {
 /*background wallpaper*/
 .wallpaper {
     position: absolute;
-    background-size: contain;
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 /*shows a pointer when the mouse hovers over a div containing this classed*/
@@ -59,6 +60,23 @@ ul li {
     background: rgba(0, 0, 0, .5);
     backdrop-filter: blur(1px);
     border-radius: 0.5rem;
+}
+
+#tooltip-content {
+    display: none;
+    white-space: nowrap;
+    height: fit-content;
+    color: inherit;
+    padding: 0 .3rem;
+    border: .1px solid;
+    border-radius: .3rem;
+    font-size: .8rem;
+    margin: auto 0;
+    transition-duration: 300ms;
+}
+
+#tooltip-trigger:hover+#tooltip-content {
+    display: inline-block;
 }
 
 /*time displayed at the center of the screen*/
@@ -246,11 +264,31 @@ ul li {
     height: fit-content;
 }
 
+/* start and user */
+.start-and-user {
+    transform: translate3d(0, -.5rem, 0);
+}
+
 /*start expanded*/
 .start {
     width: 50vw;
     padding: 1rem;
     border-radius: .7rem .7rem 0 0;
+}
+
+/*user bar under the start menu showing the name of the user and other options*/
+.user {
+    background: rgba(0, 0, 0, .3);
+    backdrop-filter: blur(2px);
+    margin: auto;
+    width: 50vw;
+    height: 2.5rem;
+    padding: 0 1rem;
+    border-radius: 0 0 1rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    display: none;
 }
 
 /*file explorer expanded*/
@@ -293,21 +331,6 @@ ul li {
     margin-bottom: .5rem;
 }
 
-/*user bar under the start menu showing the name of the user and other options*/
-.user {
-    background: rgba(0, 0, 0, .3);
-    backdrop-filter: blur(2px);
-    margin: auto;
-    width: 50vw;
-    height: 2.5rem;
-    padding: 0 1rem;
-    border-radius: 0 0 1rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    display: none;
-}
-
 /*horizontal rule in the taskbar, seperating the windows funtions, windows apps, and installed apps*/
 .hr1 {
     color: white;
@@ -331,6 +354,7 @@ ul li {
     background-color: white;
 }
 
+/*vertical rule seperating the home icon from the window name*/
 .hr4 {
     color: white;
     background-color: white;
@@ -437,57 +461,39 @@ ul li {
     border-radius: .5rem 0 0 .5rem;
 }
 
-/*music folder items*/
-#songList {
-    overflow: auto;
-    height: 20rem;
-    padding: 1rem 0;
-    display: none;
+#songList,
+#picList {
+    padding: 1rem 0 1rem 1rem;
+    display: flex;
+    width: 100%;
+    height: auto;
 }
 
-#music-text-list {
+#music-text-list,
+#pictures-text-list {
+    overflow: auto;
+    height: 17rem;
     display: none;
-    margin: 0;
+    margin: auto 0;
     overflow-x: hidden;
     padding: 0;
 }
 
+#music-text-list>.text,
+#pictures-text-list>.text {
+    margin-right: 1rem;
+}
+
+#pictures-preview>.photo,
 #music-preview>.photo {
     display: none;
-    height: 10rem;
+    max-width: 200px;
     border-radius: .5rem;
     margin: .5rem;
     transition-duration: 300ms;
 }
 
-#music-preview>.photo:hover {
-    transform: scale(1.1);
-}
-
-/*pictures folder items*/
-#picList {
-    overflow: auto;
-    height: 20rem;
-    padding: 1rem 0;
-    display: none;
-}
-
-#pictures-text-list {
-    display: none;
-    margin: 0;
-    overflow-x: hidden;
-    padding: 0;
-}
-
-/*each picture in the pictures folder*/
-#pictures-preview>.photo {
-    display: none;
-    border-radius: .5rem;
-    margin: .5rem;
-    transition-duration: 300ms;
-}
-
-/*hovering over each photo in the pictures folder*/
+#music-preview>.photo:hover,
 #pictures-preview>.photo:hover {
     transform: scale(1.1);
 }
