@@ -52,6 +52,7 @@ $(document).ready(() => {
     let imgSrc = [
         'Images/Music/Aas Pass.webp',
         'Images/Music/Akhiyaan.webp',
+        'Images/Music/Ek Vaari.webp',
         'Images/Music/Heeriye.webp',
         'Images/Music/Junoon.webp',
         'Images/Music/Kabhi Na Kabhi.webp',
@@ -67,6 +68,7 @@ $(document).ready(() => {
     let songNames = [
         'Aas Paas<br><em>Mitraz</em>',
         'Akhiyaan<br><em>Mitraz</em>',
+        'Ek Vaari<br><em>Mitraz</em>',
         'Heeriye<br><em>Mitraz</em>',
         'Junoon<br><em>Mitraz</em>',
         'Kabhi Na Kabhi<br><em>Mitraz</em>',
@@ -99,62 +101,69 @@ $(document).ready(() => {
             $('.albumArt').attr('src', imgSrc[2])
             $('#now-playing-music').html(songNames[2])
             currentSongIndex = 2
-            $('#heeriye-img').fadeIn('fast')
-            $('#music-preview >.photo').not('#heeriye-img').hide()
+            $('#ek-vaari-img').fadeIn('fast')
+            $('#music-preview >.photo').not('#ek-vaari-img').hide()
         },
         () => {
             $('.albumArt').attr('src', imgSrc[3])
             $('#now-playing-music').html(songNames[3])
             currentSongIndex = 3
-            $('#junoon-img').fadeIn('fast')
-            $('#music-preview >.photo').not('#junoon-img').hide()
+            $('#heeriye-img').fadeIn('fast')
+            $('#music-preview >.photo').not('#heeriye-img').hide()
         },
         () => {
             $('.albumArt').attr('src', imgSrc[4])
             $('#now-playing-music').html(songNames[4])
             currentSongIndex = 4
-            $('#kabhi-na-kabhi-img').fadeIn('fast')
-            $('#music-preview >.photo').not('#kabhi-na-kabhi-img').hide()
+            $('#junoon-img').fadeIn('fast')
+            $('#music-preview >.photo').not('#junoon-img').hide()
         },
         () => {
             $('.albumArt').attr('src', imgSrc[5])
             $('#now-playing-music').html(songNames[5])
             currentSongIndex = 5
-            $('#muskurahat-img').fadeIn('fast')
-            $('#music-preview >.photo').not('#muskurahat-img').hide()
+            $('#kabhi-na-kabhi-img').fadeIn('fast')
+            $('#music-preview >.photo').not('#kabhi-na-kabhi-img').hide()
         },
         () => {
             $('.albumArt').attr('src', imgSrc[6])
             $('#now-playing-music').html(songNames[6])
             currentSongIndex = 6
-            $('#panah-img').fadeIn('fast')
-            $('#music-preview >.photo').not('#panah-img').hide()
+            $('#muskurahat-img').fadeIn('fast')
+            $('#music-preview >.photo').not('#muskurahat-img').hide()
         },
         () => {
             $('.albumArt').attr('src', imgSrc[7])
             $('#now-playing-music').html(songNames[7])
             currentSongIndex = 7
-            $('#roi-na-img').fadeIn('fast')
-            $('#music-preview >.photo').not('#roi-na-img').hide()
+            $('#panah-img').fadeIn('fast')
+            $('#music-preview >.photo').not('#panah-img').hide()
         },
         () => {
             $('.albumArt').attr('src', imgSrc[8])
             $('#now-playing-music').html(songNames[8])
             currentSongIndex = 8
-            $('#raatein-img').fadeIn('fast')
-            $('#music-preview >.photo').not('#raatein-img').hide()
+            $('#roi-na-img').fadeIn('fast')
+            $('#music-preview >.photo').not('#roi-na-img').hide()
         },
         () => {
             $('.albumArt').attr('src', imgSrc[9])
             $('#now-playing-music').html(songNames[9])
             currentSongIndex = 9
-            $('#taara-tuteya-img').fadeIn('fast')
-            $('#music-preview >.photo').not('#taara-tuteya-img').hide()
+            $('#raatein-img').fadeIn('fast')
+            $('#music-preview >.photo').not('#raatein-img').hide()
         },
         () => {
             $('.albumArt').attr('src', imgSrc[10])
             $('#now-playing-music').html(songNames[10])
             currentSongIndex = 10
+            $('#taara-tuteya-img').fadeIn('fast')
+            $('#music-preview >.photo').not('#taara-tuteya-img').hide()
+        },
+        () => {
+            $('.albumArt').attr('src', imgSrc[11])
+            $('#now-playing-music').html(songNames[11])
+            currentSongIndex = 11
             $('#tere-huve-img').fadeIn('fast')
             $('#music-preview >.photo').not('#tere-huve-img').hide()
         }
@@ -163,40 +172,44 @@ $(document).ready(() => {
     //an array of functions to display the pictures-preview in the pictures folder
     let picturesFolder = [
         () => {
-            $('#antilope-img').fadeIn('fast')
-            $('#pictures-preview > .photo').not('#antilope-img').hide()
+            $('#1-img').fadeIn('fast')
+            $('#pictures-preview > .photo').not('#1-img').hide()
         },
         () => {
-            $('#barn-owl-img').fadeIn('fast')
-            $('#pictures-preview > .photo').not('#barn-owl-img').hide()
+            $('#2-img').fadeIn('fast')
+            $('#pictures-preview > .photo').not('#2-img').hide()
         },
         () => {
-            $('#polar-bear-img').fadeIn('fast')
-            $('#pictures-preview > .photo').not('#polar-bear-img').hide()
+            $('#3-img').fadeIn('fast')
+            $('#pictures-preview > .photo').not('#3-img').hide()
         },
         () => {
-            $('#cheetah-img').fadeIn('fast')
-            $('#pictures-preview > .photo').not('#cheetah-img').hide()
+            $('#4-img').fadeIn('fast')
+            $('#pictures-preview > .photo').not('#4-img').hide()
         },
         () => {
-            $('#crab-img').fadeIn('fast')
-            $('#pictures-preview > .photo').not('#crab-img').hide()
+            $('#5-img').fadeIn('fast')
+            $('#pictures-preview > .photo').not('#5-img').hide()
         },
         () => {
-            $('#dog-img').fadeIn('fast')
-            $('#pictures-preview > .photo').not('#dog-img').hide()
+            $('#6-img').fadeIn('fast')
+            $('#pictures-preview > .photo').not('#6-img').hide()
         },
         () => {
-            $('#dolphin-img').fadeIn('fast')
-            $('#pictures-preview > .photo').not('#dolphin-img').hide()
+            $('#7-img').fadeIn('fast')
+            $('#pictures-preview > .photo').not('#7-img').hide()
         },
         () => {
-            $('#elephant-img').fadeIn('fast')
-            $('#pictures-preview > .photo').not('#elephant-img').hide()
+            $('#8-img').fadeIn('fast')
+            $('#pictures-preview > .photo').not('#8-img').hide()
         },
         () => {
-            $('#humming-bird-img').fadeIn('fast')
-            $('#pictures-preview > .photo').not('#humming-bird-img').hide()
+            $('#9-img').fadeIn('fast')
+            $('#pictures-preview > .photo').not('#9-img').hide()
+        },
+        () => {
+            $('#10-img').fadeIn('fast')
+            $('#pictures-preview > .photo').not('#10-img').hide()
         }
     ]
 
@@ -204,23 +217,17 @@ $(document).ready(() => {
     let themes = [
         //light theme
         () => {
-            $('.contain, .start, .file-explorer, .browser-window, .settings').css('background', 'rgba(220, 210, 220, .5)')
-            $('.user').css('background', 'rgba(220, 210, 220, .3)')
+            const maxColorValue = 170
+            const minColorValue = 30
+            const red = Math.floor(Math.random() * (maxColorValue - minColorValue) + minColorValue)
+            const blue = Math.floor(Math.random() * (maxColorValue - minColorValue) + minColorValue)
+            const green = Math.floor(Math.random() * (maxColorValue - minColorValue) + minColorValue)
+
+            $('.contain, .start, .file-explorer, .browser-window, .settings').css('background', 'rgb(' + red + ',' + green + ',' + blue + ', .3)')
+            $('.user').css('background', 'rgb(' + red + ',' + green + ',' + blue + ', .1)')
             $('p, .text, em').css('color', 'black').css('opacity', '.8')
             $('hr, .hr1, .hr2, .hr3').css('color', 'black').css('background-color', 'black')
-            $('.progress-bar').css('background-color', 'salmon')
-            $('.progress').css('border', '1px solid salmon')
             $('.shortcut').css('color', 'black').css('font-size', 'small').css('opacity', '.85')
-            $('.material-symbols-outlined').css('color', 'black').css('opacity', '.85')
-        },
-        //purple theme
-        () => {
-            $('.contain, .start, .file-explorer, .browser-window, .settings').css('background', 'rgba(100, 50, 150, .5)')
-            $('.user').css('background', 'rgba(100, 50, 150, .3)')
-            $('p, .text, em').css('color', 'black').css('opacity', '.8')
-            $('.progress').css('border', '1px solid purple')
-            $('.progress-bar').css('background-color', 'purple')
-            $('.shortcut').css('color', 'black').css('font-size', 'small')
             $('.material-symbols-outlined').css('color', 'black').css('opacity', '.85')
         },
         //dark theme
@@ -433,9 +440,9 @@ $(document).ready(() => {
     $('#windows').click(() => {
         if ($('#start').hasClass('started')) {
             startUI[0]()
+            settingsUI[1]()
             fileExpUI[1]()
             browserUI[1]()
-            settingsUI[1]()
         }
         else if ($('#start').hasClass('toStart')) {
             startUI[1]()
@@ -503,9 +510,6 @@ $(document).ready(() => {
             themeCount++
         } else if (themeCount === 1) {
             themes[1]()
-            themeCount++
-        } else if (themeCount === 2) {
-            themes[2]()
             themeCount = 0
         }
     })
@@ -559,7 +563,7 @@ $(document).ready(() => {
 
     //on clicking the next song icon
     $('#next-song').click(() => {
-        if (currentSongIndex === 10) {
+        if (currentSongIndex === 11) {
             currentSongIndex = 0
         } else {
             currentSongIndex++
@@ -570,7 +574,7 @@ $(document).ready(() => {
     //on clicking the previous song icon
     $('#previous-song').click(() => {
         if (currentSongIndex === 0) {
-            currentSongIndex = 10
+            currentSongIndex = 11
         } else {
             --currentSongIndex
         }
@@ -600,29 +604,30 @@ $(document).ready(() => {
     })
 
 
-    // // //when the name of a picture in the pictures folder is clicked
-    $('#antilope').mouseover(picturesFolder[0])
-    $('#barn-owl').mouseover(picturesFolder[1])
-    $('#polar-bear').mouseover(picturesFolder[2])
-    $('#cheetah').mouseover(picturesFolder[3])
-    $('#crab').mouseover(picturesFolder[4])
-    $('#dog').mouseover(picturesFolder[5])
-    $('#dolphin').mouseover(picturesFolder[6])
-    $('#elephant').mouseover(picturesFolder[7])
-    $('#humming-bird').mouseover(picturesFolder[8])
+    //when the name of a picture in the pictures folder is clicked
+    for (let i = 1; i <= 10; i++) {
+        $(`#${i}`).click(picturesFolder[i - 1])
+    }
 
-    // // //when the name of a song in the music folder is clicked, a function from the musicFolder array is called
-    $('#aas-paas').dblclick(musicFolder[0])
-    $('#akhiyaan').dblclick(musicFolder[1])
-    $('#heeriye').dblclick(musicFolder[2])
-    $('#junoon').dblclick(musicFolder[3])
-    $('#kabhi-na-kabhi').dblclick(musicFolder[4])
-    $('#muskurahat').dblclick(musicFolder[5])
-    $('#panah').dblclick(musicFolder[6])
-    $('#roi-na').dblclick(musicFolder[7])
-    $('#raatein').dblclick(musicFolder[8])
-    $('#taara-tuteya').dblclick(musicFolder[9])
-    $('#tere-huve').dblclick(musicFolder[10])
+    //list of song names
+    const songs = ['aas-paas',
+        'akhiyaan',
+        'ek-vaari',
+        'heeriye',
+        'junoon',
+        'kabhi-na-kabhi',
+        'muskurahat',
+        'panah',
+        'roi-na',
+        'raatein',
+        'taara-tuteya',
+        'tere-huve']
+
+    //when any of these songs are clicked
+    songs.forEach((song, index) => {
+        $(`#${song}`).click(musicFolder[index])
+    })
+
 
     //hiding all the  images inside the pictures folder
     function hidePictures() {
@@ -633,8 +638,30 @@ $(document).ready(() => {
         $('#music-preview>.photo').hide()
     }
 
+    //minimize
+    const $minimize = $('.minimize')
+    $minimize.mouseover(() => { $minimize.css('background-color', 'olivedrab') })
+    $minimize.mouseout(() => { $minimize.css('background', 'none') })
+    // $minimize.click(() => { })
+
+    //maximize
+    const $maximize = $('.maximize')
+    $maximize.mouseover(() => { $maximize.css('background-color', 'slateblue') })
+    $maximize.mouseout(() => { $maximize.css('background', 'none') })
+    // $maximize.click(() => { })
+
+    //close
+    const $close = $('.close')
+    $close.mouseover(() => { $close.css('background-color', 'firebrick') })
+    $close.mouseout(() => { $close.css('background', 'none') })
+    $close.click(() => {
+        settingsUI[1]()
+        fileExpUI[1]()
+        browserUI[1]()
+    })
+
     $('.file-explorer, .browser-window, .settings')
-        .draggable({ handle: '.window-header', containment: 'document' })
+        .draggable({ handle: '#handle', containment: 'document' })
         .resizable({ handles: 'n, e, w, s, ne, se, nw, sw', containment: 'document', minWidth: 650, minHeight: 500 })
 })
 

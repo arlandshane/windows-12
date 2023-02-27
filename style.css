@@ -1,6 +1,22 @@
 body {
-    user-select: none;
+    /* user-select: none; */
     overflow: hidden;
+    cursor: default;
+}
+
+::selection {
+    background-color: paleturquoise;
+    color: black;
+}
+
+:not(input) {
+    caret-color: transparent;
+}
+
+:is(.findFile) {
+    caret-color: turquoise;
+    outline: none;
+    color: rgb(193, 220, 218);
 }
 
 /*paragraph element does not have a margin*/
@@ -23,6 +39,7 @@ ul {
 /*every item of an unordered list has a padding of .5rem*/
 ul li {
     padding: .5rem;
+    opacity: 1;
 }
 
 .arlandshane {
@@ -244,9 +261,18 @@ ul li {
 
 /* window-header */
 .window-header {
-    cursor: move;
     display: flex;
     justify-content: space-between;
+}
+
+.minimize,
+.maximize,
+.close {
+    border-radius: .5rem;
+}
+
+#handle {
+    cursor: move;
 }
 
 .window-action-icons>img {
@@ -257,11 +283,13 @@ ul li {
 
 /* start, file explorer, browser, and settings windows */
 .panel {
+    --panel-width: 50vw;
+
     background: rgba(0, 0, 0, .5);
     backdrop-filter: blur(2px);
-    margin: auto;
     display: none;
     height: fit-content;
+    width: var(--panel-width);
 }
 
 /* start and user */
@@ -271,7 +299,7 @@ ul li {
 
 /*start expanded*/
 .start {
-    width: 50vw;
+    margin: auto;
     padding: 1rem;
     border-radius: .7rem .7rem 0 0;
 }
@@ -293,22 +321,25 @@ ul li {
 
 /*file explorer expanded*/
 .file-explorer {
-    width: 50vw;
+    position: relative;
+    left: 5vw;
     padding: .5rem .5rem 1rem .5rem;
     border-radius: .7rem;
 }
 
 /* browser expanded */
 .browser-window {
+    position: relative;
+    left: 5vw;
     padding: .5rem;
-    width: 30vw;
     border-radius: .7rem;
 }
 
 /* settings window expanded */
 .settings {
+    position: relative;
+    left: 5vw;
     padding: 1rem;
-    width: 40vw;
     border-radius: .7rem;
 }
 
@@ -491,11 +522,13 @@ ul li {
     border-radius: .5rem;
     margin: .5rem;
     transition-duration: 300ms;
+    transform: rotate(-2deg);
 }
 
 #music-preview>.photo:hover,
 #pictures-preview>.photo:hover {
-    transform: scale(1.1);
+    transform: rotate(0deg) scale(1.1);
+
 }
 
 #windows+.progress,
@@ -516,6 +549,13 @@ ul li {
     cursor: pointer;
 }
 
+.settings-divs {
+    border-radius: .5rem;
+    background: rgba(255, 255, 255, .1);
+    padding: .5rem;
+}
+
+
 
 
 
@@ -527,11 +567,7 @@ ul li {
 
 @media only screen and (max-width: 1000px) {
     .wallpaper {
-        content: url('Images/phoneWall.png');
-    }
-
-    .contain {
-        background: rgba(0, 0, 0, .5);
+        content: url('Images/phoneWall.webp');
     }
 
     .progressBar {
@@ -556,12 +592,7 @@ ul li {
         margin: 0 1.5vw;
     }
 
-    .file-explorer {
+    .panel {
         width: 90vw;
-    }
-
-    .file-head {
-        justify-content: space-around;
-        row-gap: .5rem;
     }
 }
